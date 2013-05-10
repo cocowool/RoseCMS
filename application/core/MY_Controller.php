@@ -8,12 +8,15 @@
 class MY_Controller extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		
-		if( $this->uri->segment(1) === 'manage' ){
-			//$this->checkAdminLogin();
-		}
 	}
 	
+	private function backendSessionCheck(){
+		if( !$this->session->userdata( $this->config->item('adm_sess_username') ) ){
+			echo 'Test <br />';
+			redirect( $this->config->item('adm_segment') . '/auth/login');
+		}		
+	}
+
 	public function isBackend(){
 		echo $this->uri->segment(1);
 	}
