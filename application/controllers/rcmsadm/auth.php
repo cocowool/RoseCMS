@@ -26,18 +26,18 @@ class Auth extends MY_Controller {
 				$this->session->set_userdata('admId', $userinfo['id']);
 				$this->session->set_userdata('adminLogin', 2);
 				
-				redirect('/manage/main');
+				redirect($this->config->item('adm_segment') . '/main');
 				return TRUE;
 			}else if( $username == $this->config->item('admin_user') && $password == $this->config->item('admin_pass') ){
 				$this->session->set_userdata('admUsername', $username);
 				$this->session->set_userdata('admId', '9999');
 				$this->session->set_userdata('adminLogin', 1);
 				
-				redirect('/manage/main');
+				redirect($this->config->item('adm_segment') . '/main');
 				return TRUE;
 			}
 			
-			redirect('/manage/auth/login');
+			redirect( $this->config->item('adm_segment') . '/auth/login');
 			return FALSE;
 		}
 	}

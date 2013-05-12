@@ -4,7 +4,7 @@ $config['sys_title'] = 'Rose CMS Version 0.1';
 
 $config['adm_username'] = 'admin';
 $config['adm_password'] = 'admin';
-$config['adm_template']	= 'templates/adm_default';
+$config['adm_template']	= '/templates/adm_default';
 $config['adm_segment']	= 'rcmsadm';
 
 $config['adm_sess_username'] = 'adm_username';
