@@ -10,7 +10,7 @@ class MY_Controller extends CI_Controller {
 		parent::__construct();
 	}
 	
-	private function backendSessionCheck(){
+	protected function backendSessionCheck(){
 		if( !$this->session->userdata( $this->config->item('adm_sess_username') ) ){
 			echo 'Test <br />';
 			redirect( $this->config->item('adm_segment') . '/auth/login');
