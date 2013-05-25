@@ -28,10 +28,10 @@ class Auth extends MY_Controller {
 				
 				redirect($this->config->item('adm_segment') . '/main');
 				return TRUE;
-			}else if( $username == $this->config->item('admin_user') && $password == $this->config->item('admin_pass') ){
-				$this->session->set_userdata('admUsername', $username);
-				$this->session->set_userdata('admId', '9999');
-				$this->session->set_userdata('adminLogin', 1);
+			}else if( $username == $this->config->item('adm_username') && $password == $this->config->item('adm_password') ){
+				$this->session->set_userdata($this->config->item('adm_sess_username'), $username);
+				$this->session->set_userdata($this->config->item('adm_sess_status'), 1);
+// 				$this->session->set_userdata($this->config->item('adm_sess_level'), 9999);
 				
 				redirect($this->config->item('adm_segment') . '/main');
 				return TRUE;

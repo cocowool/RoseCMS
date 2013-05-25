@@ -1,0 +1,38 @@
+body {
+	color: #333;
+	font-size: 12px;
+	line-height: 1.4em;
+}
+
+@media all {
+	body {
+		margin: 0;
+		padding: 0;
+		border:0;
+		outline: 0;
+		background: transparent;
+	}
+}
+
+.rc-admin { 
+	min-width: 800px;
+}
+
+#rc-wrap {
+	position: relative;
+	height: auto;
+	min-height: 100%;
+	min-width: 100%;
+}
+
+#rc-adm-menu-wrap {
+	background-color: #ececec;
+	position: relative;
+	float: left;
+	width: 145px;
+	border-right: 1px solid #ccc;
+}
+
+#rc-content {
+	margin-left: 165px;
+}
