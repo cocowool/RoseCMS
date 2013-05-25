@@ -12,6 +12,19 @@ body {
 		outline: 0;
 		background: transparent;
 	}
+
+	ul, li, ol {
+		margin: 0;
+		padding: 0;
+	}
+
+	a, a:link, a:visited {
+		color: #21759b;
+	}
+
+	a:hover {
+		color: #d54e21;
+	}
 }
 
 .rc-admin { 
@@ -33,6 +46,74 @@ body {
 	border-right: 1px solid #ccc;
 }
 
+#rc-adm-menu {
+	list-style: none;
+	width: 145px;
+}
+
+#rc-adm-menu li {
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+#rc-adm-menu a {
+	display: block;	
+	text-decoration: none;
+}
+
+#rc-adm-menu a.menu-top {
+	border-top-color: #f9f9f9;
+	border-bottom-color: #dfdfdf;
+	border-width: 1px 0 1px;
+	min-width: 10em;
+	padding: 5px 5px;
+	line-height: 18px;
+	color:#21759b;
+	font-weight: bold;
+	border-style: solid;
+	font-size: 13px;
+}
+
+.rc-has-submenu {
+	position: relative;
+	min-height: 26px;
+}
+
 #rc-content {
 	margin-left: 165px;
+}
+
+#rc-head {
+	border-bottom:1px solid #dfdfdf;
+	height: 32px;
+	margin-right: 20px;
+}
+
+#rc-head h1 {
+	padding: 6px 8px 5px;
+	margin:0;
+	float: left;
+	font-size: 16px;
+}
+
+#rc-head h1 a {
+	color: #464646;
+	text-decoration: none;
+}
+
+#rc-head-info {
+	display: block;
+	margin: 0 0 0 15px;
+	padding-right: 20px;
+	position: relative;
+}
+
+#rc-userinfo {
+	float: right;
+	font-size: 12px;
+	line-height: 26px;
+	height: 25px;
+	position: relative;
+	margin-top: 3px;
 }
