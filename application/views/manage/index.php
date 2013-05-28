@@ -14,7 +14,7 @@
 				<li><a class="menu-top" href="#">文章</a></li>
 				<li><a class="menu-top" href="#">媒体</a></li>
 				<li><a class="menu-top" href="#">用户</a></li>
-				<li><a class="menu-top" href="#">二维码</a></li>
+				<li><a class="menu-top" href="">二维码</a></li>
 			</ul>
 		</div>
 		<div id="rc-content">
