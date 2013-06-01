@@ -10,6 +10,15 @@ class MY_Controller extends CI_Controller {
 		parent::__construct();
 	}
 	
+	public function _remap( $method, $params = array() ){
+		if( method_exists($this, $method) ){
+			return call_user_func_array(array($this,$method), $params);
+		}else{
+			array_push($params, $method);
+			return call_user_func_array(array($this,'index'), $params);
+		}
+	}
+	
 	protected function backendSessionCheck(){
 		if( !$this->session->userdata( $this->config->item('adm_sess_username') ) ){
 			redirect( $this->config->item('adm_segment') . '/auth/login');
