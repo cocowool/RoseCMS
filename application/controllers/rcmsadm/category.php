@@ -13,7 +13,7 @@ class Category extends MY_Controller {
 	 * 增加一条新的栏目
 	 */
 	public function add(){
-		$this->load->model('Dealer_Model','u');
+		$this->load->model('Category_Model','c');
 		$this->lang->load('form_validation', 'chinese');
 		$config = array(
 				array(
@@ -29,8 +29,8 @@ class Category extends MY_Controller {
 			$data['title']	=	'添加页面';
 			//设置不需要用户输入项目
 			$invisible = array('insert_time','update_time', 'operation');
-			$data['html_form'] = $this->u->get_add_form( 'siteLink', '/manage/dealer/add', TRUE, $invisible );
-			$this->load->view('manage/dealer/dealer_edit',$data);
+			$data['html_form'] = $this->c->get_add_form( 'siteLink', '/manage/category/add', TRUE, $invisible );
+			$this->load->view('manage/category/category_edit',$data);
 		}else{
 			$this->load->helper('date');
 			$_POST['insert_time'] = unix_to_human( local_to_gmt(), TRUE, 'eu');
