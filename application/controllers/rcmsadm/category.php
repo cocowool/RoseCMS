@@ -3,6 +3,13 @@
 class Category extends MY_Controller {
 	private $home_url = '/category/home';
 	private $page_title = '栏目管理';
+	private $form_validate = array(
+		array(
+			'field'	=>	'category',
+			'label'	=>	'栏目名称',
+			'rules'	=>	'trim|required'
+		)
+	);
 	
 	public function __construct(){
 		parent::__construct();
@@ -25,10 +32,14 @@ class Category extends MY_Controller {
 		//做一下Page的转换，这里使用的起始位置
 		$page = ( $page - 1 ) * $pagesize;
 		$result = $this->c->getAll( $option, $page, $pagesize, $sort, $direction);
+		
+		$category = $this->c->get_parent_category();
+		
 		//向结果中附加Operation的链接
 		foreach ($result as $k=>$v){
 			$v['operation'] = '<a href="' . base_url( $this->config->item('adm_segment') . '/category/edit/'.$v['id']) . '">修改</a>
 			<a href="' . base_url($this->config->item('adm_segment') . '/category/del/'.$v['id']) . '">删除</a>';
+			$v['pid'] = $category[$v['pid']];
 			$result[$k]	= $v;
 		}
 		
@@ -52,13 +63,7 @@ class Category extends MY_Controller {
 	public function add(){
 		$this->load->model('Category_Model','c');
 		$this->lang->load('form_validation', 'chinese');
-		$config = array(
-				array(
-						'field'	=>	'goverment',
-						'label'	=>	'政府机关',
-						'rules'	=>	'trim'
-				)
-		);
+		$config = $this->form_validate;
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
 		
@@ -98,13 +103,7 @@ class Category extends MY_Controller {
 	public function edit( $id ){
 		$this->load->model('Category_Model','c');
 		$this->lang->load('form_validation', 'chinese');
-		$config = array(
-				array(
-						'field'	=>	'goverment',
-						'label'	=>	'政府机关',
-						'rules'	=>	'trim'
-				)
-		);
+		$config = $this->form_validate;
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
 	
@@ -122,7 +121,7 @@ class Category extends MY_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'修改页面';
 			//设置不需要用户输入项目
-			$invisible = array('insert_time','update_time','operation');
+			$invisible = array('create_at','update_at','operation');
 			$data['html_form'] = $this->c->get_edit_form( $result, 'siteCategory', $this->config->item('adm_segment') . '/category/edit/'.$id, TRUE, $invisible );
 	
 			$this->load->view('manage/category/category_edit',$data);

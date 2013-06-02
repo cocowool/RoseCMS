@@ -11,7 +11,7 @@ class Category_Model extends MY_Model {
 	protected $fields = array(
 		array('name'=>'id', 'comment'=>'序号', 'primary' => TRUE),
 		array('name'=>'category', 'comment'=>'栏目名称'),
-		array('name'=>'pid', 'comment'=>'父栏目'),	
+		array('name'=>'pid', 'comment'=>'父栏目', 'options' => ''),	
 		array('name'=>'description', 'comment'=>'栏目描述'),	
 		array('name'=>'keywords', 'comment'=>'栏目关键词'),	
 		array('name'=>'urltag', 'comment'=>'地址标志符'),	
@@ -22,6 +22,28 @@ class Category_Model extends MY_Model {
 	
 	function __construct(){
 		parent::__construct();
+		
+		$this->fields[2]['options'] = $this->get_parent_category();
+	}
+	
+	/**
+	 * 获取某一级别菜单列表
+	 * 
+	 * @param number $level
+	 */
+	public function get_parent_category($level = 0){
+		$condition = array(
+				array('field'=>'pid', 'data' =>'0', 'action'=>'where' ),
+		);
+		$result = $this->getAll($condition);
+		
+		$options = array();
+		$options[0] = '一级分类';
+		foreach ($result as $k=>$v){
+			$options[$v['id']] = $v['category'];
+		}
+		
+		return $options;
 	}
 	
 }

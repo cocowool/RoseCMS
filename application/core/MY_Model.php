@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * 共用的数据处理Model
+ * 公用的数据处理Model
  * 
  * @author shiqiang(cocowool@gmail.com)
  * @version $Id: MY_Model.php 25 2012-07-06 14:01:38Z cocowool@gmail.com $
@@ -101,7 +101,8 @@ class MY_Model extends CI_Model{
 			//根据不同的类型，生成页面控件
 			if( key_exists('options', $v) && is_array($v['options']) ){
 				$html_form .= '<p>' . form_label($v['comment'], $v['name']);
-				$html_form .= form_dropdown( $v['name'], $v['options'] ) . '</p>';
+				$html_form .= form_dropdown( $v['name'], $v['options'], $result['pid']) . '</p>';
+				
 			}else if( key_exists('fromSession', $v) && !empty($v['fromSession']) ){
 				$html_form .= '<p>' . form_hidden($v['name'], $this->session->userdata($v['fromSession'])) . '</p>';
 			}else{
@@ -214,7 +215,8 @@ class MY_Model extends CI_Model{
 	/**
 	 * 从数据库中获取结果数据集
 	 *
-	 * $condition	array( array('field'=>'', 'data' =>'', 'action'=>'' ) ) or string
+	 * $condition	array( array('field'=>'', 'data' =>'', 'action'=>'' ) ) or string, 其中 action 指CI中数据库查询操作类型
+	 * 
 	 **/
 	function getAll( $condition = array(), $start = 0, $pagesize = 500000, $sort = '', $direction = '' ){
  		if( !empty( $condition ) ){
