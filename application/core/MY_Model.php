@@ -101,7 +101,7 @@ class MY_Model extends CI_Model{
 			//根据不同的类型，生成页面控件
 			if( key_exists('options', $v) && is_array($v['options']) ){
 				$html_form .= '<p>' . form_label($v['comment'], $v['name']);
-				$html_form .= form_dropdown( $v['name'], $v['options'], $result['pid']) . '</p>';
+				$html_form .= form_dropdown( $v['name'], $v['options'], $result[$v['name']]) . '</p>';
 				
 			}else if( key_exists('fromSession', $v) && !empty($v['fromSession']) ){
 				$html_form .= '<p>' . form_hidden($v['name'], $this->session->userdata($v['fromSession'])) . '</p>';
