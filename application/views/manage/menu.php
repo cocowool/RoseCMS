@@ -12,7 +12,7 @@
 	<div id="bd" class="sys_left">
 		<ul class="left_menu">
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">文章管理</a></li>
-			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/user/home'); ?>" target="panelFrm">栏目管理</a></li>
+			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/category/home'); ?>" target="panelFrm">栏目管理</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/user/add'); ?>" target="panelFrm">文章列表</a></li>
 		</ul>
 		<ul class="left_menu">

@@ -13,6 +13,8 @@ $config['adm_sess_username'] = 'adm_username';
 $config['adm_sess_status'] = 'adm_status';
 $config['adm_sess_level']	= 9999;
 
+//栏目菜单所允许深度级别
+$config['max_menu_level'] = 2;
 
 $config['yui_version']	= '3.10.0';
 
