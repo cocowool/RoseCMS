@@ -13,7 +13,7 @@
 		<ul class="left_menu">
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">文章管理</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/category/home'); ?>" target="panelFrm">栏目管理</a></li>
-			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/user/add'); ?>" target="panelFrm">文章列表</a></li>
+			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/article/home'); ?>" target="panelFrm">文章列表</a></li>
 		</ul>
 		<ul class="left_menu">
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">会员管理</a></li>

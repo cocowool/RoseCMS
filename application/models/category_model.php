@@ -46,4 +46,28 @@ class Category_Model extends MY_Model {
 		return $options;
 	}
 	
+	/**
+	 * 获取所有栏目列表
+	 */
+	public function get_all_category( $pid = 0, $level = 0 ){
+		$condition = array(
+				array('field'=>'pid', 'data' =>$pid, 'action'=>'where' ),
+		);
+		$result = $this->getAll($condition);
+		
+		$options = array();
+		$prefix = '';
+		foreach ($result as $k=>$v){
+			for($i=0;$i<$level;$i++){
+				$prefix .= '-';
+			}
+			$options[$v['id']] = $prefix . $v['category'];
+			$level+=2;
+			$sub = $this->get_all_category($v['id'], $level);
+			$options = $options + $sub;
+			$level-=2;
+		}
+		
+		return $options;
+	}
 }
