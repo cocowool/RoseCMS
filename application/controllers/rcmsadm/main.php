@@ -45,4 +45,8 @@ class Main extends MY_Controller {
 	public function bar(){
 		$this->load->view('manage/bar');
 	}
+	
+	public function welcome(){
+		echo "Welcome!";
+	}
 }
