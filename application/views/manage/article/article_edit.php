@@ -7,6 +7,7 @@
 		@import url('/static/lib/yui3.10.0/cssreset/cssreset-min.css');
 		@import url('/templates/adm_default/css/public.css');
 	</style>
+	<script type="text/javascript" src="/static/lib/ckeditor4.1.1/ckeditor.js"></script>
 	</head>
 <body class="yui-skin-sam">
 <div id="doc3" class="yui-t1">

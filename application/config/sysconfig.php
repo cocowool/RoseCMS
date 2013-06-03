@@ -17,4 +17,5 @@ $config['adm_sess_level']	= 9999;
 $config['max_menu_level'] = 2;
 
 $config['yui_version']	= '3.7.3';
+$config['fd_yui_version'] = '3.10.0';
 
