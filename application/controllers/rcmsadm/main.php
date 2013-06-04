@@ -15,13 +15,15 @@ class Main extends MY_Controller {
 	}
 	
 	public function index(){
-		$this->load->view('manage/main');
+		$data['username'] = $this->session->userdata($this->config->item('adm_sess_username'));
+		
+		$this->load->view('manage/main', $data);
 	}
 	
 	public function top(){
 		$this->config->load('sysconfig');
-		$data["username"] = $this->session->userdata('admUsername');
-	
+		$data['username'] = $this->session->userdata($this->config->item('adm_sess_username'));
+		
 		$this->load->helper('date');
 		$datestring = "%Y-%m-%d";
 		$time = time();
