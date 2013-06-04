@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<style type="text/css">
-		@import url('/static/lib/yui3.10.0/cssreset/cssreset-min.css');
+		@import url('/static/lib/yui<?php echo $this->config->item('yui_version'); ?>/cssreset/cssreset-min.css');
 		@import url('/templates/adm_default/css/public.css');
 	</style>
 	<title><?php echo $sys_title; ?></title>

@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<style type="text/css">
-		@import url('/static/lib/yui3.10.0/cssreset/cssreset-min.css');
+		@import url('/static/lib/yui<?php echo $this->config->item('yui_version'); ?>/cssreset/cssreset-min.css');
 		@import url('/templates/adm_default/css/public.css');
 	</style>
 </head>
@@ -17,7 +17,7 @@
 		</ul>
 		<ul class="left_menu">
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">会员管理</a></li>
-			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/dealer/home'); ?>" target="panelFrm">会员列表</a></li>
+			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/user/home'); ?>" target="panelFrm">会员列表</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/dealer/add'); ?>" target="panelFrm"></a></li>
 		</ul>
 		<ul class="left_menu">
