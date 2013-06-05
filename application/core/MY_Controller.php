@@ -8,6 +8,10 @@
 class MY_Controller extends CI_Controller {
 	function __construct(){
 		parent::__construct();
+		
+		if( $this->isBackend() ){
+			$this->backendSessionCheck();
+		}
 	}
 	
 	public function _remap( $method, $params = array() ){
@@ -26,7 +30,11 @@ class MY_Controller extends CI_Controller {
 	}
 
 	public function isBackend(){
-		echo $this->uri->segment(1);
+		if( $this->uri->segment(1) == $this->config->item('adm_segment') && $this->uri->segment(2) != $this->config->item('adm_login_segment') ){
+			return TRUE;
+		}
+		
+		return FALSE;
 	}
 
 	public function checkAdminLogin(){

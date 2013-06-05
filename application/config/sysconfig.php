@@ -8,6 +8,7 @@ $config['adm_username'] = 'admin';
 $config['adm_password'] = 'admin';
 $config['adm_template']	= '/templates/adm_default';
 $config['adm_segment']	= 'rcmsadm';
+$config['adm_login_segment'] = 'auth';
 
 $config['adm_sess_username'] = 'adm_username';
 $config['adm_sess_status'] = 'adm_status';
