@@ -1,9 +1,9 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['sys_title'] = 'Rose CMS Version 0.1';
+$config['sys_title'] = 'Rose CMS';
 
-$config['adm_sys_title'] = 'Rose CMS Version 0.1';
-
+$config['adm_sys_title'] = 'Rose CMS';
+$config['cms_version'] = '0.1';
 $config['adm_username'] = 'admin';
 $config['adm_password'] = 'admin';
 $config['adm_template']	= '/templates/adm_default';
