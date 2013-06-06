@@ -7,9 +7,9 @@
  *
  */
 class Article extends MY_Controller {
-	private $home_url = '/article/home';
-	private $segment = 'article';
-	private $page_title = '文章管理';
+	private $home_url = '/resource/home';
+	private $segment = 'resource';
+	private $page_title = '文章资源管理';
 	private $form_validate = array(
 		array(
 			'field'	=>	'name',
@@ -56,15 +56,16 @@ class Article extends MY_Controller {
 		echo json_encode( array('mydata'=> $result, 'totalItems' => $total, 'itemsPerPage' => $pagesize, 'itemIndexStart' => $page ) );
 	}
 	
-	public function home(){
-		$this->load->model('Article_Model','a');
+	
+	public function home($id){
+		$this->load->model('Resource_Model','r');
 		
 		$data = array();
-		$data['column'] = $this->a->getColumn();
-		$data['tblTitle'] = '文章列表';
+		$data['column'] = $this->r->getColumn();
+		$data['tblTitle'] = '文章资源列表';
 		$data['page_title'] = $this->page_title;
 		
-		$this->load->view('manage/article/article_list', $data);
+		$this->load->view('manage/resource/resource_list', $data);
 	}
 	
 	/**
