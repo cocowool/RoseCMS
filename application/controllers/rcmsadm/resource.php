@@ -12,8 +12,8 @@ class Resource extends MY_Controller {
 	private $page_title = '文章资源管理';
 	private $form_validate = array(
 		array(
-			'field'	=>	'name',
-			'label'	=>	'文章名称',
+			'field'	=>	'aid',
+			'label'	=>	'关联文章',
 			'rules'	=>	'trim|required'
 		)
 	);
@@ -24,9 +24,8 @@ class Resource extends MY_Controller {
 		$this->home_url = $this->config->item('adm_segment') . $this->home_url;
 	}
 
-	public function index($id, $page = 0, $pagesize = 10, $sort = '', $direction = ''){
-		$this->load->model('Article_Model','a');
-		$this->load->model('Category_Model', 'c');
+	public function index($id, $page = 1, $pagesize = 10, $sort = '', $direction = ''){
+		$this->load->model('Resource_Model','r');
 		header('Content-type:text/html;charset=utf-8');
 		
 		if(empty($id)){
@@ -36,24 +35,21 @@ class Resource extends MY_Controller {
 		$option = array();
 		if( !empty($_GET['insert_time']) ){
 			$insert_time = $_GET['create_at'];
+			$option[] = array( 'data' => $id, 'field' => 'aid', 'action' => 'where' );
 			$option[] = array( 'data' => $insert_time, 'field' => 'create_at >=', 'action' => 'where' );
 			$option[] = array( 'data' => date('Y-m-d', strtotime($insert_time)+86400), 'field' => 'create_at <=', 'action' => 'where' );
 		}
 		
-		$total = $this->a->getTotal( $option );
+		$total = $this->r->getTotal( $option );
 		//做一下Page的转换，这里使用的起始位置
 		$page = ( $page - 1 ) * $pagesize;
-		$result = $this->a->getAll( $option, $page, $pagesize, $sort, $direction);
-		
-		$category = $this->c->get_all_category();
+		$result = $this->r->getAll( $option, $page, $pagesize, $sort, $direction);
 		
 		//向结果中附加Operation的链接
 		//附加资源的链接
 		foreach ($result as $k=>$v){
 			$v['operation'] = '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
 			<a href="' . base_url($this->config->item('adm_segment') . '/' . $this->segment . '/del/'.$v['id']) . '">删除</a>';
-			$v['resource'] = '<a href="' . base_url($this->config->item('adm_segment')) .'/'.'/resource/'.$v['id']. '">资源列表</a>';
-			$v['category'] = $category[$v['category']];
 			$result[$k]	= $v;
 		}
 		
@@ -76,7 +72,7 @@ class Resource extends MY_Controller {
 	/**
 	 * 增加一条新的栏目
 	 */
-	public function add( $aid ){
+	public function add( $aid = '' ){
 		$this->load->model('Resource_Model','r');
 		$this->lang->load('form_validation', 'chinese');
 		$config = $this->form_validate;
@@ -91,24 +87,38 @@ class Resource extends MY_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'添加页面';
 			//设置不需要用户输入项目
-			$invisible = array('create_at','update_at', 'operation');
+			$invisible = array('filename','web_path','create_at','update_at', 'operation');
 			$data['html_form'] = $this->r->get_add_form( 'siteResource',  $this->config->item('adm_segment') . '/' . $this->segment . '/add', TRUE, $invisible );
 			$this->load->view('manage/resource/resource_edit',$data);
 		}else{
 			$this->load->helper('date');
 			$_POST['create_at'] = unix_to_human( local_to_gmt(), TRUE, 'eu');
 			$data = $this->input->post(NULL, true);
+
+			$config = $this->config->item('image_upload_config');
+			$this->load->library('upload', $config);
+			
+			if ( ! $this->upload->do_upload('path')){
+				$error = array('error' => $this->upload->display_errors());
+				print_r($error);
+				die('Upload Failed');
+			}else{
+				$updata = array('upload_data' => $this->upload->data());
+				$data['filename'] = $updata['upload_data']['file_name'];
+				$data['web_path'] = $updata['upload_data']['file_path'];
+				$data['path'] = $updata['upload_data']['full_path'];
+			}
 		
 			$result = $this->r->insertMethod( $data );
 			if( $result ){
 				$data['title'] = "系统提示";
-				$data['url'] = base_url() . $this->home_url;
+				$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
 				$data['content'] = "操作成功，正在跳转";
 				$data['timeout'] = 2000;
 				$this->load->view('manage/include/sys_msg', $data);
 			}else{
 				$data['title'] = "系统提示";
-				$data['url'] = base_url() . $this->home_url;
+				$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
 				$data['timeout'] = 2000;
 				$data['content'] = "<p style='color:red; font-weight:bold;'>操作失败，请联系管理员</p>";
 				$this->load->view('manage/include/sys_msg', $data);

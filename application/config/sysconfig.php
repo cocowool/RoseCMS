@@ -14,6 +14,15 @@ $config['adm_sess_username'] = 'adm_username';
 $config['adm_sess_status'] = 'adm_status';
 $config['adm_sess_level']	= 9999;
 
+$config['image_upload_config'] = array(
+	'upload_path' => './data/',
+	'allowed_types' => 'gif|jpg|png',
+	'max_size' => '1000',
+	'max_width' => '1024',
+	'max_height' => '768',
+);
+
+
 //栏目菜单所允许深度级别
 $config['max_menu_level'] = 2;
 
