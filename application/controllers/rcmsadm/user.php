@@ -6,14 +6,14 @@
  * @author shiqiang
  *
  */
-class Article extends MY_Controller {
-	private $home_url = '/article/home';
-	private $segment = 'article';
-	private $page_title = '文章管理';
+class User extends MY_Controller {
+	private $home_url = '/user/home';
+	private $segment = 'user';
+	private $page_title = '用户管理';
 	private $form_validate = array(
 		array(
-			'field'	=>	'name',
-			'label'	=>	'文章名称',
+			'field'	=>	'username',
+			'label'	=>	'用户名称',
 			'rules'	=>	'trim|required'
 		)
 	);
@@ -24,9 +24,8 @@ class Article extends MY_Controller {
 		$this->home_url = $this->config->item('adm_segment') . $this->home_url;
 	}
 
-	public function index($page = 0, $pagesize = 10, $sort = '', $direction = ''){
-		$this->load->model('Article_Model','a');
-		$this->load->model('Category_Model', 'c');
+	public function index($page = 1, $pagesize = 10, $sort = '', $direction = ''){
+		$this->load->model('User_Model','u');
 		header('Content-type:text/html;charset=utf-8');
 		
 		$option = array();
@@ -36,18 +35,15 @@ class Article extends MY_Controller {
 			$option[] = array( 'data' => date('Y-m-d', strtotime($insert_time)+86400), 'field' => 'create_at <=', 'action' => 'where' );
 		}
 		
-		$total = $this->a->getTotal( $option );
+		$total = $this->u->getTotal( $option );
 		//做一下Page的转换，这里使用的起始位置
 		$page = ( $page - 1 ) * $pagesize;
-		$result = $this->a->getAll( $option, $page, $pagesize, $sort, $direction);
-		
-		$category = $this->c->get_all_category();
+		$result = $this->u->getAll( $option, $page, $pagesize, $sort, $direction);
 		
 		//向结果中附加Operation的链接
 		foreach ($result as $k=>$v){
 			$v['operation'] = '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
 			<a href="' . base_url($this->config->item('adm_segment') . '/' . $this->segment . '/del/'.$v['id']) . '">删除</a>';
-			$v['category'] = $category[$v['category']];
 			$result[$k]	= $v;
 		}
 		
@@ -62,7 +58,7 @@ class Article extends MY_Controller {
 		$data['tblTitle'] = '文章列表';
 		$data['page_title'] = $this->page_title;
 		
-		$this->load->view('manage/article/article_list', $data);
+		$this->load->view('manage/user/user_list', $data);
 	}
 	
 	/**
