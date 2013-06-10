@@ -6,7 +6,7 @@
  * @author shiqiang
  *
  */
-class Article extends MY_Controller {
+class Resource extends MY_Controller {
 	private $home_url = '/resource/home';
 	private $segment = 'resource';
 	private $page_title = '文章资源管理';
@@ -24,10 +24,14 @@ class Article extends MY_Controller {
 		$this->home_url = $this->config->item('adm_segment') . $this->home_url;
 	}
 
-	public function index($page = 0, $pagesize = 10, $sort = '', $direction = ''){
+	public function index($id, $page = 0, $pagesize = 10, $sort = '', $direction = ''){
 		$this->load->model('Article_Model','a');
 		$this->load->model('Category_Model', 'c');
 		header('Content-type:text/html;charset=utf-8');
+		
+		if(empty($id)){
+			echo 'Invalid Parameter.';
+		}
 		
 		$option = array();
 		if( !empty($_GET['insert_time']) ){
@@ -64,6 +68,7 @@ class Article extends MY_Controller {
 		$data['column'] = $this->r->getColumn();
 		$data['tblTitle'] = '文章资源列表';
 		$data['page_title'] = $this->page_title;
+		$data['aid'] = $id;
 		
 		$this->load->view('manage/resource/resource_list', $data);
 	}
@@ -71,25 +76,30 @@ class Article extends MY_Controller {
 	/**
 	 * 增加一条新的栏目
 	 */
-	public function add(){
-		$this->load->model('Article_Model','a');
+	public function add( $aid ){
+		$this->load->model('Resource_Model','r');
 		$this->lang->load('form_validation', 'chinese');
 		$config = $this->form_validate;
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
 		
+		$hidden = array(
+			'aid'	=>	$aid,
+		);
+		$this->r->setHidden($hidden);
+		
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'添加页面';
 			//设置不需要用户输入项目
 			$invisible = array('create_at','update_at', 'operation');
-			$data['html_form'] = $this->a->get_add_form( 'siteCategory',  $this->config->item('adm_segment') . '/' . $this->segment . '/add', TRUE, $invisible );
-			$this->load->view('manage/article/article_edit',$data);
+			$data['html_form'] = $this->r->get_add_form( 'siteResource',  $this->config->item('adm_segment') . '/' . $this->segment . '/add', TRUE, $invisible );
+			$this->load->view('manage/resource/resource_edit',$data);
 		}else{
 			$this->load->helper('date');
 			$_POST['create_at'] = unix_to_human( local_to_gmt(), TRUE, 'eu');
 			$data = $this->input->post(NULL, true);
 		
-			$result = $this->a->insertMethod( $data );
+			$result = $this->r->insertMethod( $data );
 			if( $result ){
 				$data['title'] = "系统提示";
 				$data['url'] = base_url() . $this->home_url;

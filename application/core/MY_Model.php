@@ -74,11 +74,25 @@ class MY_Model extends CI_Model{
 				$html_form .= '<p>' . form_hidden($v['name'], $this->session->userdata($v['fromSession'])) . '</p>';
 			}else if( key_exists($v['name'], $parameters) ){
 				$html_form .= form_hidden($v['name'], $parameters[$v['name']]);
-			}else if( key_exists('type', $v) && $v['type'] == 'text') {
-				$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_textarea( array(
-						'name'=>$v['name'], 
-						'class' => 'ckeditor', 
-						'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . '</p>';
+			}else if( key_exists('type', $v) ) {
+				switch ( $v['type'] ){
+					case 'text':
+						$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_textarea( array(
+								'name'=>$v['name'], 
+								'class' => 'ckeditor', 
+								'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . '</p>';
+						break;
+					case 'hidden':
+						$html_form .= form_hidden(array(
+							$v['name'] => $v['hidden'],
+						));
+						break;
+					case 'file':
+						$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_upload( array(
+								'name'=>$v['name'], 
+								'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . '</p>';
+						break;
+				}
 			}else{
 				$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_input( array('name'=>$v['name'], 'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . '</p>';
 			}

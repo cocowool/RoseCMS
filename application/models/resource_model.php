@@ -10,11 +10,12 @@ class Resource_Model extends MY_Model {
 	protected $id	=	'id';
 	protected $fields = array(
 		array('name'=>'id', 'comment'=>'序号', 'primary' => TRUE),
-		array('name'=>'aid', 'comment'=>'关联文章'),
+		array('name'=>'aid', 'comment'=>'关联文章', 'invisible' => TRUE, 'type' => 'hidden', 'hidden' => '' ),
 		array('name'=>'description', 'comment'=>'资源描述', 'options' => ''),	
 		array('name'=>'author', 'comment'=>'作者'),	
 		array('name'=>'sort', 'comment'=>'排序'),	
 		array('name'=>'tag', 'comment'=>'标签'),	
+		array('name'=>'path', 'comment'=>'保存路径', 'type' => 'file'),	
 		array('name'=>'status', 'comment'=>'状态', 'options' => array('0' => '草稿', '1' => '已发布' ) ),	
 		array('name'=>'create_at', 'comment'=>'创建时间'),	
 		array('name'=>'update_at', 'comment'=>'更新时间', 'invisible' => TRUE),
@@ -23,5 +24,16 @@ class Resource_Model extends MY_Model {
 	
 	function __construct(){
 		parent::__construct();		
+	}
+	
+	public function setHidden( $data ){
+		foreach ($this->fields as $k => $v){
+			foreach ($data as $kk=>$vv){
+				if( $kk == $v['name'] ) {
+					$v['hidden'] = $vv;
+					$this->fields[$k] = $v;
+				}
+			}
+		}
 	}
 }
