@@ -183,8 +183,8 @@ class Resource extends MY_Controller {
 	 * @param int $id
 	 */
 	public function del($id){
-		$this->load->model('Article_Model','a');
-		$result = $this->a->getById($id);
+			$this->load->model('Resource_Model','r');
+		$result = $this->r->getById($id);
 		if( !$result ){
 			$data['title'] = "系统提示";
 			$data['url'] = base_url() . $this->home_url;
@@ -195,13 +195,13 @@ class Resource extends MY_Controller {
 			$data['result'] = $result;
 		}
 	
-		$result = $this->a->deleteMethod($id);
+		$result = $this->r->deleteMethod($id);
 		if( $result ){
 			$data['title'] = "系统提示";
 			$data['url'] = base_url() . $this->home_url;
 			$data['content'] = "操作成功，正在跳转";
 			$data['timeout'] = 6000;
-			$this->load->view('include/sys_msg', $data);
+			$this->load->view('manage/include/sys_msg', $data);
 		}else{
 			$data['title'] = "系统提示";
 			$data['url'] = base_url() . $this->home_url;

@@ -182,7 +182,7 @@ class Article extends MY_Controller {
 			$data['url'] = base_url() . $this->home_url;
 			$data['content'] = "操作成功，正在跳转";
 			$data['timeout'] = 6000;
-			$this->load->view('include/sys_msg', $data);
+			$this->load->view('manage/include/sys_msg', $data);
 		}else{
 			$data['title'] = "系统提示";
 			$data['url'] = base_url() . $this->home_url;
