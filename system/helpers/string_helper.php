@@ -50,6 +50,19 @@ if ( ! function_exists('trim_slashes'))
 	}
 }
 
+if( ! function_exists('add_suffix') )
+{
+	function add_suffix($str, $maxlen, $suffix = '...' ){
+		$len = strlen($str);
+		if( $len > $maxlen ){
+			$str = substr($str, 0, $maxlen);
+			$str .= $suffix;
+		}
+		
+		return $str;
+	}
+}
+
 // ------------------------------------------------------------------------
 
 /**

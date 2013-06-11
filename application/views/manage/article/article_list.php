@@ -71,7 +71,7 @@
 			    caption: "<?php echo $tblTitle; ?>",
 			    scrollable:"y",
 			    paginator: new Y.PaginatorView({
-					model: new Y.PaginatorModel({ itemsPerPage:2 }),
+					model: new Y.PaginatorModel({ itemsPerPage:10 }),
 					maxPageLinks: 6,
 					pageLinkFiller: '...',
 					container: "#pageCon"

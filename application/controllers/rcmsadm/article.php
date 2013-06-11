@@ -48,6 +48,8 @@ class Article extends MY_Controller {
 		foreach ($result as $k=>$v){
 			$v['operation'] = '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
 			<a href="' . base_url($this->config->item('adm_segment') . '/' . $this->segment . '/del/'.$v['id']) . '">删除</a>';
+			$v['photographer'] = add_suffix($v['photographer'], 10);
+			$v['create_at'] = date('Y-m-d', strtotime($v['create_at']) );
 			$v['resource'] = '<a href="' . base_url($this->config->item('adm_segment')) .'/'.'/resource/home/'.$v['id']. '">资源列表</a>';
 			$v['category'] = $category[$v['category']];
 			$result[$k]	= $v;

@@ -58,6 +58,7 @@ class Category_Model extends MY_Model {
 		$options = array();
 		$prefix = '';
 		foreach ($result as $k=>$v){
+			$prefix = '';
 			for($i=0;$i<$level;$i++){
 				$prefix .= '-';
 			}
