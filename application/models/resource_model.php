@@ -16,7 +16,7 @@ class Resource_Model extends MY_Model {
 		array('name'=>'sort', 'comment'=>'排序'),	
 		array('name'=>'tag', 'comment'=>'标签'),	
 		array('name'=>'filename', 'comment'=>'文件名称', 'invisible' => TRUE),	
-		array('name'=>'web_path', 'comment'=>'网页访问路径', 'invisible' => TRUE),	
+		array('name'=>'web_path', 'comment'=>'网页访问路径', 'invisible' => TRUE, 'preview' => TRUE),	
 		array('name'=>'path', 'comment'=>'保存路径', 'type' => 'file', 'invisible' => TRUE),	
 		array('name'=>'status', 'comment'=>'状态', 'options' => array('0' => '草稿', '1' => '已发布' ) ),	
 		array('name'=>'create_at', 'comment'=>'创建时间'),	

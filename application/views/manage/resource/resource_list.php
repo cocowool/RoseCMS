@@ -54,7 +54,7 @@
 				function(Y){
 			
 			var myDataSource = new Y.DataSource.IO({
-				source : '<?php echo base_url( $this->config->item('adm_segment') . '/resource/index'); ?>'
+				source : '<?php echo base_url( $this->config->item('adm_segment') . '/resource/index/' . $aid); ?>'
 			});
 			myDataSource.plug( { fn: Y.Plugin.DataSourceJSONSchema, cfg: {
 				schema: {

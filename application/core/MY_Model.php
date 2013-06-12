@@ -125,11 +125,28 @@ class MY_Model extends CI_Model{
 				$html_form .= form_dropdown( $v['name'], $v['options'], $result[$v['name']]) . '</p>';
 			}else if( key_exists('fromSession', $v) && !empty($v['fromSession']) ){
 				$html_form .= '<p>' . form_hidden($v['name'], $this->session->userdata($v['fromSession'])) . '</p>';
-			}else if( key_exists('type', $v) && $v['type'] == 'text') {
-				$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_textarea( array(
-						'name'=>$v['name'], 
-						'class' => 'ckeditor', 
-						'id'=>$v['name'], 'value'=> $result[$v['name']] ) ) . '</p>';
+			}else if( key_exists('preview', $v) && $v['preview']){
+				$html_form .= '<p>预览</p>';
+				$html_form .= '<p><img src="' . $result[$v['name']] . '" /></p>';
+			}else if( key_exists('type', $v) ) {
+				switch ( $v['type'] ){
+					case 'text':
+						$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_textarea( array(
+								'name'=>$v['name'], 
+								'class' => 'ckeditor', 
+								'id'=>$v['name'], 'value'=> $result['name'] ) ) . '</p>';
+						break;
+					case 'hidden':
+						$html_form .= form_hidden(array(
+							$v['name'] => $v['hidden'],
+						));
+						break;
+					case 'file':
+						$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_upload( array(
+								'name'=>$v['name'], 
+								'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . '</p>';
+						break;
+				}
 			}else{
 				$html_form .= '<p>' . form_label($v['comment'], $v['name']); 
 				$html_form .= form_input( array('name'=>$v['name'], 'id'=>$v['name'], 'value'=> set_value($v['name'], $result[$v['name']]) ) ) . '</p>';

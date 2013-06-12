@@ -10,6 +10,7 @@ class Resource extends MY_Controller {
 	private $home_url = '/resource/home';
 	private $segment = 'resource';
 	private $page_title = '文章资源管理';
+	private $invisible_items = array('filename','create_at','update_at', 'operation', 'filename', 'status');
 	private $form_validate = array(
 		array(
 			'field'	=>	'aid',
@@ -33,12 +34,7 @@ class Resource extends MY_Controller {
 		}
 		
 		$option = array();
-		if( !empty($_GET['insert_time']) ){
-			$insert_time = $_GET['create_at'];
-			$option[] = array( 'data' => $id, 'field' => 'aid', 'action' => 'where' );
-			$option[] = array( 'data' => $insert_time, 'field' => 'create_at >=', 'action' => 'where' );
-			$option[] = array( 'data' => date('Y-m-d', strtotime($insert_time)+86400), 'field' => 'create_at <=', 'action' => 'where' );
-		}
+		$option[] = array( 'data' => $id, 'field' => 'aid', 'action' => 'where' );
 		
 		$total = $this->r->getTotal( $option );
 		//做一下Page的转换，这里使用的起始位置
@@ -48,7 +44,8 @@ class Resource extends MY_Controller {
 		//向结果中附加Operation的链接
 		//附加资源的链接
 		foreach ($result as $k=>$v){
-			$v['operation'] = '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
+			$v['operation'] = '<a href="/article/detail/' . $v['aid'] . '">查看文章</a>&nbsp;&nbsp;';			
+			$v['operation'] .= '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
 			<a href="' . base_url($this->config->item('adm_segment') . '/' . $this->segment . '/del/'.$v['id']) . '">删除</a>';
 			$result[$k]	= $v;
 		}
@@ -87,7 +84,7 @@ class Resource extends MY_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'添加页面';
 			//设置不需要用户输入项目
-			$invisible = array('filename','web_path','create_at','update_at', 'operation');
+			$invisible = $this->invisible_items;
 			$data['html_form'] = $this->r->get_add_form( 'siteResource',  $this->config->item('adm_segment') . '/' . $this->segment . '/add', TRUE, $invisible );
 			$this->load->view('manage/resource/resource_edit',$data);
 		}else{
@@ -132,16 +129,16 @@ class Resource extends MY_Controller {
 	 * @param int $id
 	 */
 	public function edit( $id ){
-		$this->load->model('Article_Model','a');
+		$this->load->model('Resource_Model','r');
 		$this->lang->load('form_validation', 'chinese');
 		$config = $this->form_validate;
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
 	
-		$result = $this->a->getById($id);
+		$result = $this->r->getById($id);
 		if( !$result ){
 			$data['title'] = "系统提示";
-			$data['url'] = base_url() . $this->home_url;
+			$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
 			$data['timeout'] = 2000;
 			$data['content'] = "<p style='color:red; font-weight:bold;'>请求修改的数据不存在</p>";
 			$this->load->view('manage/include/sys_msg', $data);
@@ -152,8 +149,8 @@ class Resource extends MY_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'修改页面';
 			//设置不需要用户输入项目
-			$invisible = array('create_at','update_at','operation');
-			$data['html_form'] = $this->a->get_edit_form( $result, 'siteCategory', $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$id, TRUE, $invisible );
+			$invisible = $this->invisible_items;
+			$data['html_form'] = $this->r->get_edit_form( $result, 'siteCategory', $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$id, TRUE, $invisible );
 	
 			$this->load->view('manage/article/article_edit',$data);
 		}else{
@@ -161,16 +158,16 @@ class Resource extends MY_Controller {
 			$_POST['create_at'] = unix_to_human( local_to_gmt(), TRUE, 'eu');
 			$data = $this->input->post(NULL, true);
 	
-			$result = $this->a->updateMethod( $data, $id );
+			$result = $this->r->updateMethod( $data, $id );
 			if( $result ){
 				$data['title'] = "系统提示";
-				$data['url'] = base_url() . $this->home_url;
+				$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
 				$data['content'] = "操作成功，正在跳转";
 				$data['timeout'] = 2000;
 				$this->load->view('manage/include/sys_msg', $data);
 			}else{
 				$data['title'] = "系统提示";
-				$data['url'] = base_url() . $this->home_url;
+				$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
 				$data['timeout'] = 2000;
 				$data['content'] = "<p style='color:red; font-weight:bold;'>操作失败，请联系管理员</p>";
 				$this->load->view('manage/include/sys_msg', $data);
