@@ -6,15 +6,15 @@
  * @author shiqiang
  *
  */
-class Resource extends MY_Controller {
-	private $home_url = '/resource/home';
-	private $segment = 'resource';
-	private $page_title = '文章资源管理';
-	private $invisible_items = array('filename','create_at','update_at', 'operation', 'filename', 'status');
+class Article extends MY_Controller {
+	private $home_url = '/article/home';
+	private $segment = 'article';
+	private $page_title = '文章管理';
+	private $invisible_items = array('create_at','update_at','operation', 'cover', 'status', 'source');
 	private $form_validate = array(
 		array(
-			'field'	=>	'aid',
-			'label'	=>	'关联文章',
+			'field'	=>	'name',
+			'label'	=>	'文章名称',
 			'rules'	=>	'trim|required'
 		)
 	);
@@ -25,97 +25,82 @@ class Resource extends MY_Controller {
 		$this->home_url = $this->config->item('adm_segment') . $this->home_url;
 	}
 
-	public function index($id, $page = 1, $pagesize = 10, $sort = '', $direction = ''){
-		$this->load->model('Resource_Model','r');
+	public function index($page = 0, $pagesize = 10, $sort = '', $direction = ''){
+		$this->load->model('Article_Model','a');
+		$this->load->model('Category_Model', 'c');
 		header('Content-type:text/html;charset=utf-8');
 		
-		if(empty($id)){
-			echo 'Invalid Parameter.';
+		$option = array();
+		if( !empty($_GET['insert_time']) ){
+			$insert_time = $_GET['create_at'];
+			$option[] = array( 'data' => $insert_time, 'field' => 'create_at >=', 'action' => 'where' );
+			$option[] = array( 'data' => date('Y-m-d', strtotime($insert_time)+86400), 'field' => 'create_at <=', 'action' => 'where' );
 		}
 		
-		$option = array();
-		$option[] = array( 'data' => $id, 'field' => 'aid', 'action' => 'where' );
-		
-		$total = $this->r->getTotal( $option );
+		$total = $this->a->getTotal( $option );
 		//做一下Page的转换，这里使用的起始位置
 		$page = ( $page - 1 ) * $pagesize;
-		$result = $this->r->getAll( $option, $page, $pagesize, $sort, $direction);
+		$result = $this->a->getAll( $option, $page, $pagesize, $sort, $direction);
+		
+		$category = $this->c->get_all_category();
 		
 		//向结果中附加Operation的链接
 		//附加资源的链接
 		foreach ($result as $k=>$v){
-			$v['operation'] = '<a href="/article/detail/' . $v['aid'] . '" target="_blank">查看文章</a>&nbsp;&nbsp;';			
-			$v['operation'] .= '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
+			$v['operation'] = '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
 			<a href="' . base_url($this->config->item('adm_segment') . '/' . $this->segment . '/del/'.$v['id']) . '">删除</a>';
+			$v['photographer'] = add_suffix($v['photographer'], 10);
+			$v['create_at'] = date('Y-m-d', strtotime($v['create_at']) );
+			$v['resource'] = '<a href="' . base_url($this->config->item('adm_segment')) .'/'.'/resource/home/'.$v['id']. '">资源列表</a>';
+			$v['category'] = $category[$v['category']];
 			$result[$k]	= $v;
 		}
 		
 		echo json_encode( array('mydata'=> $result, 'totalItems' => $total, 'itemsPerPage' => $pagesize, 'itemIndexStart' => $page ) );
 	}
 	
-	
-	public function home($id){
-		$this->load->model('Resource_Model','r');
+	public function home(){
+		$this->load->model('Article_Model','a');
 		
 		$data = array();
-		$data['column'] = $this->r->getColumn();
-		$data['tblTitle'] = '文章资源列表';
+		$data['column'] = $this->a->getColumn();
+		$data['tblTitle'] = '文章列表';
 		$data['page_title'] = $this->page_title;
-		$data['aid'] = $id;
 		
-		$this->load->view('manage/resource/resource_list', $data);
+		$this->load->view('manage/article/article_list', $data);
 	}
 	
 	/**
 	 * 增加一条新的栏目
 	 */
-	public function add( $aid = '' ){
-		$this->load->model('Resource_Model','r');
+	public function add(){
+		$this->load->model('Article_Model','a');
 		$this->lang->load('form_validation', 'chinese');
 		$config = $this->form_validate;
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
 		
-		$hidden = array(
-			'aid'	=>	$aid,
-		);
-		$this->r->setHidden($hidden);
-		
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'添加页面';
 			//设置不需要用户输入项目
 			$invisible = $this->invisible_items;
-			$data['html_form'] = $this->r->get_add_form( 'siteResource',  $this->config->item('adm_segment') . '/' . $this->segment . '/add', TRUE, $invisible );
-			$this->load->view('manage/resource/resource_edit',$data);
+			$data['html_form'] = $this->a->get_add_form( 'siteCategory',  $this->config->item('adm_segment') . '/' . $this->segment . '/add', TRUE, $invisible );
+			$this->load->view('manage/article/article_edit',$data);
 		}else{
 			$this->load->helper('date');
 			$_POST['create_at'] = unix_to_human( local_to_gmt(), TRUE, 'eu');
 			$data = $this->input->post(NULL, true);
-
-			$config = $this->config->item('image_upload_config');
-			$this->load->library('upload', $config);
-			
-			if ( ! $this->upload->do_upload('path')){
-				$error = array('error' => $this->upload->display_errors());
-				print_r($error);
-				die('Upload Failed');
-			}else{
-				$updata = array('upload_data' => $this->upload->data());
-				$data['filename'] = $updata['upload_data']['file_name'];
-				$data['web_path'] = $updata['upload_data']['file_path'];
-				$data['path'] = $updata['upload_data']['full_path'];
-			}
 		
-			$result = $this->r->insertMethod( $data );
+			$result = $this->a->insertMethod( $data );
 			if( $result ){
 				$data['title'] = "系统提示";
-				$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
+				$data['url'] = base_url() . $this->home_url;
 				$data['content'] = "操作成功，正在跳转";
 				$data['timeout'] = 2000;
 				$this->load->view('manage/include/sys_msg', $data);
 			}else{
 				$data['title'] = "系统提示";
-				$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
+				$data['url'] = base_url() . $this->home_url;
 				$data['timeout'] = 2000;
 				$data['content'] = "<p style='color:red; font-weight:bold;'>操作失败，请联系管理员</p>";
 				$this->load->view('manage/include/sys_msg', $data);
@@ -129,16 +114,16 @@ class Resource extends MY_Controller {
 	 * @param int $id
 	 */
 	public function edit( $id ){
-		$this->load->model('Resource_Model','r');
+		$this->load->model('Article_Model','a');
 		$this->lang->load('form_validation', 'chinese');
 		$config = $this->form_validate;
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
 	
-		$result = $this->r->getById($id);
+		$result = $this->a->getById($id);
 		if( !$result ){
 			$data['title'] = "系统提示";
-			$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
+			$data['url'] = base_url() . $this->home_url;
 			$data['timeout'] = 2000;
 			$data['content'] = "<p style='color:red; font-weight:bold;'>请求修改的数据不存在</p>";
 			$this->load->view('manage/include/sys_msg', $data);
@@ -150,7 +135,7 @@ class Resource extends MY_Controller {
 			$data['title']	=	'修改页面';
 			//设置不需要用户输入项目
 			$invisible = $this->invisible_items;
-			$data['html_form'] = $this->r->get_edit_form( $result, 'siteCategory', $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$id, TRUE, $invisible );
+			$data['html_form'] = $this->a->get_edit_form( $result, 'siteCategory', $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$id, TRUE, $invisible );
 	
 			$this->load->view('manage/article/article_edit',$data);
 		}else{
@@ -158,16 +143,16 @@ class Resource extends MY_Controller {
 			$_POST['create_at'] = unix_to_human( local_to_gmt(), TRUE, 'eu');
 			$data = $this->input->post(NULL, true);
 	
-			$result = $this->r->updateMethod( $data, $id );
+			$result = $this->a->updateMethod( $data, $id );
 			if( $result ){
 				$data['title'] = "系统提示";
-				$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
+				$data['url'] = base_url() . $this->home_url;
 				$data['content'] = "操作成功，正在跳转";
 				$data['timeout'] = 2000;
 				$this->load->view('manage/include/sys_msg', $data);
 			}else{
 				$data['title'] = "系统提示";
-				$data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
+				$data['url'] = base_url() . $this->home_url;
 				$data['timeout'] = 2000;
 				$data['content'] = "<p style='color:red; font-weight:bold;'>操作失败，请联系管理员</p>";
 				$this->load->view('manage/include/sys_msg', $data);
@@ -180,8 +165,8 @@ class Resource extends MY_Controller {
 	 * @param int $id
 	 */
 	public function del($id){
-			$this->load->model('Resource_Model','r');
-		$result = $this->r->getById($id);
+		$this->load->model('Article_Model','a');
+		$result = $this->a->getById($id);
 		if( !$result ){
 			$data['title'] = "系统提示";
 			$data['url'] = base_url() . $this->home_url;
@@ -192,7 +177,7 @@ class Resource extends MY_Controller {
 			$data['result'] = $result;
 		}
 	
-		$result = $this->r->deleteMethod($id);
+		$result = $this->a->deleteMethod($id);
 		if( $result ){
 			$data['title'] = "系统提示";
 			$data['url'] = base_url() . $this->home_url;
