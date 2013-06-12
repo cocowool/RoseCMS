@@ -20,14 +20,14 @@
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/user/home'); ?>" target="panelFrm">会员列表</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/dealer/add'); ?>" target="panelFrm"></a></li>
 		</ul>
-		<ul class="left_menu">
+		<ul class="left_menu" style="display:none;">
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">二维码管理</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/dealer/home'); ?>" target="panelFrm">二维码列表</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/dealer/add'); ?>" target="panelFrm">生成新的二维码</a></li>
 		</ul>
 		<ul class="left_menu">
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">系统功能</a></li>
-			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/sys/version'); ?>" target="panelFrm">更新记录</a></li>
+			<li style="display:none;"><a href="<?php echo base_url($this->config->item('adm_segment') . '/sys/version'); ?>" target="panelFrm">更新记录</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/auth/logout'); ?>" target="_parent">退出系统</a></li>
 		</ul>
 	</div>

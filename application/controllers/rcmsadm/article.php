@@ -10,6 +10,7 @@ class Article extends MY_Controller {
 	private $home_url = '/article/home';
 	private $segment = 'article';
 	private $page_title = '文章管理';
+	private $invisible_items = array('create_at','update_at','operation', 'cover', 'status', 'source');
 	private $form_validate = array(
 		array(
 			'field'	=>	'name',
@@ -82,7 +83,7 @@ class Article extends MY_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'添加页面';
 			//设置不需要用户输入项目
-			$invisible = array('create_at','update_at', 'operation');
+			$invisible = $this->invisible_items;
 			$data['html_form'] = $this->a->get_add_form( 'siteCategory',  $this->config->item('adm_segment') . '/' . $this->segment . '/add', TRUE, $invisible );
 			$this->load->view('manage/article/article_edit',$data);
 		}else{
@@ -133,7 +134,7 @@ class Article extends MY_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'修改页面';
 			//设置不需要用户输入项目
-			$invisible = array('create_at','update_at','operation');
+			$invisible = $this->invisible_items;
 			$data['html_form'] = $this->a->get_edit_form( $result, 'siteCategory', $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$id, TRUE, $invisible );
 	
 			$this->load->view('manage/article/article_edit',$data);

@@ -64,6 +64,7 @@ class MY_Model extends CI_Model{
 		$html_form .= form_open_multipart($action, array('id' => $id) );
 		foreach ($this->fields as $k=>$v ){
 			if( key_exists('primary', $v) && $v['primary'] )	continue;
+			if( key_exists('notintable', $v) && $v['notintable'] )	continue;
 			if( in_array($v['name'], $invisible) )	continue;
 				
 			//根据不同的类型，生成页面控件
@@ -112,6 +113,7 @@ class MY_Model extends CI_Model{
 		$html_form .= form_open_multipart($action, array('id' => $id) );
 		foreach ($this->fields as $k=>$v ){
 			if( in_array($v['name'], $invisible) )	continue;
+			if( key_exists('notintable', $v) && $v['notintable'] ) continue;
 			if( key_exists('primary', $v) && $v['primary'] ){
 				$html_form .= form_hidden($v['name'], $result[$v['name']]);
 				continue;
