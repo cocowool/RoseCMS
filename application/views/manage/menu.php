@@ -17,7 +17,7 @@
 		</ul>
 		<ul class="left_menu">
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">活动管理</a></li>
-			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/activity/home'); ?>" target="panelFrm">会员列表</a></li>
+			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/activity/home'); ?>" target="panelFrm">活动列表</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/activity/add'); ?>" target="panelFrm">添加活动</a></li>
 		</ul>
 		<ul class="left_menu">

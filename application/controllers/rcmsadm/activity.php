@@ -39,8 +39,6 @@ class Activity extends MY_Controller {
 		$page = ( $page - 1 ) * $pagesize;
 		$result = $this->a->getAll( $option, $page, $pagesize, $sort, $direction);
 		
-		$category = $this->c->get_all_category();
-		
 		//向结果中附加Operation的链接
 		//附加资源的链接
 		foreach ($result as $k=>$v){
@@ -74,7 +72,7 @@ class Activity extends MY_Controller {
 		$config = $this->form_validate;
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
-		
+
 		if($this->form_validation->run() == FALSE){
 			$data['title']	=	'添加页面';
 			//设置不需要用户输入项目

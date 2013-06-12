@@ -134,7 +134,7 @@ class MY_Model extends CI_Model{
 						$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_textarea( array(
 								'name'=>$v['name'], 
 								'class' => 'ckeditor', 
-								'id'=>$v['name'], 'value'=> $result['name'] ) ) . '</p>';
+								'id'=>$v['name'], 'value'=> $result[$v['name']] ) ) . '</p>';
 						break;
 					case 'hidden':
 						$html_form .= form_hidden(array(
