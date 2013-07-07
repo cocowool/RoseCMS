@@ -23,7 +23,9 @@
 </head>
 <body class="yui3-skin-sam">
 	<div id="doc3">
-		<a href="<?php echo base_url($this->config->item('adm_segment') . '/article/add'); ?>">添加</a>
+		<p>
+			<a href="<?php echo base_url($this->config->item('adm_segment') . '/article/add'); ?>">添加</a>
+		</p>
 		<div id="searchTag"></div>
 		<div id="tableTag"></div>
 		<div id="footer"></div>

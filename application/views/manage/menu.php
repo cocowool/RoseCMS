@@ -14,6 +14,7 @@
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">文章管理</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/category/home'); ?>" target="panelFrm">栏目管理</a></li>
 			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/article/home'); ?>" target="panelFrm">文章列表</a></li>
+			<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/iconfig/home'); ?>" target="panelFrm">首页文章管理</a></li>
 		</ul>
 		<ul class="left_menu">
 			<li class="first"><a href="javascript:void(0);" target="panelFrm">活动管理</a></li>
