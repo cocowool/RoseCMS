@@ -10,7 +10,8 @@ class Resource extends MY_Controller {
 	private $home_url = '/resource/home';
 	private $segment = 'resource';
 	private $page_title = '文章资源管理';
-	private $invisible_items = array('filename','create_at','update_at', 'operation', 'filename', 'status');
+	private $sae_domain = 's1';
+	private $invisible_items = array('filename','author', 'tag', 'web_path',  'create_at','update_at', 'operation', 'thumb','filename', 'status');
 	private $form_validate = array(
 		array(
 			'field'	=>	'aid',
@@ -25,7 +26,7 @@ class Resource extends MY_Controller {
 		$this->home_url = $this->config->item('adm_segment') . $this->home_url;
 	}
 
-	public function index($id, $page = 1, $pagesize = 10, $sort = '', $direction = ''){
+	public function index($id, $page = 1, $pagesize = 10, $sort = 'sort', $direction = 'desc'){
 		$this->load->model('Resource_Model','r');
 		header('Content-type:text/html;charset=utf-8');
 		
@@ -44,7 +45,8 @@ class Resource extends MY_Controller {
 		//向结果中附加Operation的链接
 		//附加资源的链接
 		foreach ($result as $k=>$v){
-			$v['operation'] = '<a href="/article/detail/' . $v['aid'] . '" target="_blank">查看文章</a>&nbsp;&nbsp;';			
+			$v['thumb'] = '<img src="' . $v['web_path'] . '" height="80" />';
+			$v['operation'] = '<a href="/article/resource/' . $v['id'] . '" target="_blank">查看图片</a>&nbsp;&nbsp;';			
 			$v['operation'] .= '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
 			<a href="' . base_url($this->config->item('adm_segment') . '/' . $this->segment . '/del/'.$v['id']) . '">删除</a>';
 			$result[$k]	= $v;
@@ -95,14 +97,14 @@ class Resource extends MY_Controller {
 			$config = $this->config->item('image_upload_config');
 			$this->load->library('upload', $config);
 			
-			if ( ! $this->upload->do_upload('path')){
+			if ( ! $this->upload->sae_upload( $this->sae_domain, 'path')){
 				$error = array('error' => $this->upload->display_errors());
 				print_r($error);
 				die('Upload Failed');
 			}else{
 				$updata = array('upload_data' => $this->upload->data());
 				$data['filename'] = $updata['upload_data']['file_name'];
-				$data['web_path'] = $updata['upload_data']['file_path'];
+				$data['web_path'] = $updata['upload_data']['sae_full_path'];
 				$data['path'] = $updata['upload_data']['full_path'];
 			}
 		
@@ -180,31 +182,31 @@ class Resource extends MY_Controller {
 	 * @param int $id
 	 */
 	public function del($id){
-			$this->load->model('Resource_Model','r');
-		$result = $this->r->getById($id);
-		if( !$result ){
-			$data['title'] = "系统提示";
-			$data['url'] = base_url() . $this->home_url;
-			$data['timeout'] = 6000;
-			$data['content'] = "<p style='color:red; font-weight:bold;'>请求修改的数据不存在</p>";
-			$this->load->view('manage/include/sys_msg', $data);
+		$this->load->model('Resource_Model','r');
+		$data = $this->r->getById($id);
+		if( !$data ){
+			$page_data['title'] = "系统提示";
+			$page_data['url'] = base_url() . $this->home_url;
+			$page_data['timeout'] = 6000;
+			$page_data['content'] = "<p style='color:red; font-weight:bold;'>请求修改的数据不存在</p>";
+			$this->load->view('manage/include/sys_msg', $page_data);
 		}else{
-			$data['result'] = $result;
+			$page_data['result'] = $data;
 		}
 	
 		$result = $this->r->deleteMethod($id);
 		if( $result ){
-			$data['title'] = "系统提示";
-			$data['url'] = base_url() . $this->home_url;
-			$data['content'] = "操作成功，正在跳转";
-			$data['timeout'] = 6000;
-			$this->load->view('manage/include/sys_msg', $data);
+			$page_data['title'] = "系统提示";
+			$page_data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
+			$page_data['content'] = "操作成功，正在跳转";
+			$page_data['timeout'] = 6000;
+			$this->load->view('manage/include/sys_msg', $page_data);
 		}else{
-			$data['title'] = "系统提示";
-			$data['url'] = base_url() . $this->home_url;
-			$data['timeout'] = 6000;
-			$data['content'] = "<p style='color:red; font-weight:bold;'>操作失败，请联系管理员</p>";
-			$this->load->view('manage/include/sys_msg', $data);
+			$page_data['title'] = "系统提示";
+			$page_data['url'] = base_url() . $this->home_url . '/' . $data['aid'];
+			$page_data['timeout'] = 6000;
+			$page_data['content'] = "<p style='color:red; font-weight:bold;'>操作失败，请联系管理员</p>";
+			$this->load->view('manage/include/sys_msg', $page_data);
 		}
 	}	
 }

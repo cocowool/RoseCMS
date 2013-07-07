@@ -40,10 +40,13 @@ class User extends MY_Controller {
 		$page = ( $page - 1 ) * $pagesize;
 		$result = $this->u->getAll( $option, $page, $pagesize, $sort, $direction);
 		
+		$gender_options = $this->config->item('gender');
 		//向结果中附加Operation的链接
 		foreach ($result as $k=>$v){
-			$v['operation'] = '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
-			<a href="' . base_url($this->config->item('adm_segment') . '/' . $this->segment . '/del/'.$v['id']) . '">删除</a>';
+			$v['gender'] = $gender_options[$v['gender']];
+			$v['operation'] = '';
+			//$v['operation'] = '<a href="' . base_url( $this->config->item('adm_segment') . '/' . $this->segment . '/edit/'.$v['id']) . '">修改</a>
+			//<a href="' . base_url($this->config->item('adm_segment') . '/' . $this->segment . '/del/'.$v['id']) . '">删除</a>';
 			$result[$k]	= $v;
 		}
 		
@@ -51,11 +54,11 @@ class User extends MY_Controller {
 	}
 	
 	public function home(){
-		$this->load->model('Article_Model','a');
+		$this->load->model('User_Model','u');
 		
 		$data = array();
-		$data['column'] = $this->a->getColumn();
-		$data['tblTitle'] = '文章列表';
+		$data['column'] = $this->u->getColumn();
+		$data['tblTitle'] = '用户列表';
 		$data['page_title'] = $this->page_title;
 		
 		$this->load->view('manage/user/user_list', $data);

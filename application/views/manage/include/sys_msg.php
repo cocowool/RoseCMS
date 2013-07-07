@@ -20,11 +20,10 @@
 	</div>
 </div>
 <script type="text/javascript">
-YUI().use('node', 'io', function(Y){
 	var uri = '<?php echo $url; ?>';
 	setTimeout(function(){
-		window.location = uri; }, <?php echo $timeout; ?>);
-});
+		window.location = uri; 
+	}, <?php echo $timeout; ?>);
 </script>
 </body>
 </html>

@@ -23,7 +23,10 @@
 </head>
 <body class="yui3-skin-sam">
 	<div id="doc3">
-		<a href="<?php echo base_url($this->config->item('adm_segment') . '/resource/add/' .  $aid); ?>">添加</a>
+		<p>
+			<a href="<?php echo base_url($this->config->item('adm_segment') . '/article/home'); ?>">返回</a>&nbsp;&nbsp;
+			<a href="<?php echo base_url($this->config->item('adm_segment') . '/resource/add/' .  $aid); ?>">添加</a>
+		</p>
 		<div id="searchTag"></div>
 		<div id="tableTag"></div>
 		<div id="footer"></div>
@@ -71,7 +74,7 @@
 			    caption: "<?php echo $tblTitle; ?>",
 			    scrollable:"y",
 			    paginator: new Y.PaginatorView({
-					model: new Y.PaginatorModel({ itemsPerPage:2 }),
+					model: new Y.PaginatorModel({ itemsPerPage:10 }),
 					maxPageLinks: 6,
 					pageLinkFiller: '...',
 					container: "#pageCon"

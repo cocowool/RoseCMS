@@ -18,10 +18,10 @@
 		</div>
 		<div>
 			<ul class="nav_menu">
-				<li><a href="<?php echo base_url(); ?>manage" target="_parent" class="on">首页</a></li>
+				<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/main'); ?>" target="_parent" class="on">首页</a></li>
 				<li><a href="<?php echo base_url(); ?>" target="_blank">访问网站</a></li>
 				<li style="display:none;"><a href="javascript:alert('Coming Soon');" target="panelFrm">帐号</a></li>
-				<li><a href="<?php echo base_url(); ?>manage/auth/logout" target="_parent">退出系统</a></li>
+				<li><a href="<?php echo base_url($this->config->item('adm_segment') . '/auth/logout'); ?>" target="_parent">退出系统</a></li>
 			</ul>
 		</div>
 	</div>

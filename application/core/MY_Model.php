@@ -68,9 +68,13 @@ class MY_Model extends CI_Model{
 			if( in_array($v['name'], $invisible) )	continue;
 				
 			//根据不同的类型，生成页面控件
+			$tips = '';
+			if(!empty($v['tips'])){
+				$tips = form_label($v['tips'], '', array('class' => "form_tips"));
+			}
 			if( key_exists('options', $v) && is_array($v['options']) ){
 				$html_form .= '<p>' . form_label($v['comment'], $v['name']);
-				$html_form .= form_dropdown( $v['name'], $v['options'] ) . '</p>';
+				$html_form .= form_dropdown( $v['name'], $v['options'] ) . $tips .  '</p>';
 			}else if( key_exists('fromSession', $v) && !empty($v['fromSession']) ){
 				$html_form .= '<p>' . form_hidden($v['name'], $this->session->userdata($v['fromSession'])) . '</p>';
 			}else if( key_exists($v['name'], $parameters) ){
@@ -81,7 +85,7 @@ class MY_Model extends CI_Model{
 						$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_textarea( array(
 								'name'=>$v['name'], 
 								'class' => 'ckeditor', 
-								'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . '</p>';
+								'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . $tips . '</p>';
 						break;
 					case 'hidden':
 						$html_form .= form_hidden(array(
@@ -91,11 +95,11 @@ class MY_Model extends CI_Model{
 					case 'file':
 						$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_upload( array(
 								'name'=>$v['name'], 
-								'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . '</p>';
+								'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . $tips .  '</p>';
 						break;
 				}
 			}else{
-				$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_input( array('name'=>$v['name'], 'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . '</p>';
+				$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_input( array('name'=>$v['name'], 'id'=>$v['name'], 'value'=> set_value($v['name']) ) ) . $tips . '</p>';
 			}
 		}
 		$html_form .= '<p>' . form_submit(array('name'=>'submitform', 'id'=>'submitform', 'class' => 'btnSubmit'), '提交') . '</p>';
@@ -137,9 +141,15 @@ class MY_Model extends CI_Model{
 								'id'=>$v['name'], 'value'=> $result[$v['name']] ) ) . '</p>';
 						break;
 					case 'hidden':
-						$html_form .= form_hidden(array(
-							$v['name'] => $v['hidden'],
-						));
+						if( !empty($v['hidden']) ){ 
+							$html_form .= form_hidden(array(
+								$v['name'] => $v['hidden'],
+							));
+						}else{
+							$html_form .= form_hidden(array(
+									$v['name'] => $result[$v['name']],
+							));
+						}
 						break;
 					case 'file':
 						$html_form .= '<p>' . form_label($v['comment'], $v['name']) . form_upload( array(
@@ -332,14 +342,21 @@ class MY_Model extends CI_Model{
 	 * @param $id
 	 * @param $field
 	 */
-	function getById($id, $field = ''){
+	function getById($id, $field = '', $row = TRUE, $sort = '', $direction = ''){
 		if( empty($field) && isset($this->id) ){
 			$field = $this->id;
 		}
 
 		$this->db->where($field, $id);
-		$result = $this->db->get($this->table);
-		return $result->row_array();
+		if(!empty($sort) && !empty($direction)){
+			$this->db->order_by($sort, $direction);
+		}
+		$query = $this->db->get($this->table);
+		if( $row ){
+			return $query->row_array();
+		}else{
+			return $query->result_array();
+		}
 	}
 
 	//支持复杂查询

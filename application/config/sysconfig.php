@@ -26,6 +26,11 @@ $config['image_upload_config'] = array(
 //栏目菜单所允许深度级别
 $config['max_menu_level'] = 2;
 
+$config['gender'] = array(
+		0	=>	'女',
+		1	=>	'男',
+);
+
 $config['yui_version']	= '3.7.3';
 $config['fd_yui_version'] = '3.10.0';
 

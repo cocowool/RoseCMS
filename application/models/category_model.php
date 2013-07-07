@@ -14,7 +14,7 @@ class Category_Model extends MY_Model {
 		array('name'=>'pid', 'comment'=>'父栏目', 'options' => ''),	
 		array('name'=>'description', 'comment'=>'栏目描述'),	
 		array('name'=>'keywords', 'comment'=>'栏目关键词'),	
-		array('name'=>'urltag', 'comment'=>'地址标志符'),	
+		array('name'=>'urltag', 'comment'=>'地址标志符', 'invisible' => TRUE),	
 		array('name'=>'create_at', 'comment'=>'创建时间'),	
 		array('name'=>'update_at', 'comment'=>'更新时间', 'invisible' => TRUE),
 		array('name'=>'operation', 'comment'=>'操作', 'allowHTML' => TRUE),

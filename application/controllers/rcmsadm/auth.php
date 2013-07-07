@@ -6,9 +6,8 @@ class Auth extends MY_Controller {
 	}
 
 	public function index(){
-		echo "Test";
 
-		return;
+		return false;
 	}
 
 	public function login(){
@@ -40,5 +39,12 @@ class Auth extends MY_Controller {
 			redirect( $this->config->item('adm_segment') . '/auth/login');
 			return FALSE;
 		}
+	}
+	
+	public function logout(){
+		session_destroy();
+		
+		redirect( $this->config->item('adm_segment') . '/auth/login');
+		return FALSE;
 	}
 }
