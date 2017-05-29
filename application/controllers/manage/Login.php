@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tool extends CI_Controller {
+class Login extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,10 +21,10 @@ class Tool extends CI_Controller {
 	public function index()
 	{
 
-		echo "Tool Test <br />";
+		//echo "Login Test <br />";
 
-		$this->load->model('Article_Model', 'a');
-		print_r($this->a);
+		//$this->load->model('Article_Model', 'a');
+		//print_r($this->a);
 		//$this->load->view('main');
 	}
 }
