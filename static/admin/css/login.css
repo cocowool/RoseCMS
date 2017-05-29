@@ -1,0 +1,121 @@
+body {
+	background:#f1f1f1;
+	min-width:0;	
+	color: #444;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 13px;
+	line-height: 1.4em	
+}
+
+#login {
+	padding:20px 0;
+	width:320px;
+	margin:0 auto;
+}
+
+.login h1 {
+	text-align: center;
+}
+
+.login form {
+	margin-top:20px;
+	margin-left:0;
+	padding:26px 24px 26px;
+	background:#fff;
+	box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+
+#login form p {
+	margin-bottom:0;
+}
+
+p { line-height: 1.5; }
+
+.login form , .login h1 a {
+	overflow: hidden;
+	font-weight: 400;
+}
+
+.login label {
+	color:#72777c;
+	font-size: 14px;
+}
+
+label {
+	cursor:pointer;
+	vertical-align: middle;
+}
+
+.login form .input, .login input[type=checkbox] , .login input[type=text] {
+	background: #fbfbfb;
+}
+
+.login form .input, .login input[type=text] {
+	font-size: 24px;
+	width: 100%;
+	padding:3px;
+	margin:2px 6px 16px 0;
+}
+
+input[type=text] {
+	border:1px solid #ddd;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+	background-color: #fff;
+	color: #32373c;
+	outline: 0;
+	-webkit-transition: 50ms border-color ease-in-out;
+	transition: 50ms border-color ease-in-out
+}
+
+input[type=radio], input[type=checkbox] {
+	border: 1px solid #b4b9be;
+	background: #fff;
+	color: #555;
+	clear: none;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 0;
+	height: 16px;
+	margin: -4px 4px 0 0;
+	outline: 0;
+	padding: 0 !important;
+	text-align: center;
+	vertical-align: middle;
+	width: 16px;
+	min-width: 16px;
+	-webkit-appearance: none;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	-webkit-transition: .05s border-color ease-in-out;
+	transition: .05s border-color ease-in-out;
+}
+
+.login form .rememberme {
+	float:left; font-weight: 400;
+}
+
+.login form .rememberme label {
+	font-size:12px;
+	line-height: 19px;
+}
+
+p.submit {
+	text-align: left;
+	max-width: 100%;
+}
+
+#loginform p.submit {
+	border:none;
+	margin:-10px 0 20px;
+}
+
+.login form p.submit {
+	margin:0; padding:0;
+}
+
+.rs-core-ui .button.button-large {
+	height: 30px;	
+    line-height: 28px;
+    padding: 0 12px 2px
+}

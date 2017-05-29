@@ -21,8 +21,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 
-		//echo "Login Test <br />";
-
+		$this->load->view('manage/login');
 		//$this->load->model('Article_Model', 'a');
 		//print_r($this->a);
 		//$this->load->view('main');
