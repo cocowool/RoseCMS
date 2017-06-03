@@ -20,10 +20,21 @@ class Login extends CI_Controller {
 	 */
 	public function index()
 	{
+		$validation_rules = array(
+			array(
+				'field'	=>	'user_login',
+				'label'	=>	'',
+				'rules'	=>	'trim|required'
+			),
+		);
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
 
-		$this->load->view('manage/login');
-		//$this->load->model('Article_Model', 'a');
-		//print_r($this->a);
-		//$this->load->view('main');
+		$this->form_validation->set_rules($validation_rules);
+		if($this->form_validation->run() == FALSE){
+			$this->load->view('manage/login');
+		}else{
+			echo "Form Validation Success";
+		}
 	}
 }

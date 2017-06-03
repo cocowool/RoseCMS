@@ -12,7 +12,7 @@
 			<form name="loginform" id="loginform" action="/manage/login" method="post">
 				<p>
 					<label for="user_login">用户名</label><br />
-					<input type="text" name="user_login" id="user-login" class="input" size="20">
+					<input type="text" name="user_login" id="user-login" class="input" value="<?php echo set_value('user_login'); ?>" size="20">
 				</p>
 				<p>
 					<label for="user_pass">密码</label><br />
