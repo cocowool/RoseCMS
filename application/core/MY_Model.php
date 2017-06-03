@@ -11,22 +11,29 @@ class MY_Model extends CI_Model {
 	}
 
 	public function getTableDdl(){
+		$primary = '';
 		$sql = "CREATE TABLE " . $this->table . " (";
 		foreach ($this->fields as $key => $value) {
-				$sql .= "`" . $value['name'] . "` " .  $value['ddl']['type'] . " NOT NULL";
-				if(!empty($value['ddl']['default'])){
-					$sql .= " DEFAULT '" . $value['default'] . "'";
-				}
+			$sql .= "`" . $value['name'] . "` " .  $value['ddl']['type'] . " NOT NULL";
+			
+			if(!empty($value['ddl']['default'])){
+				$sql .= " DEFAULT '" . $value['ddl']['default'] . "'";
+			}
 
-				if(!empty($value['ddl']['extra'])){
-					$sql .= " " . $value['extra'] . " ";
-				}
-				$sql .= " COMMENT '" . $value['ddl']['comment'] . "',";
+			if(!empty($value['ddl']['extra'])){
+				$sql .= " " . $value['ddl']['extra'] . " ";
+			}
+
+			$sql .= " COMMENT '" . $value['ddl']['comment'] . "',";
+
+			if($value['ddl']['primary']){
+				$primary = " PRIMARY KEY (`" . $value['name'] . "`) ";
+			}				
 		}
-		$sql .= "PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-		echo $sql;
+		$sql .=  $primary . " ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
+		return $sql;
 	}
 	
 }
