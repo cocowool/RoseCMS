@@ -43,9 +43,9 @@ class Login extends MY_Controller {
 
 			$this->load->model("User_Model", "u");
 			if( $this->u->check_user($post_data['user_login'], $post_data['user_pass'])){
-				$data = array();
-
-				$this->load->view('dashboard', $data);
+				//验证完成后跳转到管理后台
+				$this->load->helper('url');
+				redirect('manage/dashboard');
 			}else{
 				echo "Login Failed!";
 			}
