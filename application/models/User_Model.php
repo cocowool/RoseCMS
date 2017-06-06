@@ -14,7 +14,7 @@ class User_Model extends MY_Model {
 					'collation'	=>	'',
 					'null'		=>	'No',
 					'default'	=>	'',
-					'extra'		=>	'',
+					'extra'		=>	'AUTO_INCREMENT',
 					'index'		=>	'primary',
 					'comment'	=>	'ID',
 				),
@@ -217,7 +217,7 @@ class User_Model extends MY_Model {
 			'name'=>'display_name', 
 			//Database数据定义相关属性
 			'ddl' => array(
-					'type'		=>	'int(250)',
+					'type'		=>	'varchar(250)',
 					'primary'	=>	FALSE,
 					'collation'	=>	'',
 					'null'		=>	'No',

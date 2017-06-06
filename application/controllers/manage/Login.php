@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -42,11 +42,13 @@ class Login extends CI_Controller {
 			$post_data = $this->input->post();
 
 			$this->load->model("User_Model", "u");
-			var_dump($this->u->check_user($post_data['user_login'], $post_data['user_pass']));
-			//$userinfo = $this->
+			if( $this->u->check_user($post_data['user_login'], $post_data['user_pass'])){
+				$data = array();
 
-			print_r($post_data);
-			echo "Form Validation Success";
+				$this->load->view('dashboard', $data);
+			}else{
+				echo "Login Failed!";
+			}
 		}
 	}
 }
