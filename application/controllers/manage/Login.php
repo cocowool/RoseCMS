@@ -23,8 +23,13 @@ class Login extends CI_Controller {
 		$validation_rules = array(
 			array(
 				'field'	=>	'user_login',
-				'label'	=>	'',
+				'label'	=>	'用户名',
 				'rules'	=>	'trim|required'
+			),
+			array(
+				'field'	=>	'user_pass',
+				'label'	=>	'密码',
+				'rules'	=>	'trim|required',
 			),
 		);
 		$this->load->helper(array('form', 'url'));
@@ -34,6 +39,13 @@ class Login extends CI_Controller {
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('manage/login');
 		}else{
+			$post_data = $this->input->post();
+
+			$this->load->model("User_Model", "u");
+			var_dump($this->u->check_user($post_data['user_login'], $post_data['user_pass']));
+			//$userinfo = $this->
+
+			print_r($post_data);
 			echo "Form Validation Success";
 		}
 	}

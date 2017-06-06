@@ -240,6 +240,18 @@ class User_Model extends MY_Model {
 				),
 		),
 	);
+
+	/**
+	 *	Check if the username and password is correct
+	 **/
+	public function check_user($username, $password){
+		$userinfo = $this->getById($username, 'user_login');
+		if($userinfo and $userinfo['user_pass'] == $password){
+			return TRUE;
+		}
+
+		return FALSE;
+	}
 }
 
 ?>
