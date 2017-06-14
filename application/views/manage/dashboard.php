@@ -17,14 +17,17 @@
 	<div id="rs-wrap">
 		<div id="rs-mainmenu">
 			<div id="rs-menu-wrap">
-				<ul><li><a href="javascript:void(0);">发布</a></li></ul>
+				<ul><li><a href="javascript:void(0);">文章</a></li></ul>
 			</div>
 		</div>
 		<div id="rs-content">
 			<div id="rs-topbar">
-				<ul>
-					<li><a href=""></a></li>
-				</ul>
+				<div class="top-links">
+					<ul id="rs-topbar-default">
+						<li id="rs-site-name"><a href="javascript:void(0);">系统分析之家</a></li>
+					</ul>
+					
+				</div>
 			</div>
 			<div id="rs-body">
 				<?php 
