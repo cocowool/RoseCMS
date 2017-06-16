@@ -21,7 +21,7 @@
 					<li>
 						<a href="javascript:void(0);">
 							<div class="rs-menu-arrow"></div>
-							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-icon rs-icon-dashboard"></div>
 							<div class="rs-menu-name">控制台</div>
 						</a>
 					</li>
