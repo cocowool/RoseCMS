@@ -17,7 +17,54 @@
 	<div id="rs-wrap">
 		<div id="rs-mainmenu">
 			<div id="rs-menu-wrap">
-				<ul><li><a href="javascript:void(0);">文章</a></li></ul>
+				<ul id="rs-menu">
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name">控制台</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name">文章</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name">资源</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name">评论</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name">设置</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li><a href="javascript:void(0);">文章</a></li>
+					<li><a href="javascript:void(0);">资源</a></li>
+					<li><a href="javascript:void(0);">评论</a></li>
+					<li><a href="javascript:void(0);">设置</a></li>
+				</ul>
 			</div>
 		</div>
 		<div id="rs-content">
