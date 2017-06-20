@@ -8,6 +8,7 @@
 	<link href="/static/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/static/admin/css/main.css" rel="stylesheet">
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body class="container-fluid" id="rs-container">
 	<?php
@@ -60,10 +61,97 @@
 							<div class="rs-menu-name"></div>
 						</a>
 					</li>
-					<li><a href="javascript:void(0);">文章</a></li>
-					<li><a href="javascript:void(0);">资源</a></li>
-					<li><a href="javascript:void(0);">评论</a></li>
-					<li><a href="javascript:void(0);">设置</a></li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"></div>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -78,21 +166,43 @@
 			</div>
 			<div id="rs-body">
 				<div id="rs-main">
-					xxx
-					x
-					x
-					x
-					x
-					x
-					x
-					x
-					xx
-									
-					<?php 
-					if(isset($default_view) and !empty($default_view)){
-						$this->load->view($default_view, $data);
-					}
-					?>
+					<div class="rs-wrap">
+						<h1 class="rs-head">文章管理</h1>
+						<div id="rs-operation">
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+						    		文章
+						    		<span class="caret"></span>
+						  		</button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/data/event">文章列表</a></li>
+								    <li role="presentation"><a role="menuitem" tabindex="-1" href="/data/event/add">发表文章</a></li>
+								</ul>
+							</div>							
+						</div>
+						<div id="rs-table-container">
+							<div class="row" id="rs-article">
+							<form>
+								<div class="col-md-8">
+									<div class="form-group">
+										<label>文章标题</label>
+										<input type="text" name="rs-title" id="rs-title" class="form-control" placeholder="请输入标题">
+									</div>
+									<div class="form-group">
+										<label>文章内容</label>
+										<textarea class="form-control">
+											
+										</textarea>
+									</div>
+								</div>
+								<div class="col-md-4">
+									yyyy
+								</div>								
+							</form>
+							</div>
+
+						</div>
+					</div>				
 				</div>
 			</div>
 		</div>
