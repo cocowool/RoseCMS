@@ -77,11 +77,23 @@
 				</div>
 			</div>
 			<div id="rs-body">
-				<?php 
-				if(isset($default_view) and !empty($default_view)){
-					$this->load->view($default_view, $data);
-				}
-				?>
+				<div id="rs-main">
+					xxx
+					x
+					x
+					x
+					x
+					x
+					x
+					x
+					xx
+									
+					<?php 
+					if(isset($default_view) and !empty($default_view)){
+						$this->load->view($default_view, $data);
+					}
+					?>
+				</div>
 			</div>
 		</div>
 	</div>		
