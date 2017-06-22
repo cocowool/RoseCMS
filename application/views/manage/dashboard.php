@@ -190,13 +190,20 @@
 									</div>
 									<div class="form-group">
 										<label>文章内容</label>
-										<textarea class="form-control">
+										<textarea class="form-control" style="height:500px; z-index: 0;">
 											
 										</textarea>
 									</div>
 								</div>
 								<div class="col-md-4">
-									yyyy
+									<div>
+										<div id="rs-publish" class="rs-sidebox">
+											<h2 class="rs-hand"><span>发布</span></h2>
+											<div class="rs-sb-inside">
+												
+											</div>
+										</div>
+									</div>
 								</div>								
 							</form>
 							</div>
