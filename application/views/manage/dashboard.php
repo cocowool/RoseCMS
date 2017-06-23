@@ -216,12 +216,12 @@
 											<h2 class="rs-hand"><span>分类</span></h2>
 											<div class="rs-sb-inside">
 												<div class="rs-postbox">
-													<div></div>
-													<div id="rs-publish-action">
-														<div id="rs-publish-delete"></div>
-														<div id="rs-publish-submit">
-															<input type="submit" name="publish" id="publish" class="btn btn-primary" value="发布">
-														</div>
+													<ul id="rs-category-tabs" class="rs-tabs">
+														<li class="rs-tabs-item rs-tabs-on">所有</li>
+														<li class="rs-tabs-item">常用</li>
+													</ul>
+													<div class="rs-tabs-panel">
+														
 													</div>
 												</div>
 											</div>
