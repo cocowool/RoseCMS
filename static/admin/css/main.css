@@ -56,7 +56,11 @@ div.rs-menu-icon:before { color: #a0a5aa; color: rgba(240, 245, 250, .6); paddin
 #rs-article { margin-top:15px; }
 #rs-article h2 { font-size: 14px; padding: 8px 12px; margin: 0; line-height: 1.4; }
 
-.rs-sidebox { display: block; min-width: 255px; border:1px solid #e5e5e5; background: #fff; box-shadow: 0 1px 1px rgba(0, 0, 0, .04); }
+.rs-sidebox { display: block; min-width: 255px; border:1px solid #e5e5e5; background: #fff; box-shadow: 0 1px 1px rgba(0, 0, 0, .04); margin-bottom:20px; padding: 0; line-height: 1; }
 .rs-sidebox .rs-hand { cursor: move; }
 .rs-sb-inside { margin:0; padding:0; }
 .rs-sidebox .rs-sb-inside { position: relative; line-height: 1.4em; font-size: 14px; }
+
+#rs-publish-action { padding:10px; clear: both; border-top:1px solid #ddd; background-color: #f5f5f5;  }
+#rs-publish-delete {  }
+#rs-publish-submit {  }

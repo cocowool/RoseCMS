@@ -200,9 +200,33 @@
 										<div id="rs-publish" class="rs-sidebox">
 											<h2 class="rs-hand"><span>发布</span></h2>
 											<div class="rs-sb-inside">
-												
+												<div class="rs-postbox">
+													<div></div>
+													<div id="rs-publish-action">
+														<div id="rs-publish-delete"></div>
+														<div id="rs-publish-submit">
+															<input type="submit" name="publish" id="publish" class="btn btn-primary" value="发布">
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
+
+										<div id="rs-category" class="rs-sidebox">
+											<h2 class="rs-hand"><span>分类</span></h2>
+											<div class="rs-sb-inside">
+												<div class="rs-postbox">
+													<div></div>
+													<div id="rs-publish-action">
+														<div id="rs-publish-delete"></div>
+														<div id="rs-publish-submit">
+															<input type="submit" name="publish" id="publish" class="btn btn-primary" value="发布">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
 									</div>
 								</div>								
 							</form>
