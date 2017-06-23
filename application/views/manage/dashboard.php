@@ -9,6 +9,7 @@
 	<link href="/static/admin/css/main.css" rel="stylesheet">
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/static/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/lib/tinymce-4.6.4/js/tinymce/tinymce.min.js"></script>
 </head>
 <body class="container-fluid" id="rs-container">
 	<?php
@@ -190,7 +191,7 @@
 									</div>
 									<div class="form-group">
 										<label>文章内容</label>
-										<textarea class="form-control" style="height:500px; z-index: 0;">
+										<textarea id="rs-article-content" class="form-control" style="height:300px; z-index: 0;">
 											
 										</textarea>
 									</div>
@@ -244,5 +245,10 @@
 			</div>
 		</div>
 	</div>		
+<script>
+  tinymce.init({
+    selector: '#rs-article-content'
+  });
+  </script>
 </body>
 </html>
