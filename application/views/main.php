@@ -11,11 +11,21 @@
 	<script type="text/javascript" src="/static/lib/vue/vue.js"></script>
 </head>
 <body>
-	<div class="rs-top-menu">
-		<div class="rs-menu-container">
-			
+	<div class="rs-top-menu container">
+		<div class="rs-menu-container row">
+			<div class="col-md-8">
+				<a href="#">系统分析之家</a>				
+			</div>
+			<div class="col-md-4">
+				<a href="#">Login</a>
+			</div>
 		</div>
-		<a href="#">系统分析之家</a>		
+	</div>
+	<div class="rs-body">
+		
+	</div>
+	<div class="rs-footer">
+		
 	</div>
 </body>
 <script type="text/javascript">
