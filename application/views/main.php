@@ -11,7 +11,12 @@
 	<script type="text/javascript" src="/static/lib/vue/vue.js"></script>
 </head>
 <body>
-	<h1>欢迎访问软考资料站</h1>
+	<div class="rs-top-menu">
+		<div class="rs-menu-container">
+			
+		</div>
+		<a href="#">系统分析之家</a>		
+	</div>
 </body>
 <script type="text/javascript">
 	
