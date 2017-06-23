@@ -221,7 +221,13 @@
 														<li class="rs-tabs-item">常用</li>
 													</ul>
 													<div class="rs-tabs-panel">
-														
+														<ul class="rs-checkbox-list">
+														<form>
+															<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]"> 新闻</label></li>
+															<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]" / > 杂记</label></li>
+															<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]" checked="checked" /> 未分类</label></li>
+														</form>
+														</ul>
 													</div>
 												</div>
 											</div>
