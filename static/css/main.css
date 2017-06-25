@@ -1,8 +1,8 @@
 html, body { margin:0; padding:0; }
-body { margin:0 auto; }
+body { margin:0 auto; color: #828282; }
 
 .rs-top-menu { 
-	background-color: #FDFDFD;
+	background-color: #FFF;
 	border-bottom: 1px solid #DFDFDF;
 	line-height: 66px;
 
@@ -16,6 +16,7 @@ body { margin:0 auto; }
 	z-index: 100000;
 
 	font-size: 16px;
+	box-shadow: 0 4px 5px -2px rgba(0, 0, 0, .22), 0 2px 1px -1px rgba(0, 0, 0, .05);
 }
 
 .rs-menu-container {
@@ -24,4 +25,7 @@ body { margin:0 auto; }
 	margin-left: auto;
 	margin-right: auto;
 	height: 68px;
+	/*box-shadow: 0 4px 5px -2px rgba(0, 0, 0, .22), 0 2px 1px -1px rgba(0, 0, 0, .05);*/
 }
+
+.rs-menu-fixed { /*position: fixed;*/ }

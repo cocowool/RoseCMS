@@ -20,6 +20,8 @@ class Main extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->model('Post_Model', 'p');
+
 		$this->load->view('main');
 	}
 }
