@@ -14,23 +14,42 @@
 <body class="">
 	<div class="rs-top-menu container">
 		<div class="rs-menu-container rs-menu-fixed row">
-			<div class="col-md-9">
+			<div class="col-md-9 rs-menu-left">
 				<div class="rs-logo">
 					<a href="/"><img src="/static/default/image/saexam.png"></a>
 				</div>
-				<a href="#">系统分析之家</a>				
+				<div class="rs-nav">
+					<nav class="nav">
+						<ul>
+							<li><a href="javascript:void(0);"><span>首页</span><span></span></a></li>
+							<li><a href="javascript:void(0);"><span>文章</span><span></span></a></li>
+							<li><a href="javascript:void(0);"><span>关于</span><span></span></a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 			<div class="col-md-3">
-				<a href="#">Login</a>
+				<a href="#"></a>
 			</div>
 		</div>
 	</div>
-
-	<div class="rs-body">
-		
+	<div class="rs-body container">
+		<div class="row">
+			<div class="col-md-8">XXXX
+				<div style="display:block; border:1px solid #eee; height:800px;"></div>
+			</div>
+			<div class="col-md-4">YYYY</div>
+		</div>
 	</div>
 	<div class="rs-footer">
-		
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				
+			</div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+		</div>
 	</div>
 </body>
 <script type="text/javascript">

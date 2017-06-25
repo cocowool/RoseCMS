@@ -1,5 +1,8 @@
 html, body { margin:0; padding:0; }
 body { margin:0 auto; color: #828282; }
+ul,li { list-style: none; margin:0; padding:0; }
+
+::selection { background-color: #2196f3; color: #fff; }
 
 .rs-top-menu { 
 	background-color: #FFF;
@@ -29,3 +32,11 @@ body { margin:0 auto; color: #828282; }
 }
 
 .rs-menu-fixed { /*position: fixed;*/ }
+.rs-menu-left, .rs-menu-left div, .rs-menu-left nav, .rs-menu-left ul, .rs-menu-left li { display: inline-block; }
+.rs-logo { margin-right:20px; }
+.rs-menu-left a { text-decoration: none; color: #828282; font-weight: 400; padding:0 15px; }
+.rs-menu-left a:hover { color:#337ab7; }
+
+.rs-body { margin-top: 80px; }
+
+.rs-footer { background-color: #4a4a4a; min-height: 100px; }
