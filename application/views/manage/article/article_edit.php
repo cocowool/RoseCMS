@@ -7,11 +7,11 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<label>文章标题</label>
-										<input type="text" name="rs-title" id="rs-title" class="form-control" placeholder="请输入标题">
+										<input type="text" name="post_title" id="rs-title" class="form-control" placeholder="请输入标题">
 									</div>
 									<div class="form-group">
 										<label>文章内容</label>
-										<textarea id="rs-article-content" class="form-control" style="height:300px; z-index: 0;">
+										<textarea id="rs-article-content" name="post_content" class="form-control" style="height:300px; z-index: 0;">
 											
 										</textarea>
 									</div>

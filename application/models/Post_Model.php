@@ -21,7 +21,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'required',
+					'validation'	=>	'',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -47,7 +47,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'required',
+					'validation'	=>	'',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -73,7 +73,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'required',
+					'validation'	=>	'',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -99,7 +99,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'required',
+					'validation'	=>	'trim|required',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -125,7 +125,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'required',
+					'validation'	=>	'trim|required',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -139,7 +139,7 @@ class Post_Model extends MY_Model {
 			'name'=>'post_modified', 
 			//Database数据定义相关属性
 			'ddl' => array(
-					'type'		=>	'timestap',
+					'type'		=>	'timestamp',
 					'primary'	=>	FALSE,
 					'collation'	=>	'',
 					'null'		=>	'No',
@@ -151,7 +151,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'required',
+					'validation'	=>	'',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -177,7 +177,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'required',
+					'validation'	=>	'trim',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -203,7 +203,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'select',
-					'validation'	=>	'required',
+					'validation'	=>	'trim',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -229,7 +229,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'select',
-					'validation'	=>	'required',
+					'validation'	=>	'trim',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -255,7 +255,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'select',
-					'validation'	=>	'required',
+					'validation'	=>	'trim',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -281,7 +281,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'select',
-					'validation'	=>	'required',
+					'validation'	=>	'trim',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',

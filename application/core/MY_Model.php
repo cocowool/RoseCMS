@@ -10,6 +10,22 @@ class MY_Model extends CI_Model {
 		return $this->table;
 	}
 
+	//获取模型的验证规则
+	public function getFormValidation(){
+		$validation_rules = array();
+		foreach ($this->fields as $key => $value) {
+			if(!empty($value['form']['validation'])){
+				$validation_rules[] = array(
+					'field'	=>	$value['name'],
+					'label'	=>	$value['ddl']['comment'],
+					'rules'	=>	$value['form']['validation']
+				);
+			}
+		}
+
+		return $validation_rules;
+	}
+
 	public function getTableDdl(){
 		$primary = '';
 		$sql = "CREATE TABLE " . $this->table . " (";
@@ -67,6 +83,15 @@ class MY_Model extends CI_Model {
 		}
 	}
 	
+
+	public function insert($data = array() ){
+		if(empty($data)){
+			return FALSE;
+		}
+		
+		$this->db->insert($this->table, $data);
+		return $this->db->insert_id();
+	}
 }
 
 ?>
