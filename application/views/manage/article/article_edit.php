@@ -1,9 +1,9 @@
-<div id="rs-main">
+				<div id="rs-main">
 					<div class="rs-wrap">
 						<h1 class="rs-head">文章管理</h1>
 						<div id="rs-table-container">
 							<div class="row" id="rs-article">
-							<form>
+							<form action="<?php echo current_url(); ?>" method="post" id="rs-post-form" name="rs-post-form">
 								<div class="col-md-8">
 									<div class="form-group">
 										<label>文章标题</label>
@@ -62,3 +62,8 @@
 						</div>
 					</div>				
 				</div>
+<script>
+  tinymce.init({
+    selector: '#rs-article-content'
+  });
+</script>

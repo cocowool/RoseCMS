@@ -1,0 +1,258 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Post_Model extends MY_Model {
+	protected $table = 'rs_post';
+	protected $id	=	'id';
+	public $fields = array(
+		array(
+			'name'=>'id', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'bigint(20)',
+					'primary'	=>	TRUE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'',
+					'extra'		=>	'AUTO_INCREMENT',
+					'index'		=>	'primary',
+					'comment'	=>	'ID',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'text',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'0',
+				),
+		),
+		array(
+			'name'=>'post_author', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'bigint(20)',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'0',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'作者ID',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'text',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'1',
+				),
+		),
+		array(
+			'name'=>'post_date', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'timestamp',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'0000-00-00',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'发布时间',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'text',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'2',
+				),
+		),
+		array(
+			'name'=>'post_content', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'longtext',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'文章内容',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'text',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'3',
+				),
+		),
+		array(
+			'name'=>'post_title', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'text',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'文章标题',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'text',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'4',
+				),
+		),
+		array(
+			'name'=>'post_modified', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'timestap',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'0000-00-00',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'修改日期',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'text',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'5',
+				),
+		),
+		array(
+			'name'=>'user_registered', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'datetime',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'0000-00-00',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'注册时间',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'text',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'5',
+				),
+		),
+		array(
+			'name'=>'user_status', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'int(11)',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'状态',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'select',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'5',
+				),
+		),
+		array(
+			'name'=>'display_name', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'varchar(250)',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'显示名称',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'select',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'5',
+				),
+		),
+	);
+
+	/**
+	 *	Check if the username and password is correct
+	 **/
+	public function check_user($username, $password){
+		$userinfo = $this->getById($username, 'user_login');
+		if($userinfo and $userinfo['user_pass'] == $password){
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+}
+
+?>
+

@@ -159,15 +159,9 @@
 				</div>
 			</div>
 			<div id="rs-body">
-				
+				<?php $this->load->view($rs_view_main, $rs_view_data); ?>
 			</div>
 		</div>
 	</div>		
-<script>
-
-  tinymce.init({
-    selector: '#rs-article-content'
-  });
-  </script>
 </body>
 </html>
