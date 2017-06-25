@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'rosecms',
+	'hostname' => 'r.rdc.sae.sina.com.cn',
+	'username' => '42zzj20k1x',
+	'password' => 'k5lh30z3xk410y2yjkx1j552124kmkwy1ixhz2h5',
+	'database' => 'app_golf',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -94,3 +94,6 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+
+
