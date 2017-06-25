@@ -48,6 +48,7 @@
 						<div class="rs-pl-content">
 							<p>本站致力于分享系统分析师学习、考试相关资料，更多内容，敬请期待。</p>
 						</div>
+						<a href="#" class="btn btn-default">了解更多</a>
 					</div>
 				</div>
 			</div>
