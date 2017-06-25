@@ -42,12 +42,19 @@
 					</div>
 					<div class="col-md-9">
 						<h2 class="rs-pl-title"><a href="javascipt:void(0);">你好，未来的系统分析师</a></h2>
-						<div></div>
+						<div class="rs-pl-meta">
+							
+						</div>
+						<div class="rs-pl-content">
+							<p>本站致力于分享系统分析师学习、考试相关资料，更多内容，敬请期待。</p>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
-				
+				<div class="rs-google-ad">
+					
+				</div>
 			</div>
 		</div>
 	</div>
