@@ -146,13 +146,6 @@
 							<div class="rs-menu-name"></div>
 						</a>
 					</li>
-					<li>
-						<a href="javascript:void(0);">
-							<div class="rs-menu-arrow"></div>
-							<div class="rs-menu-icon"></div>
-							<div class="rs-menu-name"></div>
-						</a>
-					</li>
 				</ul>
 			</div>
 		</div>
@@ -166,86 +159,12 @@
 				</div>
 			</div>
 			<div id="rs-body">
-				<div id="rs-main">
-					<div class="rs-wrap">
-						<h1 class="rs-head">文章管理</h1>
-						<div id="rs-operation">
-							<div class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-						    		文章
-						    		<span class="caret"></span>
-						  		</button>
-								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/data/event">文章列表</a></li>
-								    <li role="presentation"><a role="menuitem" tabindex="-1" href="/data/event/add">发表文章</a></li>
-								</ul>
-							</div>							
-						</div>
-						<div id="rs-table-container">
-							<div class="row" id="rs-article">
-							<form>
-								<div class="col-md-8">
-									<div class="form-group">
-										<label>文章标题</label>
-										<input type="text" name="rs-title" id="rs-title" class="form-control" placeholder="请输入标题">
-									</div>
-									<div class="form-group">
-										<label>文章内容</label>
-										<textarea id="rs-article-content" class="form-control" style="height:300px; z-index: 0;">
-											
-										</textarea>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div>
-										<div id="rs-publish" class="rs-sidebox">
-											<h2 class="rs-hand"><span>发布</span></h2>
-											<div class="rs-sb-inside">
-												<div class="rs-postbox">
-													<div></div>
-													<div id="rs-publish-action">
-														<div id="rs-publish-delete"></div>
-														<div id="rs-publish-submit">
-															<input type="submit" name="publish" id="publish" class="btn btn-primary" value="发布">
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div id="rs-category" class="rs-sidebox">
-											<h2 class="rs-hand"><span>分类</span></h2>
-											<div class="rs-sb-inside">
-												<div class="rs-postbox">
-													<ul id="rs-category-tabs" class="rs-tabs">
-														<li class="rs-tabs-item rs-tabs-on">所有</li>
-														<li class="rs-tabs-item">常用</li>
-													</ul>
-													<div class="rs-tabs-panel">
-														<ul class="rs-checkbox-list">
-														<form>
-															<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]"> 新闻</label></li>
-															<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]" / > 杂记</label></li>
-															<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]" checked="checked" /> 未分类</label></li>
-														</form>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>								
-							</form>
-							</div>
-
-						</div>
-					</div>				
-				</div>
+				
 			</div>
 		</div>
 	</div>		
 <script>
+
   tinymce.init({
     selector: '#rs-article-content'
   });
