@@ -35,10 +35,20 @@
 	</div>
 	<div class="rs-body container">
 		<div class="row">
-			<div class="col-md-8">XXXX
-				<div style="display:block; border:1px solid #eee; height:800px;"></div>
+			<div class="col-md-8 rs-post-list">
+				<div class="row rs-pl-item">
+					<div class="col-md-3">
+						<a href="javascript:void(0);"><img src="/static/default/image/timg.jpg"></a>
+					</div>
+					<div class="col-md-9">
+						<h2 class="rs-pl-title"><a href="javascipt:void(0);">你好，未来的系统分析师</a></h2>
+						<div></div>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-4">YYYY</div>
+			<div class="col-md-4">
+				
+			</div>
 		</div>
 	</div>
 	<div class="rs-footer">
