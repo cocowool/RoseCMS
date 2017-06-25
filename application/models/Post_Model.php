@@ -162,17 +162,17 @@ class Post_Model extends MY_Model {
 				),
 		),
 		array(
-			'name'=>'user_registered', 
+			'name'=>'post_status', 
 			//Database数据定义相关属性
 			'ddl' => array(
-					'type'		=>	'datetime',
+					'type'		=>	'varchar(20)',
 					'primary'	=>	FALSE,
 					'collation'	=>	'',
 					'null'		=>	'No',
-					'default'	=>	'0000-00-00',
+					'default'	=>	'',
 					'extra'		=>	'',
 					'index'		=>	'',
-					'comment'	=>	'注册时间',
+					'comment'	=>	'状态',
 				),
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
@@ -188,17 +188,17 @@ class Post_Model extends MY_Model {
 				),
 		),
 		array(
-			'name'=>'user_status', 
+			'name'=>'post_name', 
 			//Database数据定义相关属性
 			'ddl' => array(
-					'type'		=>	'int(11)',
+					'type'		=>	'varchar(20)',
 					'primary'	=>	FALSE,
 					'collation'	=>	'',
 					'null'		=>	'No',
 					'default'	=>	'',
 					'extra'		=>	'',
 					'index'		=>	'',
-					'comment'	=>	'状态',
+					'comment'	=>	'URL别名',
 				),
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
@@ -214,10 +214,10 @@ class Post_Model extends MY_Model {
 				),
 		),
 		array(
-			'name'=>'display_name', 
+			'name'=>'post_parent', 
 			//Database数据定义相关属性
 			'ddl' => array(
-					'type'		=>	'varchar(250)',
+					'type'		=>	'bigint(20)',
 					'primary'	=>	FALSE,
 					'collation'	=>	'',
 					'null'		=>	'No',
@@ -239,19 +239,60 @@ class Post_Model extends MY_Model {
 					'excel_column'	=>	'5',
 				),
 		),
+		array(
+			'name'=>'post_type', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'varchar(20)',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'类型',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'select',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'5',
+				),
+		),
+		array(
+			'name'=>'comment_count', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'bigint(20)',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'留言数量',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'select',
+					'validation'	=>	'required',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'5',
+				),
+		),
 	);
 
-	/**
-	 *	Check if the username and password is correct
-	 **/
-	public function check_user($username, $password){
-		$userinfo = $this->getById($username, 'user_login');
-		if($userinfo and $userinfo['user_pass'] == $password){
-			return TRUE;
-		}
-
-		return FALSE;
-	}
 }
 
 ?>
