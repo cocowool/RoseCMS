@@ -6,6 +6,7 @@ a:hover { text-decoration: none; color:#88b5e5; }
 h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 
 ::selection { background-color: #2196f3; color: #fff; }
+.glyphicon { color:#828282; }
 
 .rs-top-menu { 
 	background-color: #FFF;
@@ -47,6 +48,10 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-pl-item h2 { margin-bottom: 0.5em; color: 000; font-size: 24px; }
 .rs-pl-item h2 a { color: #000; }
 .rs-pl-item h2 a:hover { color: #88b5e5; }
+
+.rs-post-detail { display:block; position: relative; }
+.rs-post-title {  }
+.rs-post-content {  }
 
 .rs-google-ad { border:1px solid #eee; min-height: 100px; }
 
