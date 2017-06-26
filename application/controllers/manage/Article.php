@@ -48,8 +48,7 @@ class Article extends MY_Controller {
 			$save_data['post_date'] = unix_to_human( time(), TRUE, 'eu');
 			$save_data['post_author'] = 1;
 			$result = $this->p->insert( $save_data );
-			echo $this->db->last_query();
-			die;
+
 			if($result){
 				redirect('/manage/article/add','auto');				
 			}
