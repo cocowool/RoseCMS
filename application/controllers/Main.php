@@ -21,8 +21,10 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Post_Model', 'p');
+		$condition = array();
+		$data['article_list'] = $this->p->getAll($condition, 0, 10);
 
-		$this->load->view('main');
+		$this->load->view('main', $data);
 	}
 
 	public function article($id = ''){

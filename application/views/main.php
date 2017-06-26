@@ -20,12 +20,15 @@
 	<div class="rs-body container">
 		<div class="row">
 			<div class="col-md-8 rs-post-list">
+			<?php
+			foreach ($article_list as $key => $value) {
+			?>
 				<div class="row rs-pl-item">
 					<div class="col-md-3">
 						<a href="javascript:void(0);"><img class="img-circle" src="/static/default/image/timg.jpg"></a>
 					</div>
 					<div class="col-md-9">
-						<h2 class="rs-pl-title"><a href="javascipt:void(0);">你好，未来的系统分析师</a></h2>
+						<h2 class="rs-pl-title"><a href="/article/<?php echo $value['id']; ?>"><?php echo $value['post_title']; ?></a></h2>
 						<div class="rs-pl-meta">
 							<span class="glyphicon glyphicon-time" aria-hidden="true"> </span>
 							<!--
@@ -34,11 +37,14 @@
 							-->
 						</div>
 						<div class="rs-pl-content">
-							<p>本站致力于分享系统分析师学习、考试相关资料，更多内容，敬请期待。</p>
+							<?php echo $value['post_content']; ?>
 						</div>
-						<a href="#" class="btn btn-default">了解更多</a>
+						<a href="/article/<?php echo $value['id']; ?>" class="btn btn-default">了解更多</a>
 					</div>
 				</div>
+			<?php
+			}
+			?>
 			</div>
 			<div class="col-md-4">
 				<div class="rs-google-ad">

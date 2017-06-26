@@ -1,6 +1,7 @@
 				<div id="rs-main">
 					<div class="rs-wrap">
 						<h1 class="rs-head">文章管理</h1>
+						<?php //echo validation_errors(); ?>
 						<div id="rs-table-container">
 							<div class="row" id="rs-article">
 							<form action="<?php echo current_url(); ?>" method="post" id="rs-post-form" name="rs-post-form">

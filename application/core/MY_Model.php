@@ -53,6 +53,38 @@ class MY_Model extends CI_Model {
 	}
 	
 	/**
+	 * 从数据库中获取结果数据集
+	 *
+	 * $condition	array( array('field'=>'', 'data' =>'', 'action'=>'' ) ) or string, 其中 action 指CI中数据库查询操作类型
+	 *
+	 **/
+	public function getAll( $condition = array(), $start = 0, $pagesize = 500000, $sort = '', $direction = '' ){
+		if( !empty( $condition ) ){
+			if( is_string($condition) ){
+				$this->db->where("$condition");
+			}else if( is_array($condition) ){
+				foreach ($condition as $v){
+					if( isset($v['data']) ){
+						$this->db->$v['action']($v['field'], $v['data']);
+					}
+				}
+			}
+		}
+	
+		if( is_array($sort) && !empty($sort) ){
+			foreach ($sort as $k=>$v){
+				if(!empty($v)){
+					$this->db->order_by( $v, $direction[$k] );
+				}
+			}
+		}else if( !empty($sort) && !empty($direction) ){
+			$this->db->order_by( $sort, $direction );
+		}
+		$query = $this->db->get($this->table, $pagesize, $start);
+		return $query->result_array();
+	}	
+
+	/**
 	 * 根据ID取值，默认根据ID取
 	 * 
 	 * @param int $id
@@ -89,9 +121,31 @@ class MY_Model extends CI_Model {
 			return FALSE;
 		}
 		
+		$data = $this->filterInputArray($data);
+
 		$this->db->insert($this->table, $data);
 		return $this->db->insert_id();
 	}
+
+	//根据数据表字段过滤
+	function filterInputArray($data, $xss_clean = false, $table = '' ){
+		if(empty($table)){
+			$table = $this->table;
+		}
+
+		$fields = $this->db->list_fields($table);
+		foreach($data as $k => $v){
+			if( in_array($k, $fields) == false ){
+				unset($data[$k]);
+			}else{
+				//luyh
+				if($xss_clean == true) $data[$k] = $this->security->xss_clean($data[$k]);
+			}
+		}
+
+		return $data;
+	}
+	
 }
 
 ?>

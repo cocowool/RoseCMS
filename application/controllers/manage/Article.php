@@ -8,13 +8,15 @@ class Article extends MY_Controller {
 	}
 
 	public function index(){
-		$data = array();
-		$rs_view_data = array();
+		// $data = array();
+		// $rs_view_data = array();
 
-		$data['rs_view_main'] = 'manage/article/article_edit';
-		$data['rs_view_data'] = $rs_view_data;
+		// $data['rs_view_main'] = 'manage/article/article_edit';
+		// $data['rs_view_data'] = $rs_view_data;
 
-		$this->load->view('manage/dashboard', $data);
+		// $this->load->view('manage/dashboard', $data);
+
+		redirect('/manage/article/add');
 	}
 
 	// 新增文章
@@ -31,6 +33,9 @@ class Article extends MY_Controller {
 			$data = array();
 			$rs_view_data = array();
 
+			//echo validation_errors();
+			//echo xxx;
+
 			$data['rs_view_main'] = 'manage/article/article_edit';
 			$data['rs_view_data'] = $rs_view_data;
 
@@ -39,9 +44,12 @@ class Article extends MY_Controller {
 			$post_data = $this->input->post(NULL, true);
 			$this->load->helper('date');
 
+			$save_data = $post_data;
 			$save_data['post_date'] = unix_to_human( time(), TRUE, 'eu');
 			$save_data['post_author'] = 1;
 			$result = $this->p->insert( $save_data );
+			echo $this->db->last_query();
+			die;
 			if($result){
 				redirect('/manage/article/add','auto');				
 			}
