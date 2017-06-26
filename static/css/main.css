@@ -6,6 +6,7 @@ a:hover { text-decoration: none; color:#88b5e5; }
 h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 
 ::selection { background-color: #2196f3; color: #fff; }
+::-moz-selection { background-color: #2196f3; color: #fff; }
 .glyphicon { color:#828282; }
 
 .rs-top-menu { 

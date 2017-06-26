@@ -13,25 +13,9 @@
 </head>
 <body class="">
 	<div class="rs-top-menu container">
-		<div class="rs-menu-container rs-menu-fixed row">
-			<div class="col-md-9 rs-menu-left">
-				<div class="rs-logo">
-					<a href="/"><img src="/static/default/image/saexam.png"></a>
-				</div>
-				<div class="rs-nav">
-					<nav class="nav">
-						<ul>
-							<li><a href="javascript:void(0);"><span>首页</span><span></span></a></li>
-							<li><a href="javascript:void(0);"><span>文章</span><span></span></a></li>
-							<li><a href="javascript:void(0);"><span>关于</span><span></span></a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<a href="#"></a>
-			</div>
-		</div>
+		<?php
+			$this->load->view('menu');
+		?>
 	</div>
 	<div class="rs-body container">
 		<div class="row">
@@ -46,22 +30,15 @@
 			</div>
 			<div class="col-md-4">
 				<div class="rs-google-ad">
-					
+					<?php $this->load->view('adsense');
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="rs-footer">
-		<div class="row">
-			<div class="col-md-4">
-				
-			</div>
-			<div class="col-md-4">
-				
-			</div>
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-		</div>
+	<?php
+		$this->load->view('footer');
+	?>
 	</div>
 </body>
 <script type="text/javascript">
