@@ -1,28 +1,31 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Article extends CI_Controller {
+class Article extends MY_Controller {
+	public function __construct(){
+		parent::__construct();
+	}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index( $id = '' )
-	{
+	public function _remap($method, $params = array() ){
+
+        if (method_exists($this, $method)){
+                return call_user_func_array(array($this, $method), $params);
+        }else{
+        	call_user_func_array(array($this,'index'), array($method));
+        }
+
+        show_404();
+	}
+
+	public function index( $id = '' ){
+		if(empty($id)){
+			show_404('访问的网页不存在');
+		}
+
 		$this->load->model('Post_Model', 'p');
+		$data = $this->p->getById($id);
 
-		$this->load->view('detail');
+		$this->load->view('detail', $data);
 	}
 
 }

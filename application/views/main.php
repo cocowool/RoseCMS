@@ -28,7 +28,7 @@
 						<a href="javascript:void(0);"><img class="img-circle" src="/static/default/image/timg.jpg"></a>
 					</div>
 					<div class="col-md-9">
-						<h2 class="rs-pl-title"><a href="/article/<?php echo $value['id']; ?>"><?php echo $value['post_title']; ?></a></h2>
+						<h2 class="rs-pl-title"><a href="/article/<?php echo $value['id']; ?>"><?php echo mb_substr($value['post_title'], 0, 22); ?></a></h2>
 						<div class="rs-pl-meta">
 							<span class="glyphicon glyphicon-time" aria-hidden="true"> <?php echo $value['post_date']; ?></span>
 							<!--

@@ -22,7 +22,7 @@
 			<div class="col-md-8 rs-post-detail">
 				<h2 class="rs-post-title"></h2>
 				<div class="rs-post-content">
-					
+					<?php echo "hello"; ?>
 				</div>
 				<div class="rs-post-meta">
 					
@@ -30,7 +30,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="rs-google-ad">
-					<?php $this->load->view('adsense');
+					<?php $this->load->view('adsense'); ?>
 				</div>
 			</div>
 		</div>

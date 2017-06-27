@@ -17,7 +17,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="">
 	<div class="rs-top-menu container">
 		<?php
-			$this->load->view('menu');
+			$CI = & get_instance();
+			$CI->load->view('menu');
 		?>
 	</div>
 	<div class="rs-body container">
@@ -34,14 +35,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="col-md-4">
 				<div class="rs-google-ad">
-					<?php $this->load->view('adsense'); ?>
+					<?php $CI->load->view('adsense'); ?>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="rs-footer">
 	<?php
-		$this->load->view('footer');
+		$CI->load->view('footer');
 	?>
 	</div>
 </body>
