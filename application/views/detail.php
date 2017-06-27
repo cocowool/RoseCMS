@@ -20,9 +20,9 @@
 	<div class="rs-body container">
 		<div class="row">
 			<div class="col-md-8 rs-post-detail">
-				<h2 class="rs-post-title"></h2>
+				<h2 class="rs-post-title"><?php echo $post_title; ?></h2>
 				<div class="rs-post-content">
-					<?php echo "hello"; ?>
+					<?php echo $post_content; ?>
 				</div>
 				<div class="rs-post-meta">
 					

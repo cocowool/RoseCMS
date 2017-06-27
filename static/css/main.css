@@ -52,8 +52,9 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-pl-meta { margin:0.5em 0;  }
 
 .rs-post-detail { display:block; position: relative; }
-.rs-post-title {  }
+.rs-post-title { font-size: 24px; margin: 0 0 30px; }
 .rs-post-content {  }
+.rs-post-content p { text-indent: 2em; }
 
 .rs-google-ad { border:1px solid #eee; min-height: 100px; }
 

@@ -11,10 +11,8 @@ class Article extends MY_Controller {
         if (method_exists($this, $method)){
                 return call_user_func_array(array($this, $method), $params);
         }else{
-        	call_user_func_array(array($this,'index'), array($method));
+        	return call_user_func_array(array($this,'index'), array($method));
         }
-
-        show_404();
 	}
 
 	public function index( $id = '' ){
