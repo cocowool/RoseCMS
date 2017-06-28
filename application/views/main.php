@@ -37,7 +37,7 @@
 							-->
 						</div>
 						<div class="rs-pl-content">
-							<?php echo mb_substr($value['post_content'], 0, 200) . " ... "; ?>
+							<?php echo $value['post_content']; ?>
 						</div>
 						<a href="/article/<?php echo $value['id']; ?>" class="btn btn-default">了解更多</a>
 					</div>
