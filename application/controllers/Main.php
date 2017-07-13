@@ -22,7 +22,7 @@ class Main extends CI_Controller {
 	{
 		$this->load->model('Post_Model', 'p');
 		$condition = array();
-		$data['article_list'] = $this->p->getAll($condition, 0, 10);
+		$data['article_list'] = $this->p->getAll($condition, 0, 10, 'id', 'desc');
 
 		$this->load->view('main', $data);
 	}
