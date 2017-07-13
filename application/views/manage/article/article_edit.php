@@ -65,6 +65,16 @@
 				</div>
 <script>
   tinymce.init({
-    selector: '#rs-article-content'
+  	theme: "modern",
+  	skin:"lightgray",
+  	language:"en",
+    menubar: false,
+    branding: false,
+    toolbar1:"formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,unlink,wp_more,spellchecker,dfw,wp_adv",
+    toolbar2:"strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help",
+    toolbar3:"",
+    toolbar4:"",
+    selector: "#rs-article-content"
+
   });
 </script>
