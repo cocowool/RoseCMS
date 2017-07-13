@@ -51,6 +51,7 @@
 					<?php $this->load->view('adsense'); ?>					
 				</div>
 				<div class="rs-friendlink">
+					<h3>友情链接</h3>
 					<ul>
 						<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>
 						<li><a href="http://www.miit.gov.cn">中华人民共和国工业和信息化部</a></li>

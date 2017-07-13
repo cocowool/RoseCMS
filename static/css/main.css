@@ -1,5 +1,5 @@
 html, body { margin:0; padding:0; }
-body { margin:0 auto; color: #828282; }
+body { margin:0 auto; color: #828282; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
 ul,li { list-style: none; margin:0; padding:0; }
 a { text-decoration: none; }
 a:hover { text-decoration: none; color:#88b5e5; }
@@ -58,6 +58,11 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-post-content p { text-indent: 2em; }
 
 .rs-google-ad { border:1px solid #eee; min-height: 100px; }
+
+.rs-friendlink { margin-top:3em; }
+.rs-friendlink h3 { font-size: 18px; border-bottom: 1px solid #ebebeb; line-height: 36px; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+.rs-friendlink ul { margin:10px 0; }
+.rs-friendlink ul li { line-height: 24px; }
 
 .rs-footer { background-color: #4a4a4a; min-height: 100px; }
 .rs-ft-logo { display: block; padding:40px 0 150px 50px; }
