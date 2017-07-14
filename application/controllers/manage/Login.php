@@ -43,6 +43,9 @@ class Login extends MY_Controller {
 
 			$this->load->model("User_Model", "u");
 			if( $this->u->check_user($post_data['user_login'], $post_data['user_pass'])){
+				$userinfo = $this->u->getById($post_data['user_login'], 'user_login');
+				$this->session->set_userdata( 'rs_user_login', $userinfo['user_login']);
+
 				//验证完成后跳转到管理后台
 				$this->load->helper('url');
 				redirect('manage/dashboard');
