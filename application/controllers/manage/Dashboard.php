@@ -9,6 +9,8 @@ class Dashboard extends MY_Controller {
 
 	public function index(){
 		$data = array();
+		$data['rs_view_main'] = '';
+		$data['rs_view_data'] = array();
 
 		$this->load->view('manage/dashboard', $data);
 	}

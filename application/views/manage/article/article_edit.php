@@ -55,6 +55,14 @@
 											</div>
 										</div>
 
+										<div class="rs-sidebox" id="rs-featureimage">
+											<h2 class="rs-hand">焦点图片</h2>
+											 <div class="rs-sb-inside">
+											 	<p>
+											 		<a id="set-feature-image" href="#">上传焦点图片</a>											 		
+											 	</p>
+											 </div>
+										</div>
 									</div>
 								</div>								
 							</form>

@@ -159,7 +159,11 @@
 				</div>
 			</div>
 			<div id="rs-body">
-				<?php $this->load->view($rs_view_main, $rs_view_data); ?>
+				<?php
+				if(isset($rs_view_main) and !empty($rs_view_main)){
+					$this->load->view($rs_view_main, $rs_view_data); 					
+				} 
+				?>
 			</div>
 		</div>
 	</div>		
