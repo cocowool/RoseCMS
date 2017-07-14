@@ -70,10 +70,11 @@
   	language:"en",
     menubar: false,
     branding: false,
-    toolbar1:"formatselect,undo,redo,bold,italic,blockquote,alignleft,aligncenter,alignright,strikethrough,removeformat,outdent,indent",
+    plugins:'link,image,code',
+    toolbar:"formatselect,undo,redo,bold,italic,blockquote,alignleft,aligncenter,alignright,strikethrough,removeformat,outdent,indent,link,image,code",
     //toolbar2:"hr,forecolor,pastetext,removeformat,charmap,wp_help,link,unlink,wp_more,spellchecker,dfw,wp_adv",
-    toolbar3:"",
-    toolbar4:"",
+    //toolbar3:"",
+    //toolbar4:"",
     selector: "#rs-article-content"
 
   });
