@@ -71,19 +71,26 @@
 						</div>
 					</div>				
 				</div>
-<script>
-  tinymce.init({
-  	theme: "modern",
-  	skin:"lightgray",
-  	language:"en",
-    menubar: false,
-    branding: false,
-    plugins:'link,image,code,fullscreen',
-    toolbar:"formatselect,undo,redo,bold,italic,blockquote,alignleft,aligncenter,alignright,strikethrough,removeformat,outdent,indent,link,image,code,fullscreen",
-    //toolbar2:"hr,forecolor,pastetext,removeformat,charmap,wp_help,link,unlink,wp_more,spellchecker,dfw,wp_adv",
-    //toolbar3:"",
-    //toolbar4:"",
-    selector: "#rs-article-content"
+<script type="text/javascript">
+	$('document').ready(function(){
+		//console.log("Hello world");
+		$('#set-feature-image').click(function(e){
+			e.preventDefault();
+		});
+	});
 
-  });
+	tinymce.init({
+		theme: "modern",
+		skin:"lightgray",
+		language:"en",
+	menubar: false,
+	branding: false,
+	plugins:'link,image,code,fullscreen',
+	toolbar:"formatselect,undo,redo,bold,italic,blockquote,alignleft,aligncenter,alignright,strikethrough,removeformat,outdent,indent,link,image,code,fullscreen",
+	//toolbar2:"hr,forecolor,pastetext,removeformat,charmap,wp_help,link,unlink,wp_more,spellchecker,dfw,wp_adv",
+	//toolbar3:"",
+	//toolbar4:"",
+	selector: "#rs-article-content"
+
+	});
 </script>
