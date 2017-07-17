@@ -253,6 +253,3 @@ class User_Model extends MY_Model {
 		return FALSE;
 	}
 }
-
-?>
-
