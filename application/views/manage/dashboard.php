@@ -31,7 +31,7 @@
 						<a href="javascript:void(0);">
 							<div class="rs-menu-arrow"></div>
 							<div class="rs-menu-icon"></div>
-							<div class="rs-menu-name">文章</div>
+							<div class="rs-menu-name"><a href="/manage/article">文章</a></div>
 						</a>
 					</li>
 					<li>

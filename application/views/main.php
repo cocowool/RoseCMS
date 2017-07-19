@@ -25,7 +25,7 @@
 			?>
 				<div class="row rs-pl-item">
 					<div class="col-md-3">
-						<a href="javascript:void(0);"><img class="img-circle" src="/static/default/image/timg.jpg"></a>
+						<a href="javascript:void(0);"><img class="img-thumbnail" src="/static/default/image/timg.jpg"></a>
 					</div>
 					<div class="col-md-9">
 						<h2 class="rs-pl-title"><a href="/article/<?php echo $value['id']; ?>"><?php echo mb_substr($value['post_title'], 0, 22); ?></a></h2>
