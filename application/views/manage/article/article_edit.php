@@ -79,9 +79,6 @@
 						<span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span>
 					</button>
 					<div class="modal-content">
-						<div class="modal-header">
-							<h5>设置头图</h5>
-						</div>
 						<div class="modal-body">
 							<ul class="rs-meida-router nav nav-tabs">
 								<li class="active"><a href="#" class="rs-media-menu">上传文件</a></li>
