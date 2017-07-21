@@ -14,7 +14,7 @@ p { font-size: 14px; line-height: 1.5; margin:1em 0; }
 .rs-wrap { margin:10px 20px 0 2px; }
 .rs-wrap h1 { font-size: 24px; font-weight: 400; margin: 0; padding: 9px 0 4px; line-height: 29px; }
 .rs-wrap .rs-head { margin-right:5px; }
-
+.rs-hide { display:hidden; }
 
 .container-fluid { }
 #rs-container { padding:0; }
@@ -78,3 +78,8 @@ ul.rs-tabs li.rs-tabs-on { border:1px solid #ddd; border-bottom: #fdfdfd; backgr
 .rs-checkbox-list { margin:15px 0; }
 ul.rs-checkbox-list li { margin: 0; padding: 0; line-height: 22px; word-wrap: break-word; }
 ul.rs-checkbox-list label.rs-checkbox-item { cursor: pointer; }
+
+.rs-upload-content, .rs-upload-tip { text-align: center; }
+.rs-upload-content h2 { text-align:center; font-size: 18px; }
+
+
