@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/static/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/lib/tinymce-4.6.4/js/tinymce/tinymce.min.js"></script>
+	<script type="text/javascript" src="/static/lib/plupload-2.3.1/js/plupload.full.min.js"></script>
 </head>
 <body class="container-fluid" id="rs-container">
 	<?php
