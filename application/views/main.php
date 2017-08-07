@@ -9,7 +9,7 @@
 	<meta name="description" content="系统分析师资料站">
 	<link href="/static/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
-	<script type="text/javascript" src="/static/lib/vue/vue.js"></script>
+	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 </head>
 <body class="">
 	<div class="rs-top-menu container">
@@ -46,11 +46,17 @@
 			}
 			?>
 			</div>
-			<div class="col-md-4">
-				<div class="rs-google-ad">
+			<div class="col-md-4" id="right-column">
+				<div class="rs-google-ad" id="google-ad">
 					<?php $this->load->view('adsense'); ?>					
 				</div>
-				<div class="rs-friendlink">
+				<div class="rs-sidebox" id="date_counter">
+					<div class="rs-date-counter">
+						<p></p>
+						<p></p>
+					</div>
+				</div>
+				<div class="rs-sidebox rs-friendlink">
 					<h3>友情链接</h3>
 					<ul>
 						<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>
@@ -70,6 +76,43 @@
 	</div>
 </body>
 <script type="text/javascript">
-	
+	var vm = new Vue({
+		el:"#right-columnqueryEvent.php",
+		beforeCreate : function(){
+			console.log("Before Vue is created");
+		},
+		mounted : function(){
+			console.log("Vue is ready!");
+		}
+	});	
+
+	//vm.$mount('#date_counter')
+
+	// var google_ad = new Vue({
+	// 	el:"#date_counter",
+	// 	data(){
+	// 		return {
+	// 			scroll:''
+	// 		}
+	// 	},
+	// 	methods: {
+	// 		google() {
+	// 			this.scroll = document.body.scrollTop;
+	// 			console.log(this.scroll);
+	// 		},
+
+	// 		mounted() {
+	// 			console.log("Event Listener");
+	// 			window.addEventListener('scroll', this.google)
+	// 		}
+	// 	}
+	// });
+
+	// var app = new Vue({
+	// 	el:"#date_counter",
+	// 	data:{
+	// 		message:"距离下半年软考还有"
+	// 	}
+	// });
 </script>
 </html>

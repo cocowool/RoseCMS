@@ -175,6 +175,12 @@
 				BeforeUpload: function(up, file) {
 					// Called right before the upload for a given file starts, can be used to cancel it if required
 					console.log('[BeforeUpload]', 'File: ', file);
+
+					//设置参数
+					uploader.setOption("multipart_params", {
+						"post_id"	: 1,
+						"post_author" : 2
+					})
 				},
 	 
 	            UploadProgress: function(up, file) {
