@@ -570,7 +570,7 @@ class CI_Upload {
 		 *
 		 *
 		 */
-		if( ! $s->putObject($this->file_temp, $bucket, $this->upload_path.$this->file_name) ){
+		if( ! $s->putObjectFile($this->file_temp, $bucket, $this->upload_path.$this->file_name) ){
 			$this->set_error('sae_upload_error', 'error');
 			return FALSE;
 		}
