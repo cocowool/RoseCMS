@@ -25,8 +25,6 @@ class Upload extends MY_Controller {
 		$s->listBuckets();
 		var_dump($s);
 
-		die("Sina Storage Test<br />");
-
 		$config['upload_path'] = 'upload/' . date('Ymd', time());
 		//if(!is_dir($config['upload_path']))	mkdir($config['upload_path'], 0777);
 		//$config['file_name'] = 'drill_' . $data['group'] . '_' . $data['position'] . '_' . time();
