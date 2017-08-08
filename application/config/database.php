@@ -96,4 +96,24 @@ $db['default'] = array(
 );
 
 
-
+$db['master'] = array(
+	'dsn'	=> '',
+	'hostname' => 'w.rdc.sae.sina.com.cn',
+	'username' => '42zzj20k1x',
+	'password' => 'k5lh30z3xk410y2yjkx1j552124kmkwy1ixhz2h5',
+	'database' => 'app_golf',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
