@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'r.rdc.sae.sina.com.cn',
+	'hostname' => 'w.rdc.sae.sina.com.cn',
 	'username' => '42zzj20k1x',
 	'password' => 'k5lh30z3xk410y2yjkx1j552124kmkwy1ixhz2h5',
 	'database' => 'app_golf',
