@@ -41,6 +41,9 @@ class Upload extends MY_Controller {
 			// $request_data = $this->input->request();
 			// print_r($request_data);
 
+			//Save data to post
+			$this->load->model('Post_Model', 'p');
+
 			$post_data = $this->input->post();
 			$upload_data = $this->upload->data();
 			print_r($upload_data);
