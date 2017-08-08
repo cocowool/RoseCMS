@@ -21,8 +21,7 @@ class Upload extends MY_Controller {
 		$access_key = "5zj3405013";
 		$secret_key = "0j5xylxkh4h52h242hj0jhm44xzlyll3025iw2wm";
 
-		use sinacloud\sae;
-		$s = new Storage($access_key, $secret_key);
+		$s = new sinacloud\sae\Storage($access_key, $secret_key);
 		var_dump($s);
 
 		die("Sina Storage Test<br />");
