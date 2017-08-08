@@ -365,7 +365,7 @@ class CI_Upload {
 
 	// --------------------------------------------------------------------
 
-	public function sae_upload($field = 'userfile', $bucket = '')
+	public function sae_upload($field = 'userfile', $bucket = '', $s)
 	{
 		// Is $_FILES[$field] set? If not, no reason to continue.
 		if (isset($_FILES[$field]))
