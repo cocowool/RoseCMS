@@ -582,7 +582,7 @@ class CI_Upload {
 		 * in the "data" function.
 		 */
 		$uri = $s->getUrl($this->upload_path.$this->file_name);
-		$this->set_image_properties($uri);
+		$this->set_image_properties($bucket, $uri);
 
 		return TRUE;
 	}
