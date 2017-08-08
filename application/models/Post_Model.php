@@ -181,6 +181,7 @@ class Post_Model extends MY_Model {
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
+					'option'		=>	array('draft'=>'草稿','publish'=>'发布', 'pending'=>'待审'),
 				),
 			//表格所需属性
 			'table'	=>	array(
@@ -251,6 +252,7 @@ class Post_Model extends MY_Model {
 					'extra'		=>	'',
 					'index'		=>	'',
 					'comment'	=>	'类型',
+					'option'	=>	array('post'=>'文章','attachment'=>'附件')
 				),
 			//新增、修改表单生成所需属性
 			'form'	=>	array(

@@ -5,15 +5,16 @@
 						<div id="rs-table-container">
 							<div class="row" id="rs-article">
 							<form action="<?php echo current_url(); ?>" method="post" id="rs-post-form" name="rs-post-form">
+								<input type="hidden" id="post_id" name="post_id" value="<?php echo $article['id']; ?>">
 								<div class="col-md-8">
 									<div class="form-group">
 										<label>文章标题</label>
-										<input type="text" name="post_title" id="rs-title" class="form-control" placeholder="请输入标题">
+										<input type="text" name="post_title" id="rs-title" class="form-control" value="<?php echo !empty($article['post_name'])?$article['post_name']:''; ?>" placeholder="请输入标题">
 									</div>
 									<div class="form-group">
 										<label>文章内容</label>
 										<textarea id="rs-article-content" name="post_content" class="form-control" style="height:300px; z-index: 0;">
-											
+											<?php echo !empty($article['post_content'])?$article['post_content']:''; ?>
 										</textarea>
 									</div>
 								</div>
@@ -116,16 +117,6 @@ var uploader = new plupload.Uploader({
 	browse_button : 'rs-uploader',
 	url : '/manage/upload',
 	chunk_size : '1mb',
-	//multipart : true,
-	multipart_params : {
-		one: '1',
-		two: '2',
-		object : {
-			three: '3',
-			four: '4'
-		},
-		array: ['6','7','8']
-	},
 	multi_selection : false,
 	filters : {
 		max_file_size : '10mb',
@@ -187,12 +178,9 @@ var uploader = new plupload.Uploader({
 
 			//设置参数
 			uploader.setOption("multipart_params", {
-				"post_id"	: 1,
-				"post_author" : 2
+				"post_id"	: <?php echo $article['id'] ?>,
+				"post_author" : <?php echo '1'; ?>
 			});
-
-			uploader.settings.multipart_params.test_id = 2;
-			uploader.settings.multipart_params.test_author = "Wang";
 		},
  
             UploadProgress: function(up, file) {

@@ -20,7 +20,7 @@ class Article extends MY_Controller {
 	}
 
 	// 新增文章
-	public function add(){
+	public function add( $id = '' ){
 		$validations = array();
 		//加载Model中的验证规则
 		$this->load->model('Post_Model', 'p');
@@ -29,15 +29,34 @@ class Article extends MY_Controller {
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($validations);
 
+		$article = array();
+		if(empty($id)){
+			//检查是否有草稿状态，post_name为空的文章，没有则新建
+			$option = array();
+			$option[] = array('data' =>	'post', 'field' => 'post_type', 'action' => 'where'	);
+			$option[] = array('data' =>	'draft', 'field' => 'post_status', 'action' => 'where'	);
+			$option[] = array('data' =>	'', 'field' => 'post_name', 'action' => 'where'	);
+			$data = $this->p->getAll($option);
+			if( empty($data) ){
+				$article = array();
+				$article['post_status'] = 'draft';
+				$article['post_type'] = 'post';
+
+				$result = $this->p->insert($data);
+				$article['id'] = $result;
+			}else{
+				$article = $data[0];
+			}
+		}else{
+			$article = $this->p->getById($id);
+			if(!$article){
+				return false;
+			}
+		}
+
 		if($this->form_validation->run() == FALSE){
-			$data = array();
-			$rs_view_data = array();
-
-			//echo validation_errors();
-			//echo xxx;
-
 			$data['rs_view_main'] = 'manage/article/article_edit';
-			$data['rs_view_data'] = $rs_view_data;
+			$data['rs_view_data']['article'] = $article;
 
 			$this->load->view('manage/dashboard', $data);
 		}else{
