@@ -112,137 +112,149 @@
 			e.preventDefault();
 		});
 
-		var uploader = new plupload.Uploader({
-			browse_button : 'rs-uploader',
-			url : '/manage/upload',
-			chunk_size : '1mb',
-			//multipart : true,
-			multi_selection : false,
-			filters : {
-				max_file_size : '10mb',
-	            mime_types: [
-	                {title : "Image files", extensions : "jpg,gif,png"},
-	                {title : "Zip files", extensions : "zip"}
-	            ]
-			},
-			flash_swf_url : '../js/Moxie.swf',
-			silverlight_xap_url : '../js/Moxie.xap',
-	        preinit : {
-	            Init: function(up, info) {
-	                //console.log('[Init]', 'Info:', info, 'Features:', up.features);
-	            },
-	 
-	            UploadFile: function(up, file) {
-	                //console.log('[UploadFile]', file);
-	            }
-	        },
-			init : {
-				PostInit: function() {
-					// Called after initialization is finished and internal event handlers bound
-					//console.log('[PostInit]');
-					
-					// document.getElementById('uploadfiles').onclick = function() {
-					// 	uploader.start();
-					// 	return false;
-					// };
-				},
+var uploader = new plupload.Uploader({
+	browse_button : 'rs-uploader',
+	url : '/manage/upload',
+	chunk_size : '1mb',
+	//multipart : true,
+	multipart_params : {
+		one: '1',
+		two: '2',
+		object : {
+			three: '3',
+			four: '4'
+		},
+		array: ['6','7','8']
+	},
+	multi_selection : false,
+	filters : {
+		max_file_size : '10mb',
+            mime_types: [
+                {title : "Image files", extensions : "jpg,gif,png"},
+                {title : "Zip files", extensions : "zip"}
+            ]
+	},
+	flash_swf_url : '../js/Moxie.swf',
+	silverlight_xap_url : '../js/Moxie.xap',
+        preinit : {
+            Init: function(up, info) {
+                //console.log('[Init]', 'Info:', info, 'Features:', up.features);
+            },
+ 
+            UploadFile: function(up, file) {
+                //console.log('[UploadFile]', file);
+            }
+        },
+	init : {
+		PostInit: function() {
+			// Called after initialization is finished and internal event handlers bound
+			//console.log('[PostInit]');
+			
+			// document.getElementById('uploadfiles').onclick = function() {
+			// 	uploader.start();
+			// 	return false;
+			// };
+		},
 
-				Browse: function(up) {
-	                // Called when file picker is clicked
-	                console.log('[Browse]');
-	            },
+		Browse: function(up) {
+                // Called when file picker is clicked
+                console.log('[Browse]');
+            },
 
-	            Refresh: function(up) {
-	                // Called when the position or dimensions of the picker change
-	                console.log('[Refresh]');
-	            },
-	 
-	            StateChanged: function(up) {
-	                // Called when the state of the queue is changed
-	                console.log('[StateChanged]', up.state == plupload.STARTED ? "STARTED" : "STOPPED");
-	            },
-	 
-	            QueueChanged: function(up) {
-	                // Called when queue is changed by adding or removing files
-	                console.log('[QueueChanged]');
-	            },
+            Refresh: function(up) {
+                // Called when the position or dimensions of the picker change
+                console.log('[Refresh]');
+            },
+ 
+            StateChanged: function(up) {
+                // Called when the state of the queue is changed
+                console.log('[StateChanged]', up.state == plupload.STARTED ? "STARTED" : "STOPPED");
+            },
+ 
+            QueueChanged: function(up) {
+                // Called when queue is changed by adding or removing files
+                console.log('[QueueChanged]');
+            },
 
-				OptionChanged: function(up, name, value, oldValue) {
-					// Called when one of the configuration options is changed
-					console.log('[OptionChanged]', 'Option Name: ', name, 'Value: ', value, 'Old Value: ', oldValue);
-				},
+		OptionChanged: function(up, name, value, oldValue) {
+			// Called when one of the configuration options is changed
+			console.log('[OptionChanged]', 'Option Name: ', name, 'Value: ', value, 'Old Value: ', oldValue);
+		},
 
-				BeforeUpload: function(up, file) {
-					// Called right before the upload for a given file starts, can be used to cancel it if required
-					console.log('[BeforeUpload]', 'File: ', file);
+		BeforeUpload: function(up, file) {
+			// Called right before the upload for a given file starts, can be used to cancel it if required
+			console.log('[BeforeUpload]', 'File: ', file);
 
-					//设置参数
-					uploader.setOption("multipart_params", {
-						"post_id"	: 1,
-						"post_author" : 2
-					})
-				},
-	 
-	            UploadProgress: function(up, file) {
-	                // Called while file is being uploaded
-	                console.log('[UploadProgress]', 'File:', file, "Total:", up.total);
-					console.log(file.percent);
-	            },
+			//设置参数
+			uploader.setOption("multipart_params", {
+				"post_id"	: 1,
+				"post_author" : 2
+			});
 
-				FileFiltered: function(up, file) {
-					// Called when file successfully files all the filters
-	                console.log('[FileFiltered]', 'File:', file);
-				},
-	 
-	            FilesAdded: function(up, files) {
-	                // Called when files are added to queue
-	                console.log('[FilesAdded]');
-	 
-	                plupload.each(files, function(file) {
-	                    console.log('  File:', file);
-	                });
+			uploader.settings.multipart_params.test_id = 2;
+			uploader.settings.multipart_params.test_author = "Wang";
+		},
+ 
+            UploadProgress: function(up, file) {
+                // Called while file is being uploaded
+                console.log('[UploadProgress]', 'File:', file, "Total:", up.total);
+			console.log(file.percent);
+            },
 
-					uploader.start();
-	            },
-	 
-	            FilesRemoved: function(up, files) {
-	                // Called when files are removed from queue
-	                console.log('[FilesRemoved]');
-	 
-	                plupload.each(files, function(file) {
-	                    console.log('  File:', file);
-	                });
-	            },
-	 
-	            FileUploaded: function(up, file, info) {
-	                // Called when file has finished uploading
-	                console.log('[FileUploaded] File:', file, "Info:", info);
-	            },
-	 
-	            ChunkUploaded: function(up, file, info) {
-	                // Called when file chunk has finished uploading
-	                console.log('[ChunkUploaded] File:', file, "Info:", info);
-	            },
+		FileFiltered: function(up, file) {
+			// Called when file successfully files all the filters
+                console.log('[FileFiltered]', 'File:', file);
+		},
+ 
+            FilesAdded: function(up, files) {
+                // Called when files are added to queue
+                console.log('[FilesAdded]');
+ 
+                plupload.each(files, function(file) {
+                    console.log('  File:', file);
+                });
 
-				UploadComplete: function(up, files) {
-					// Called when all files are either uploaded or failed
-	                console.log('[UploadComplete]');
-				},
+			uploader.start();
+            },
+ 
+            FilesRemoved: function(up, files) {
+                // Called when files are removed from queue
+                console.log('[FilesRemoved]');
+ 
+                plupload.each(files, function(file) {
+                    console.log('  File:', file);
+                });
+            },
+ 
+            FileUploaded: function(up, file, info) {
+                // Called when file has finished uploading
+                console.log('[FileUploaded] File:', file, "Info:", info);
+            },
+ 
+            ChunkUploaded: function(up, file, info) {
+                // Called when file chunk has finished uploading
+                console.log('[ChunkUploaded] File:', file, "Info:", info);
+            },
 
-				Destroy: function(up) {
-					// Called when uploader is destroyed
-	                console.log('[Destroy] ');
-				},
-	 
-	            Error: function(up, args) {
-	                // Called when error occurs
-	                console.log('[Error] ', args);
-	            }
-			}
-		});
+		UploadComplete: function(up, files) {
+			// Called when all files are either uploaded or failed
+                console.log('[UploadComplete]');
+		},
 
-		uploader.init();
-	});
+		Destroy: function(up) {
+			// Called when uploader is destroyed
+                console.log('[Destroy] ');
+		},
+ 
+            Error: function(up, args) {
+                // Called when error occurs
+                console.log('[Error] ', args);
+            }
+	}
+});
+
+uploader.init();
+});
 
 	tinymce.init({
 		theme: "modern",
