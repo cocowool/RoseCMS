@@ -258,6 +258,20 @@ class CI_Upload {
 	 */
 	public $client_name = '';
 
+	/**
+	 * SAE File hash
+	 *
+	 * @var	string
+	 */
+	public $sae_hash = '';	
+
+	/**
+	 * SAE URI String
+	 *
+	 * @var	string
+	 */
+	public $sae_uri = '';	
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -550,25 +564,10 @@ class CI_Upload {
 			return FALSE;
 		}
 
-		/*
-		 * Move the file to the final destination
-		 * To deal with different server configurations
-		 * we'll attempt to use copy() first. If that fails
-		 * we'll use move_uploaded_file(). One of the two should
-		 * reliably work in most environments
-		 */
-		// if ( ! @copy($this->file_temp, $this->upload_path.$this->file_name))
-		// {
-		// 	if ( ! @move_uploaded_file($this->file_temp, $this->upload_path.$this->file_name))
-		// 	{
-		// 		$this->set_error('upload_destination_error', 'error');
-		// 		return FALSE;
-		// 	}
-		// }
 
 		/*
-		 *
-		 *
+		 * Upload file to sae storage bucket.
+		 * Author Green Wang
 		 */
 		if( ! $s->putObjectFile($this->file_temp, $bucket, $this->upload_path.$this->file_name) ){
 			$this->set_error('sae_upload_error', 'error');
@@ -582,10 +581,10 @@ class CI_Upload {
 		 * in the "data" function.
 		 */
 		$object_info = $s->getObjectInfo($bucket, $this->upload_path.$this->file_name);
-		print_r($object_info);
 
-		$uri = $s->getUrl($bucket, $this->upload_path.$this->file_name);
-		echo $uri;
+		$this->image_type = $object_info['type'];
+		$this->sae_hash = $object_info['hash'];
+		$this->sae_uri = $s->getUrl($bucket, $this->upload_path.$this->file_name);
 		//$this->set_image_properties($uri);
 
 		return TRUE;
@@ -839,6 +838,8 @@ class CI_Upload {
 				'image_height'		=> $this->image_height,
 				'image_type'		=> $this->image_type,
 				'image_size_str'	=> $this->image_size_str,
+				'sae_hash'		=>	$this->sae_hash,
+				'sae_uri'		=>	$this->sae_uri,
 			);
 
 		if ( ! empty($index))

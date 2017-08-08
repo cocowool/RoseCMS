@@ -224,7 +224,7 @@ class Post_Model extends MY_Model {
 					'default'	=>	'',
 					'extra'		=>	'',
 					'index'		=>	'',
-					'comment'	=>	'显示名称',
+					'comment'	=>	'上级元素',
 				),
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
@@ -255,6 +255,32 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'select',
+					'validation'	=>	'trim',
+					'tiptext'		=>	'',
+					'extra'			=>	'',
+					'class'			=>	'',
+				),
+			//表格所需属性
+			'table'	=>	array(
+					'excel_column'	=>	'5',
+				),
+		),
+		array(
+			'name'=>'guid', 
+			//Database数据定义相关属性
+			'ddl' => array(
+					'type'		=>	'varchar(255)',
+					'primary'	=>	FALSE,
+					'collation'	=>	'',
+					'null'		=>	'No',
+					'default'	=>	'',
+					'extra'		=>	'',
+					'index'		=>	'',
+					'comment'	=>	'GUID',
+				),
+			//新增、修改表单生成所需属性
+			'form'	=>	array(
+					'type'			=>	'text',
 					'validation'	=>	'trim',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
