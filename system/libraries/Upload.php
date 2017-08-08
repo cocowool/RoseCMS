@@ -581,8 +581,12 @@ class CI_Upload {
 		 * file was an image). We use this information
 		 * in the "data" function.
 		 */
+		$object_info = $s->getOjbectInfo($bucket, $this->upload_path.$this->file_name);
+		print_r($object_info);
+
 		$uri = $s->getUrl($bucket, $this->upload_path.$this->file_name);
-		$this->set_image_properties($uri);
+		echo $uri;
+		//$this->set_image_properties($uri);
 
 		return TRUE;
 	}
