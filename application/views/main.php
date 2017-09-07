@@ -10,6 +10,7 @@
 	<link href="/static/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
+	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
 </head>
 <body class="">
 	<div class="rs-top-menu container">
@@ -57,14 +58,6 @@
 					</div>
 				</div>
 				<div class="rs-sidebox rs-friendlink">
-					<h3>友情链接</h3>
-					<ul>
-						<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>
-						<li><a href="http://www.miit.gov.cn">中华人民共和国工业和信息化部</a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -76,8 +69,12 @@
 	</div>
 </body>
 <script type="text/javascript">
+	$(document).ready(function(){
+		console.log("Document Ready");
+	});
+
 	var vm = new Vue({
-		el:"#right-columnqueryEvent.php",
+		//el:"#right-column",
 		beforeCreate : function(){
 			console.log("Before Vue is created");
 		},

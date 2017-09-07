@@ -62,6 +62,8 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-sidebox { margin-top:3em; }
 .rs-sidebox h3 { font-size: 18px; border-bottom:1px solid #ebebeb; line-height: 36px; }
 
+#right-column { position: fixed; right: 15px; }
+
 .rs-friendlink { margin-top:2em; }
 .rs-friendlink h3 { font-size: 18px; border-bottom: 1px solid #ebebeb; line-height: 36px; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
 .rs-friendlink ul { margin:10px 0; }
@@ -69,8 +71,8 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 
 .rs-date-counter { text-align: center; border:1px solid #ddd; padding:1.5em 0 0.5em; background-color: #4a90e2; color:#fff; }
 
-.rs-footer { background-color: #4a4a4a; min-height: 100px; }
-.rs-ft-logo { display: block; padding:40px 0 150px 50px; }
+.rs-footer { background-color: #4a4a4a; min-height: 60px; }
+.rs-ft-logo { display: block; padding:20px 0 20px 50px; }
 .rs-ft-logo img { width: 64px; }
-.rs-ft-about { display: block; padding:40px 0; color:#ddd;  }
+.rs-ft-about { display: block; padding:20px 0; color:#ddd;  }
 .rs-ft-about h3 { font-size: 16px; margin-bottom: 20px; }
