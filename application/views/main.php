@@ -53,7 +53,7 @@
 				</div>
 				<div class="rs-sidebox" id="date_counter">
 					<div class="rs-date-counter">
-						<p></p>
+						<p>距离2017年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
 						<p></p>
 					</div>
 				</div>
@@ -73,13 +73,22 @@
 		console.log("Document Ready");
 	});
 
+	var d = new Date();
+	var se = new Date('2017-11-11');
+	var ddCount = parseInt( (Math.abs(se - d))/1000/60/60/24 ); 
+
 	var vm = new Vue({
-		//el:"#right-column",
+		el:"#dateCounter",
 		beforeCreate : function(){
 			console.log("Before Vue is created");
+			// console.log(d);
+			// console.log(se);
 		},
 		mounted : function(){
 			console.log("Vue is ready!");
+		},
+		data : {
+			dayCount : ddCount
 		}
 	});	
 
