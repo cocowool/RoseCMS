@@ -37,11 +37,24 @@ class Upload extends MY_Controller {
 		}else{
 			$post_data = $this->input->post();
 			$upload_data = $this->upload->data();
+			$this->load->helper('date');
 
 			//Save data to post
 			$this->load->model('Post_Model', 'p');
 			$data = array();
-			$data['post_author'] = $post_data[''];
+			$data['post_author'] = $post_data['post_author'];
+			$data['post_date'] = unix_to_human( time(), TRUE, 'eu');
+			$data['post_content'] = '';
+			$data['post_title'] = '';
+
+			//Save Meta Data
+			$this->load->model('Meta_Model', 'm');
+
+			$data = array();
+			$data['post_author'] = $post_data['post_author'];
+			$data['post_id'] = $post_data['post_id'];
+			$data['meta_key'] = 'thumbnail_id';
+			$data['meta_value'] = 
 
 			print_r($upload_data);
 			print_r($post_data);

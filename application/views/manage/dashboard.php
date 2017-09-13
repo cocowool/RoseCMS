@@ -11,6 +11,7 @@
 	<script type="text/javascript" src="/static/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/lib/tinymce-4.6.4/js/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript" src="/static/lib/plupload-2.3.1/js/plupload.full.min.js"></script>
+	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 </head>
 <body class="container-fluid" id="rs-container">
 	<?php
@@ -40,6 +41,13 @@
 							<div class="rs-menu-arrow"></div>
 							<div class="rs-menu-icon"></div>
 							<div class="rs-menu-name">资源</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"><a href="/manage/question">试题</a></div>
 						</a>
 					</li>
 					<li>
