@@ -54,6 +54,8 @@ class Article extends MY_Controller {
 			}
 		}
 
+		print_r($article);
+
 		if($this->form_validation->run() == FALSE){
 			$data['rs_view_main'] = 'manage/article/article_edit';
 			$data['rs_view_data']['article'] = $article;
