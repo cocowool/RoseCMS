@@ -37,6 +37,9 @@ class Article extends MY_Controller {
 			$option[] = array('data' =>	'draft', 'field' => 'post_status', 'action' => 'where'	);
 			$option[] = array('data' =>	'', 'field' => 'post_name', 'action' => 'where'	);
 			$data = $this->p->getAll($option);
+
+			var_dump($data);
+
 			if( empty($data) ){
 				$article = array();
 				$article['post_status'] = 'draft';
