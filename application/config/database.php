@@ -70,12 +70,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
+$active_group = 'master';
 $query_builder = TRUE;
 
-$db['default'] = array(
+$db['slave'] = array(
 	'dsn'	=> '',
-	'hostname' => 'w.rdc.sae.sina.com.cn',
+	'hostname' => 'r.rdc.sae.sina.com.cn',
 	'username' => '42zzj20k1x',
 	'password' => 'k5lh30z3xk410y2yjkx1j552124kmkwy1ixhz2h5',
 	'database' => 'app_golf',

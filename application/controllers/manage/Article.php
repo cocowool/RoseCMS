@@ -46,7 +46,9 @@ class Article extends MY_Controller {
 				$article['post_type'] = 'post';
 
 				$result = $this->p->insert($data);
+				echo $this->db->last_query();
 				var_dump($result);
+
 				$article['id'] = $result;
 			}else{
 				$article = $data[0];
