@@ -41,6 +41,7 @@ class Article extends MY_Controller {
 
 			if( empty($data) ){
 				$article = array();
+				$article['post_author'] = 1;
 				$article['post_status'] = 'draft';
 				$article['post_type'] = 'post';
 
@@ -69,13 +70,15 @@ class Article extends MY_Controller {
 			$post_data = $this->input->post(NULL, true);
 			$this->load->helper('date');
 
+			echo "Save Action";
+
 			$save_data = $post_data;
 			$save_data['post_date'] = unix_to_human( time(), TRUE, 'eu');
 			$save_data['post_author'] = 1;
-			$result = $this->p->insert( $save_data );
+			//$result = $this->p->insert( $save_data );
 
 			if($result){
-				redirect('/manage/article/add','auto');				
+				//redirect('/manage/article/add','auto');				
 			}
 		}
 	}

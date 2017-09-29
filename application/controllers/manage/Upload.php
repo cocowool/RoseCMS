@@ -49,6 +49,7 @@ class Upload extends MY_Controller {
 			$data['post_name'] = strtolower($upload_data['raw_name']);
 			$data['guid'] = $upload_data['sae_uri'];
 			$data['psot_type'] = 'thumbnail';
+			$data['post_status'] = 'media';
 			$result = $this->p->insert($data);
 			if($result){
 				//Save Meta Data
@@ -59,7 +60,7 @@ class Upload extends MY_Controller {
 				$data['post_author'] = $post_data['post_author'];
 				$data['post_id'] = $post_data['post_id'];
 				$data['meta_key'] = 'thumbnail_id';
-				$data['meta_value'] = $result['id'];
+				$data['meta_value'] = $result;
 
 				$m_result = $this->m->insert($data);				
 				if( ! $m_result ){
