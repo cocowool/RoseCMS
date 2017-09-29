@@ -44,7 +44,7 @@ class Upload extends MY_Controller {
 			$data = array();
 			$data['post_author'] = $post_data['post_author'];
 			$data['post_date'] = unix_to_human( time(), TRUE, 'eu');
-			$data['post_content'] = $upload_data[''];
+			$data['post_content'] = '';
 			$data['post_title'] = $upload_data['client_name'];
 			$data['post_name'] = strtolower($upload_data['raw_name']);
 			$data['guid'] = $upload_data['sae_uri'];
