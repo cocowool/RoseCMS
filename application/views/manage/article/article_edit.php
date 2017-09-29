@@ -9,7 +9,7 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<label>文章标题</label>
-										<input type="text" name="post_title" id="rs-title" class="form-control" value="<?php echo !empty($article['post_name'])?$article['post_name']:''; ?>" placeholder="请输入标题">
+										<input type="text" name="post_title" id="rs-title" class="form-control" value="<?php echo !empty($article['post_title'])?$article['post_title']:''; ?>" placeholder="请输入标题">
 									</div>
 									<div class="form-group">
 										<label>文章内容</label>
@@ -29,7 +29,9 @@
 													<div id="rs-publish-action">
 														<div id="rs-publish-delete"></div>
 														<div id="rs-publish-submit">
+															<input type="submit" name="savedraft" id="savedraft" class="btn btn-primary" value="存草稿">
 															<input type="submit" name="publish" id="publish" class="btn btn-primary" value="发布">
+															<input type="hidden" name="post_action" id="post_action" value="" />
 														</div>
 													</div>
 												</div>
@@ -111,6 +113,14 @@
 		//console.log("Hello world");
 		$('#set-feature-image').click(function(e){
 			e.preventDefault();
+		});
+
+		$('#savedraft').click(function(e){
+			$('#post_action').val( 'savedraft' );
+		});
+
+		$('#publish').click(function(e){
+			$('#post_action').val( 'publish' );
 		});
 
 		var uploader = new plupload.Uploader({

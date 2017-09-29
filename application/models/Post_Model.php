@@ -99,7 +99,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'trim|required',
+					'validation'	=>	'trim',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',
@@ -125,7 +125,7 @@ class Post_Model extends MY_Model {
 			//新增、修改表单生成所需属性
 			'form'	=>	array(
 					'type'			=>	'text',
-					'validation'	=>	'trim|required',
+					'validation'	=>	'trim',
 					'tiptext'		=>	'',
 					'extra'			=>	'',
 					'class'			=>	'',

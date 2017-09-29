@@ -27,6 +27,7 @@ class Article extends MY_Controller {
 		$validations = $this->p->getFormValidation();
 
 		$this->load->library('form_validation');
+		// print_r($validations);
 		$this->form_validation->set_rules($validations);
 
 		$article = array();
@@ -70,15 +71,29 @@ class Article extends MY_Controller {
 			$post_data = $this->input->post(NULL, true);
 			$this->load->helper('date');
 
-			echo "Save Action";
+			if( $post_data['post_id'] ){
+				$save_data = $post_data;
 
-			$save_data = $post_data;
-			$save_data['post_date'] = unix_to_human( time(), TRUE, 'eu');
-			$save_data['post_author'] = 1;
-			//$result = $this->p->insert( $save_data );
+				switch ($post_data['post_action']) {
+					case 'savedraft':
+						$save_data['post_status'] = 'draft';
+						break;
+					case 'publish':
+						$save_data['post_status'] = 'open';
+						break;
+				}
 
-			if($result){
-				//redirect('/manage/article/add','auto');				
+				$save_data['post_date'] = unix_to_human( time(), TRUE, 'eu');
+				$save_date['post_modified'] = unix_to_human( time(), TRUE, 'eu');
+				$save_data['post_author'] = 1;
+
+				$result = $this->p->update( $save_data, $post_data['post_id'] );
+
+				if($result){
+					//redirect('/manage/article/add','auto');				
+				}
+			}else{
+
 			}
 		}
 	}
