@@ -44,20 +44,34 @@ class Upload extends MY_Controller {
 			$data = array();
 			$data['post_author'] = $post_data['post_author'];
 			$data['post_date'] = unix_to_human( time(), TRUE, 'eu');
-			$data['post_content'] = '';
-			$data['post_title'] = '';
+			$data['post_content'] = $upload_data[''];
+			$data['post_title'] = $upload_data['client_name'];
+			$data['post_name'] = strtolower($upload_data['raw_name']);
+			$data['guid'] = $upload_data['sae_uri'];
+			$data['psot_type'] = 'thumbnail';
+			$result = $this->p->insert($data);
+			if($result){
+				//Save Meta Data
+				//Meta 中记录三份信息（三条记录），文件ID，文件名称，文件属性
+				$this->load->model('Meta_Model', 'm');
 
-			//Save Meta Data
-			$this->load->model('Meta_Model', 'm');
+				$data = array();
+				$data['post_author'] = $post_data['post_author'];
+				$data['post_id'] = $post_data['post_id'];
+				$data['meta_key'] = 'thumbnail_id';
+				$data['meta_value'] = $result['id'];
 
-			$data = array();
-			$data['post_author'] = $post_data['post_author'];
-			$data['post_id'] = $post_data['post_id'];
-			$data['meta_key'] = 'thumbnail_id';
-			$data['meta_value'] = 
+				$m_result = $this->m->insert($data);				
+				if( ! $m_result ){
+					echo '<h1>Meta Insert Error</h1>';
+				}else{
+					$response = array('code' => '200', 'message' => 'Thumbnail Upload Success');
+					echo json_encode($response);
+				}
+			}
 
-			print_r($upload_data);
-			print_r($post_data);
+			// print_r($upload_data);
+			// print_r($post_data);
 		}
 	}
 

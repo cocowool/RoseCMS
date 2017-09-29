@@ -37,7 +37,7 @@ class Article extends MY_Controller {
 			$option[] = array('data' =>	'draft', 'field' => 'post_status', 'action' => 'where'	);
 			$option[] = array('data' =>	'', 'field' => 'post_name', 'action' => 'where'	);
 			$data = $this->p->getAll($option);
-			var_dump($data); echo "<br />";
+			//var_dump($data); echo "<br />";
 
 			if( empty($data) ){
 				$article = array();
@@ -45,8 +45,8 @@ class Article extends MY_Controller {
 				$article['post_type'] = 'post';
 
 				$result = $this->p->insert($article);
-				echo $this->db->last_query(); echo "<br />";
-				var_dump($result); echo "<br />";
+				//echo $this->db->last_query(); echo "<br />";
+				//var_dump($result); echo "<br />";
 
 				$article['id'] = $result;
 			}else{
@@ -59,8 +59,7 @@ class Article extends MY_Controller {
 			}
 		}
 
-		print_r($article);
-
+		//print_r($article);
 		if($this->form_validation->run() == FALSE){
 			$data['rs_view_main'] = 'manage/article/article_edit';
 			$data['rs_view_data']['article'] = $article;
