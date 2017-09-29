@@ -44,7 +44,7 @@ class Article extends MY_Controller {
 				$article['post_status'] = 'draft';
 				$article['post_type'] = 'post';
 
-				$result = $this->p->insert($data);
+				$result = $this->p->insert($article);
 				echo $this->db->last_query(); echo "<br />";
 				var_dump($result); echo "<br />";
 
