@@ -22,6 +22,7 @@ class Main extends CI_Controller {
 	{
 		$this->load->model('Post_Model', 'p');
 		$condition = array();
+		$condition[] = array('data'	=> 'open', 'field' => 'post_status', 'action' => 'where'	);
 		$data['article_list'] = $this->p->getAll($condition, 0, 10, 'id', 'desc');
 
 		$this->load->view('main', $data);
