@@ -56,6 +56,12 @@ class Article extends MY_Controller {
 			}
 		}else{
 			$article = $this->p->getById($id);
+
+			//获取文章的焦点图
+			$this->load->model('Meta_Model', 'm');
+			$option = array();
+			$option[] = array();
+
 			if(!$article){
 				return false;
 			}
