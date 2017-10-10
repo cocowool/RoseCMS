@@ -61,11 +61,26 @@
 
 										<div class="rs-sidebox" id="rs-featureimage">
 											<h2 class="rs-hand">焦点图片</h2>
+											<?php
+											if(!empty($thumb_detail)){
+											?>
+
+											<div class="rs-sb-inside">
+												<p>
+													<a href="#"><img src="<?php echo $thumb_detail['guid']; ?>" alt="<?php echo $thumb_detail['post_title']; ?>"></a>
+												</p>
+											</div>
+											<?php
+											}else{
+											?>
 											 <div class="rs-sb-inside">
 											 	<p>
 											 		<a id="set-feature-image" href="#" data-toggle="modal" data-target="#rs-set-thumbnail">上传焦点图片</a>
 											 	</p>
 											 </div>
+											<?php
+											}
+											?>
 										</div>
 									</div>
 								</div>								

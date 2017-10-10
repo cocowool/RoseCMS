@@ -31,6 +31,7 @@ class Upload extends MY_Controller {
         $config['max_width'] = 0;
 
 		$this->load->library('upload', $config);
+		//if(!$this->upload->do_upload('file', $config)){
 		if(!$this->upload->sae_upload('file', 'thumbnail', $s)){
 			print_r($this->upload->display_errors());
 			die('{"jsonrpc" : "2.0", "error" : {"code": 101, "message": "Failed to open input stream."}, "id" : "id"}');

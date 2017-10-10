@@ -54,13 +54,23 @@ class Article extends MY_Controller {
 			}else{
 				$article = $data[0];
 			}
+
+			redirect('/manage/article/add/' . $article['id'],'auto');		
 		}else{
 			$article = $this->p->getById($id);
 
 			//获取文章的焦点图
 			$this->load->model('Meta_Model', 'm');
 			$option = array();
-			$option[] = array();
+			$option[] = array('data' =>	'thumbnail_id', 'field' => 'meta_key', 'action' => 'where'	);
+			$option[] = array('data' =>	$id, 'field' => 'post_id', 'action' => 'where'	);
+			$thumb_meta = $this->m->getAll($option);
+
+			if(count($thumb_meta) == 1){
+				$thumb_detail = $this->p->getById($thumb_meta[0]['meta_value']);
+			}
+			//print_r($thumb_data);
+			//print_r($thumb_detail);
 
 			if(!$article){
 				return false;
@@ -71,6 +81,8 @@ class Article extends MY_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['rs_view_main'] = 'manage/article/article_edit';
 			$data['rs_view_data']['article'] = $article;
+			$data['rs_view_data']['thumb_detail'] = $thumb_detail;
+			$data['rs_view_data']['thumb_meta'] = $thumb_meta;
 
 			$this->load->view('manage/dashboard', $data);
 		}else{
