@@ -66,6 +66,7 @@ class Article extends MY_Controller {
 			$option[] = array('data' =>	$id, 'field' => 'post_id', 'action' => 'where'	);
 			$thumb_meta = $this->m->getAll($option);
 
+			print_r($thumb_meta);
 			if(count($thumb_meta) == 1){
 				$thumb_detail = $this->p->getById($thumb_meta[0]['meta_value']);
 			}
