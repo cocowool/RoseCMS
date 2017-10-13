@@ -35,6 +35,12 @@
 							<div class="rs-menu-icon"></div>
 							<div class="rs-menu-name"><a href="/manage/article">文章</a></div>
 						</a>
+						<ul class="rs-submenu">
+							<li class="rs-submenu-item rs-submenu-first rs-active"><a href="#" class="">所有文章</a></li>
+							<li><a href="#">新建</a></li>
+							<li><a href="#">分类</a></li>
+							<li><a href="#">标签</a></li>
+						</ul>
 					</li>
 					<li>
 						<a href="javascript:void(0);">

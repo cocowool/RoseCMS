@@ -8,15 +8,15 @@ class Article extends MY_Controller {
 	}
 
 	public function index(){
-		// $data = array();
-		// $rs_view_data = array();
+		$data = array();
+		$rs_view_data = array();
 
-		// $data['rs_view_main'] = 'manage/article/article_edit';
-		// $data['rs_view_data'] = $rs_view_data;
+		$data['rs_view_main'] = 'manage/article/article_list';
+		$data['rs_view_data'] = $rs_view_data;
 
-		// $this->load->view('manage/dashboard', $data);
+		$this->load->view('manage/dashboard', $data);
 
-		redirect('/manage/article/add');
+		//redirect('/manage/article/list');
 	}
 
 	// 新增文章
@@ -67,6 +67,7 @@ class Article extends MY_Controller {
 			$thumb_meta = $this->m->getAll($option);
 
 			// print_r($thumb_meta);
+			$thumb_detail = '';
 			if(count($thumb_meta) == 1){
 				$thumb_detail = $this->p->getById($thumb_meta[0]['meta_value']);
 			}
@@ -109,7 +110,7 @@ class Article extends MY_Controller {
 				$result = $this->p->update( $save_data, $post_data['post_id'] );
 
 				if($result){
-					//redirect('/manage/article/add','auto');				
+					redirect('/manage/article/add/' . $id,'auto');				
 				}
 			}else{
 
