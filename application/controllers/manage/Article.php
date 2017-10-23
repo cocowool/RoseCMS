@@ -7,16 +7,19 @@ class Article extends MY_Controller {
 		parent::__construct();
 	}
 
-	public function index(){
+	public function index($page = 0){
 		$data = array();
 		$rs_view_data = array();
+
+		//加载
+		$this->load->model('Post_Model', 'p');
+		$article_list = $this->p->getAll();
+		$rs_view_data['articles'] = $article_list;
 
 		$data['rs_view_main'] = 'manage/article/article_list';
 		$data['rs_view_data'] = $rs_view_data;
 
 		$this->load->view('manage/dashboard', $data);
-
-		//redirect('/manage/article/list');
 	}
 
 	// 新增文章

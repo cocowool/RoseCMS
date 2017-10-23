@@ -36,8 +36,8 @@
 							<div class="rs-menu-name"><a href="/manage/article">文章</a></div>
 						</a>
 						<ul class="rs-submenu">
-							<li class="rs-submenu-item rs-submenu-first rs-active"><a href="#" class="">所有文章</a></li>
-							<li><a href="#">新建</a></li>
+							<li class="rs-submenu-item rs-submenu-first rs-active"><a href="/manage/article" class="">所有文章</a></li>
+							<li><a href="/manage/article/add">新建</a></li>
 							<li><a href="#">分类</a></li>
 							<li><a href="#">标签</a></li>
 						</ul>
