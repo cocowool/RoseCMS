@@ -182,5 +182,15 @@
 			</div>
 		</div>
 	</div>		
+<script type="text/javascript">
+$('document').ready(function(){
+	console.log("Test");
+	console.log($('#rs-menu>li'));
+
+	$('#rs-menu>li').on('mousein', function(){
+		console.log("Mouse Over");
+	})
+});
+</script>
 </body>
 </html>
