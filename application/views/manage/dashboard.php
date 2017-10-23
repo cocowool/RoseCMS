@@ -187,9 +187,18 @@ $('document').ready(function(){
 	console.log("Test");
 	console.log($('#rs-menu>li'));
 
-	$('#rs-menu>li').on('mousein', function(){
-		console.log("Mouse Over");
-	})
+	$('.rs-submenu').on('mouseover', function(){
+		$(this).css('top', '-5px');
+	});
+
+	$('#rs-menu>li').on('mouseenter', function(){
+		//console.log("Mouse Over");
+		$(this).find('.rs-submenu').css('top', '-5px');
+	});
+
+	$('#rs-menu>li').on('mouseout', function(){
+		$(this).find('.rs-submenu').css('top', '-9999px');
+	});
 });
 </script>
 </body>
