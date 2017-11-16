@@ -13,7 +13,9 @@ class Article extends MY_Controller {
 
 		//加载
 		$this->load->model('Post_Model', 'p');
-		$article_list = $this->p->getAll();
+		$option = array();
+		$option[] = array('data' =>	'post', 'field' => 'post_type', 'action' => 'where'	);
+		$article_list = $this->p->getAll( $option );
 		$rs_view_data['articles'] = $article_list;
 
 		$data['rs_view_main'] = 'manage/article/article_list';

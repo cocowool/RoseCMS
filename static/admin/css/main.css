@@ -39,9 +39,10 @@ p { font-size: 14px; line-height: 1.5; margin:1em 0; }
 
 #rs-mainmenu, #rs-menu-wrap , #rs-menu { width: 160px; background-color: #23282d; }
 #rs-menu { clear: left; margin: 12px 0; padding: 0; list-style:none; }
+#rs-menu a { color:#eee; }
 #rs-menu li { border: none; min-height: 34px; position: relative; margin: 0; padding: 0; cursor: pointer; }
 #rs-menu li:hover { position: relative; background-color: #191e23; color:#00b9eb; }
-#rs-menu>a { font-size: 14px; font-weight: 400; line-height: 18px; padding: 0; display: block; color: #eee; padding: 2px 5px; }
+#rs-menu > a { font-size: 14px; font-weight: 400; line-height: 18px; padding: 0; display: block; color: #eee; padding: 2px 5px; }
 #rs-menu li a:hover { color: #00b9eb; background-color: #191e23;  }
 
 div.rs-menu-icon:before { color: #a0a5aa; color: rgba(240, 245, 250, .6); padding: 7px 0; -webkit-transition: all .1s ease-in-out; transition: all .1s ease-in-out }
