@@ -1,6 +1,6 @@
 
 
-body { padding:0; background:#f1f1f1; color:#444; min-width: 600px; height:100%; }
+body { padding:0; background:#fff; color:#444; min-width: 600px; height:100%; }
 a, div { outline: 0; transition-property: border, background, color; transition-duration: .05s; transition-timing-function: ease-in-out; }
 a { color:#0073aa; }
 a:hover { color:#00a0d2; text-decoration: none; }
@@ -13,7 +13,7 @@ p { font-size: 14px; line-height: 1.5; margin:1em 0; }
 .clear { clear: both; }
 .rs-wrap { margin:10px 20px 0 2px; }
 .rs-wrap h1 { font-size: 24px; font-weight: 400; margin: 0; padding: 9px 0 4px; line-height: 29px; }
-.rs-wrap .rs-head { margin-right:5px; }
+.rs-wrap .rs-head { margin-right:5px; margin-bottom:10px; }
 .rs-hide { display:hidden; }
 
 .container-fluid { }
