@@ -15,13 +15,38 @@ class Article extends MY_Controller {
 		$this->load->model('Post_Model', 'p');
 		$option = array();
 		$option[] = array('data' =>	'post', 'field' => 'post_type', 'action' => 'where'	);
+		$option[] = array(
+			'group'	=>	array(
+				array('data' =>	'open', 'field' => 'post_status', 'action' => 'where' ),
+				array('data' =>	'draft', 'field' => 'post_status', 'action' => 'or_where' ),
+			),
+		);
 		$article_list = $this->p->getAll( $option );
+		echo $this->db->last_query();
+		die;
+
 		$rs_view_data['articles'] = $article_list;
 
 		$data['rs_view_main'] = 'manage/article/article_list';
 		$data['rs_view_data'] = $rs_view_data;
 
 		$this->load->view('manage/dashboard', $data);
+	}
+
+	// 删除文章
+	public function del( $id = '' ){
+		if(empty($id)){
+			echo "Post ID can not be empty!";
+			return false;
+		}
+
+		$data = array();
+		$data['post_status'] = 'deleted';
+
+		$this->load->model('Post_Model', 'p');
+		$result = $this->p->update($data, $id);
+
+		var_dump($result);
 	}
 
 	// 新增文章

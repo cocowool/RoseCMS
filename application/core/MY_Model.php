@@ -57,6 +57,7 @@ class MY_Model extends CI_Model {
 	 *
 	 * $condition	array( array('field'=>'', 'data' =>'', 'action'=>'' ) ) or string, 其中 action 指CI中数据库查询操作类型
 	 *
+	 * 2017-11-17 增加考虑支持分组条件
 	 **/
 	public function getAll( $condition = array(), $start = 0, $pagesize = 500000, $sort = '', $direction = '' ){
 		if( !empty( $condition ) ){
@@ -64,6 +65,16 @@ class MY_Model extends CI_Model {
 				$this->db->where("$condition");
 			}else if( is_array($condition) ){
 				foreach ($condition as $v){
+					if( isset($v['group']) and is_array($v['group'])){
+						$this->db->group_start();
+						foreach ($v['group'] as $key => $value) {
+							if( isset($value['data']) ){
+								$this->db->$value['action']($value['field'], $value['data']);
+							}
+						}
+						$this->db->group_end();
+					}
+
 					if( isset($v['data']) ){
 						$this->db->$v['action']($v['field'], $v['data']);
 					}
