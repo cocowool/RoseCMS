@@ -22,8 +22,8 @@ class Article extends MY_Controller {
 			),
 		);
 		$article_list = $this->p->getAll( $option );
-		echo $this->db->last_query();
-		die;
+		// echo $this->db->last_query();
+		// die;
 
 		$rs_view_data['articles'] = $article_list;
 
