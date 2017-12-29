@@ -27,7 +27,7 @@
 				<div class="row rs-pl-item">
 					<div class="col-md-3">
 						<?php
-						if( !empty($value['thumbnail']) ){}
+						if( !empty($value['thumbnail']) ){
 						?>
 						<a href="#"><img src="<?php echo $value['thumbnail']['guid']; ?>" alt="<?php echo $value['thumbnail']['post_title']; ?>"></a>
 						<?php
