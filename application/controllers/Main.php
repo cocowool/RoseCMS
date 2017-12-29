@@ -32,7 +32,7 @@ class Main extends CI_Controller {
 
 			$option = array();
 			$option[] = array('data' =>	'thumbnail_id', 'field' => 'meta_key', 'action' => 'where'	);
-			$option[] = array('data' =>	$id, 'field' => 'post_id', 'action' => 'where'	);
+			$option[] = array('data' =>	$value['id'], 'field' => 'post_id', 'action' => 'where'	);
 			$thumb_meta = $this->m->getAll($option);
 
 			// print_r($thumb_meta);
