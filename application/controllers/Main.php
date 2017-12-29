@@ -26,6 +26,18 @@ class Main extends CI_Controller {
 		$condition[] = array('data'	=> 'post', 'field' => 'post_type', 'action' => 'where'	);
 		$data['article_list'] = $this->p->getAll($condition, 0, 10, 'id', 'desc');
 
+		$this->load->model('Meta_Model', 'm');
+		$option = array();
+		$option[] = array('data' =>	'thumbnail_id', 'field' => 'meta_key', 'action' => 'where'	);
+		$option[] = array('data' =>	$id, 'field' => 'post_id', 'action' => 'where'	);
+		$thumb_meta = $this->m->getAll($option);
+
+		// print_r($thumb_meta);
+		$thumb_detail = '';
+		if(count($thumb_meta) == 1){
+			$data['thumb_detail'] = $this->p->getById($thumb_meta[0]['meta_value']);
+		}
+
 		$this->load->view('main', $data);
 	}
 
