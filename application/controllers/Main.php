@@ -27,15 +27,24 @@ class Main extends CI_Controller {
 		$data['article_list'] = $this->p->getAll($condition, 0, 10, 'id', 'desc');
 
 		$this->load->model('Meta_Model', 'm');
-		$option = array();
-		$option[] = array('data' =>	'thumbnail_id', 'field' => 'meta_key', 'action' => 'where'	);
-		$option[] = array('data' =>	$id, 'field' => 'post_id', 'action' => 'where'	);
-		$thumb_meta = $this->m->getAll($option);
 
-		// print_r($thumb_meta);
-		$thumb_detail = '';
-		if(count($thumb_meta) == 1){
-			$data['thumb_detail'] = $this->p->getById($thumb_meta[0]['meta_value']);
+		foreach ($data['article_list'] as $key => $value) {
+
+			$option = array();
+			$option[] = array('data' =>	'thumbnail_id', 'field' => 'meta_key', 'action' => 'where'	);
+			$option[] = array('data' =>	$id, 'field' => 'post_id', 'action' => 'where'	);
+			$thumb_meta = $this->m->getAll($option);
+
+			// print_r($thumb_meta);
+			$thumb_detail = '';
+			if(count($thumb_meta) == 1){
+				$data['article_list'][$key]['article'] = $value;
+				$data['article_list'][$key]['thumbnail'] = $this->p->getById($thumb_meta[0]['meta_value']);
+			}else{
+				$data['article_list'][$key]['article'] = $value;
+				$data['article_list'][$key]['thumbnail'] = '';
+			}
+			# code...
 		}
 
 		$this->load->view('main', $data);

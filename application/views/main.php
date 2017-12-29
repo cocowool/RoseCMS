@@ -27,9 +27,9 @@
 				<div class="row rs-pl-item">
 					<div class="col-md-3">
 						<?php
-						if( !empty($thumb_detail) ){}
+						if( !empty($value['thumbnail']) ){}
 						?>
-						<a href="#"><img src="<?php echo $thumb_detail['guid']; ?>" alt="<?php echo $thumb_detail['post_title']; ?>"></a>
+						<a href="#"><img src="<?php echo $value['thumbnail']['guid']; ?>" alt="<?php echo $value['thumbnail']['post_title']; ?>"></a>
 						<?php
 						}else{
 						?>
@@ -39,18 +39,18 @@
 						?>
 					</div>
 					<div class="col-md-9">
-						<h2 class="rs-pl-title"><a href="/article/<?php echo $value['id']; ?>"><?php echo mb_substr($value['post_title'], 0, 22); ?></a></h2>
+						<h2 class="rs-pl-title"><a href="/article/<?php echo $value['article']['id']; ?>"><?php echo mb_substr($value['article']['post_title'], 0, 22); ?></a></h2>
 						<div class="rs-pl-meta">
-							<span class="glyphicon glyphicon-time" aria-hidden="true"> <?php echo $value['post_date']; ?></span>
+							<span class="glyphicon glyphicon-time" aria-hidden="true"> <?php echo $value['article']['post_date']; ?></span>
 							<!--
 							<span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
 							<span class="glyphicon glyphicon-tag" aria-hidden="true"> </span>
 							-->
 						</div>
 						<div class="rs-pl-content">
-							<?php echo mb_substr(strip_tags($value['post_content']), 0, 150) . "..."; ?>
+							<?php echo mb_substr(strip_tags($value['article']['post_content']), 0, 150) . "..."; ?>
 						</div>
-						<a href="/article/<?php echo $value['id']; ?>" class="btn btn-default">了解更多</a>
+						<a href="/article/<?php echo $value['article']['id']; ?>" class="btn btn-default">了解更多</a>
 					</div>
 				</div>
 			<?php
