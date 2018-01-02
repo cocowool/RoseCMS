@@ -29,7 +29,7 @@
 						<?php
 						if( !empty($value['thumbnail']) ){
 						?>
-						<a href="#"><img src="<?php echo $value['thumbnail']['guid']; ?>" alt="<?php echo $value['thumbnail']['post_title']; ?>"></a>
+						<a href="#"><img class="img-thumbnail" src="<?php echo $value['thumbnail']['guid']; ?>" alt="<?php echo $value['thumbnail']['post_title']; ?>"></a>
 						<?php
 						}else{
 						?>
