@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="description" content="系统分析师资料站">
 	<link href="/static/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
-	<script type="text/javascript" src="/static/lib/vue/vue.js"></script>
+	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 </head>
 <body class="">
 	<div class="rs-top-menu container">

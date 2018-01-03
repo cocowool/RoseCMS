@@ -50,6 +50,10 @@ class Main extends CI_Controller {
 		$this->load->view('main', $data);
 	}
 
+	public function about(){
+		
+	}
+
 	public function article($id = ''){
 		$data = array();
 		
