@@ -78,7 +78,7 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-ft-about { display: block; padding:20px 0; color:#ddd;  }
 .rs-ft-about h3 { font-size: 16px; margin-bottom: 20px; }
 
-.rs-about {  }
+.rs-about { min-height: 450px; }
 .rs-about h3 { padding:0 0 1.5em; }
 .rs-about div {  }
 .rs-about div p { line-height: 1.5em; }
