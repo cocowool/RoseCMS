@@ -9,6 +9,7 @@ class Question extends MY_Controller {
 
 	public function index(){
 		$data = array();
+		
 
 		$this->load->view('manage/dashboard', $data);
 	}

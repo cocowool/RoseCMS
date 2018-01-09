@@ -24,7 +24,7 @@
 				<h3>关于我们</h3>
 				<div>
 					<p>我们希望为软考考友提供全面、贴切的资讯服务，为大家提供一个优质的学习平台。我们目前正在茁壮成长中，也非常希望有志之士加入我们。为各位考友贡献一份力量！</p>
-					<p>邮箱 <a href="mailto:cocowool@qq.com">cocowool@qq.com</a></p>
+					<p>邮箱 <a href="mailto:cocowool@qq.com">cocowool@qq.com</a> </p>
 				</div>
 				
 			</div>

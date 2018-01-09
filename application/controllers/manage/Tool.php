@@ -23,7 +23,7 @@ class Tool extends CI_Controller {
 
 		echo "Tool Test <br />";
 
-		$this->load->model('User_Model', 'a');
+		$this->load->model('Question_Model', 'a');
 		print_r($this->a->getTableDdl());
 		//$this->load->view('main');
 	}
