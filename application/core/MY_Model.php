@@ -40,9 +40,9 @@ class MY_Model extends CI_Model {
 				$sql .= " " . $value['ddl']['extra'] . " ";
 			}
 
-			$sql .= " COMMENT '" . $value['ddl']['comment'] . "',";
+			$sql .= " COMMENT '" . $value['comment'] . "',";
 
-			if($value['ddl']['primary']){
+			if(isset($value['primary']) and $value['primary']){
 				$primary = " PRIMARY KEY (`" . $value['name'] . "`) ";
 			}				
 		}
