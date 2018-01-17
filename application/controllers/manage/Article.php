@@ -21,7 +21,7 @@ class Article extends MY_Controller {
 				array('data' =>	'draft', 'field' => 'post_status', 'action' => 'or_where' ),
 			),
 		);
-		$article_list = $this->p->getAll( $option );
+		$article_list = $this->p->getAll( $option, $page, $pagesize = 3 );
 		// echo $this->db->last_query();
 		// die;
 
