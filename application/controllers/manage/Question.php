@@ -21,4 +21,12 @@ class Question extends MY_Controller {
 
 	}
 
+	//新增试题
+	public function add(){
+		$data = array();
+
+		$data['rs_view_main'] = 'manage/question/question_edit';
+		$data['rs_view_data'] = '';
+		$this->load->view('manage/dashboard', $data);
+	}
 }

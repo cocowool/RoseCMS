@@ -184,8 +184,6 @@
 	</div>		
 <script type="text/javascript">
 $('document').ready(function(){
-	console.log("Test");
-	console.log($('#rs-menu>li'));
 
 	$('.rs-submenu').on('mouseover', function(){
 		$(this).css('top', '-5px');

@@ -124,6 +124,13 @@ class Question_Model extends MY_Model {
 				'default'	=>	'',
 				'extra'		=>	'',
 			)),
+		array('name'=>'q_status', 'excel_column' => '1', 'comment'=>'状态',
+			'ddl' => array(
+				'type'		=>	'char(20)',
+				'index'		=>	'',
+				'default'	=>	'',
+				'extra'		=>	'',
+			)),
 	);
 
 }
