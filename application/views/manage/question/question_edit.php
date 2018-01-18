@@ -50,7 +50,46 @@
 				</div>
 
 				<div class="col-md-4">
-					
+					<div class="rs-side-ops">
+						<div id="rs-publish" class="rs-sidebox">
+							<h2 class="rs-hand"><span>发布</span></h2>
+							<div class="rs-sb-inside">
+								<div class="rs-postbox">
+									<div></div>
+									<div id="rs-publish-action">
+										<div id="rs-publish-delete"></div>
+										<div id="rs-publish-submit">
+											<input type="submit" name="savedraft" id="savedraft" class="btn btn-primary" value="存草稿">
+											<input type="submit" name="publish" id="publish" class="btn btn-primary" value="发布">
+											<input type="hidden" name="post_action" id="post_action" value="" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="rs-category" class="rs-sidebox">
+							<h2 class="rs-hand"><span>分类</span></h2>
+							<div class="rs-sb-inside">
+								<div class="rs-postbox">
+									<ul id="rs-category-tabs" class="rs-tabs">
+										<li class="rs-tabs-item rs-tabs-on">所有</li>
+										<li class="rs-tabs-item">常用</li>
+									</ul>
+									<div class="rs-tabs-panel">
+										<ul class="rs-checkbox-list">
+										<form>
+											<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]"> 新闻</label></li>
+											<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]" / > 杂记</label></li>
+											<li><label class="rs-checkbox-item"><input type="checkbox" name="a[]" checked="checked" /> 未分类</label></li>
+										</form>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
 				</div>
 
 			</form>
