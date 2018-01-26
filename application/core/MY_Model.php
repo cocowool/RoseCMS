@@ -14,7 +14,7 @@ class MY_Model extends CI_Model {
 	public function getFormValidation(){
 		$validation_rules = array();
 		foreach ($this->fields as $key => $value) {
-			if(!empty($value['form']['validation'])){
+			if( isset($value['form']['validation']) && !empty($value['form']['validation']) ){
 				$validation_rules[] = array(
 					'field'	=>	$value['name'],
 					'label'	=>	$value['ddl']['comment'],

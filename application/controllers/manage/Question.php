@@ -36,7 +36,7 @@ class Question extends MY_Controller {
 		if(empty($id)){
 			//检查是否有草稿状态，post_name为空的文章，没有则新建
 			$option = array();
-			$option[] = array('data' =>	'draft', 'field' => 'post_status', 'action' => 'where'	);
+			$option[] = array('data' =>	'draft', 'field' => 'q_status', 'action' => 'where'	);
 			$data = $this->q->getAll($option);
 			//var_dump($data); echo "<br />";
 
@@ -54,7 +54,7 @@ class Question extends MY_Controller {
 				$question = $data[0];
 			}
 
-			redirect('/manage/article/add/' . $article['id'],'auto');		
+			redirect('/manage/question/add/' . $article['id'],'auto');		
 		}else{
 			$question = $this->q->getById($id);
 
@@ -78,10 +78,10 @@ class Question extends MY_Controller {
 
 				switch ($post_data['post_action']) {
 					case 'savedraft':
-						$save_data['post_status'] = 'draft';
+						$save_data['q_status'] = 'draft';
 						break;
 					case 'publish':
-						$save_data['post_status'] = 'open';
+						$save_data['q_status'] = 'open';
 						break;
 				}
 
