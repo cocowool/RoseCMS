@@ -39,6 +39,9 @@ class Question_Model extends MY_Model {
 				'index'		=>	'',
 				'default'	=>	'',
 				'extra'		=>	'',
+			),
+			'form'	=>	array(
+				'validation'	=>	'trim|required'
 			)),
 		array('name'=>'q_desc', 'excel_column' => '4', 'comment'=>'题干',
 			'ddl' => array(
@@ -94,6 +97,13 @@ class Question_Model extends MY_Model {
 				'type'		=>	'varchar(200)',
 				'index'		=>	'',
 				'default'	=>	'',
+				'extra'		=>	'',
+			)),
+		array('name'=>'q_status', 'excel_column' => '1', 'comment'=>'状态',
+			'ddl' => array(
+				'type'		=>	'char(20)',
+				'index'		=>	'',
+				'default'	=>	'draft',
 				'extra'		=>	'',
 			)),
 		array('name'=>'q_tips', 'excel_column' => '1', 'comment'=>'试题分析',
