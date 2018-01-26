@@ -54,11 +54,12 @@ class Question extends MY_Controller {
 				$question = $data[0];
 			}
 
-			redirect('/manage/question/add/' . $article['id'],'auto');		
+			//print_r($question);
+			redirect('/manage/question/add/' . $question['id'],'auto');		
 		}else{
 			$question = $this->q->getById($id);
 
-			if(!$article){
+			if(!$question){
 				return false;
 			}
 		}
@@ -88,7 +89,7 @@ class Question extends MY_Controller {
 				$save_data['q_update_time'] = unix_to_human( time(), TRUE, 'eu');
 				$save_data['q_author'] = 1;
 
-				$result = $this->p->update( $save_data, $post_data['q_id'] );
+				$result = $this->q->update( $save_data, $post_data['q_id'] );
 
 				if($result){
 					redirect('/manage/question/add/' . $id,'auto');				

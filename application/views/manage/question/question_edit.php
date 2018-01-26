@@ -6,7 +6,7 @@
 		<div id="rs-table-container">
 			<div id="rs-question" class="row">
 			<form action="<?php echo current_url(); ?>" method="post" id="rs-question-form" name="rs-question-form">
-				
+				<input type="hidden" id="q_id" name="q_id" value="<?php echo $question['id']; ?>">
 				<div class="col-md-8">
 					<div class="form-group">
 						<label>试题题目</label>

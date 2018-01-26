@@ -39,6 +39,7 @@ class Question_Model extends MY_Model {
 				'index'		=>	'',
 				'default'	=>	'',
 				'extra'		=>	'',
+				'comment'	=>	'题目',
 			),
 			'form'	=>	array(
 				'validation'	=>	'trim|required'
