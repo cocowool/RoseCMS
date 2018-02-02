@@ -3,7 +3,7 @@
 		<h1 class="rs-head">文章管理</h1>
 		<?php //echo validation_errors(); ?>
 		<div id="rs-table-container">
-			<table class="table table-striped table-hover">
+			<table id="rs_table" class="table table-striped table-hover">
 				<tr>
 					<th>标题</th>
 					<th>作者</th>

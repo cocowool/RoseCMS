@@ -44,15 +44,15 @@ $(document).ready(function(){
 		"order":[],
 		"orderFixed": [1, 'desc'],
 		'ajax': {
-			"url":'/index.php/data/event/serverside',
+			"url":'/manage/question/serverside',
 			"type":"post",
 			"data": function(d){
-				d.group = $('#group').val();
-				d.position = $('#position').val();
-				d.startdate = $('#startdate').val();
-				d.enddate = $('#enddate').val();
-				d.emergent = $('#emergent').val();
-				d.important = $('#important').val();
+				// d.group = $('#group').val();
+				// d.position = $('#position').val();
+				// d.startdate = $('#startdate').val();
+				// d.enddate = $('#enddate').val();
+				// d.emergent = $('#emergent').val();
+				// d.important = $('#important').val();
 			}
 		},
 		initComplete: function(settings, data){
@@ -68,10 +68,10 @@ $(document).ready(function(){
 			    "defaultContent":"",
 			    "width":"2px",
 			    "createdCell":function(td,cellData,rowData,row,col){
-					$(td).attr('data-toggle', 'modal');
-					$(td).attr('data-target', '#event_modal');
+					// $(td).attr('data-toggle', 'modal');
+					// $(td).attr('data-target', '#event_modal');
 					$(td).attr('data-id', rowData.id);
-					$(td).attr('data-isimportant',rowData.isimportant);
+					// $(td).attr('data-isimportant',rowData.isimportant);
 			    }
 			},
 			{"orderable":false,"data":"event_date"},

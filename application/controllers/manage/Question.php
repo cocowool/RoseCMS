@@ -18,7 +18,12 @@ class Question extends MY_Controller {
 
 	//响应DataTable请求
 	public function serverside(){
+		$post_data = $this->input->post();
 
+		$this->load->model('Question_Model','q');
+		$questions = $this->q->getAll();
+
+		echo json_encode($questions);
 	}
 
 	//新增试题
