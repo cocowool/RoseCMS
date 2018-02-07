@@ -10,8 +10,13 @@ class Question extends MY_Controller {
 	public function index(){
 		$data = array();
 
+		$this->load->model('Question_Model','q');
+		$q_data['questions'] = $this->q->getAll();
+
+		//print_r($questions);
+
 		$data['rs_view_main'] = 'manage/question/question_list';
-		$data['rs_view_data'] = '';
+		$data['rs_view_data'] = $q_data;
 
 		$this->load->view('manage/dashboard', $data);
 	}
@@ -21,7 +26,7 @@ class Question extends MY_Controller {
 		$post_data = $this->input->post();
 
 		$this->load->model('Question_Model','q');
-		$questions = $this->q->getAll();
+		$questions = $this->q->dtRequest();
 
 		echo json_encode($questions);
 	}

@@ -10,7 +10,6 @@
 					<th>题目类型</th>
 					<th>题目</th>
 					<th>创建日期</th>
-					<th>创建日期</th>
 					<th>作者</th>
 					<th>操作</th>
 				</tr>
@@ -23,7 +22,7 @@
 $(document).ready(function(){
 	//console.log("Hello");
 
-	var dt = $('#rs_table').DataTable({
+	var dt = $('#rs-table').DataTable({
 		'processing': true,
 		'serverSide': true,
 		'searching':true,
@@ -74,11 +73,10 @@ $(document).ready(function(){
 					// $(td).attr('data-isimportant',rowData.isimportant);
 			    }
 			},
-			{"orderable":false,"data":"event_date"},
-			{"orderable":false,"data":"groupAndPosition"},
-			{"orderable":false,"data":"systemname"},
-			{"orderable":false,"data":"events_detail"},
-			{"orderable":false,"data":"event_memo"},
+			{"orderable":false,"data":"q_type"},
+			{"orderable":false,"data":"q_title"},
+			{"orderable":false,"data":"q_insert_time"},
+			{"orderable":false,"data":"q_author"},
 			{
 				"class":"operation-control",
 				"orderable":false,
