@@ -21,7 +21,7 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	console.log("Hello");
+	//console.log("Hello");
 
 	var dt = $('#rs_table').DataTable({
 		'processing': true,
@@ -87,5 +87,7 @@ $(document).ready(function(){
 			}
 		]		
 	});
+
+	console.log(dt);
 });
 </script>

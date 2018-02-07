@@ -12,8 +12,8 @@
 	<script type="text/javascript" src="/static/lib/tinymce-4.6.4/js/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript" src="/static/lib/plupload-2.3.1/js/plupload.full.min.js"></script>
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
-	<link rel="stylesheet" type="text/css" href="/static/lib//datatables/DataTables-1.10.16/css/jquery.dataTables.css">
-	<script type="text/javascript" charset="utf8" src="/static/lib/datatables/DataTables-1.10.16/js/jquery.dataTables.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/lib//datatables/DataTables-1.10.2/css/jquery.dataTables.css">
+	<script type="text/javascript" charset="utf8" src="/static/lib/datatables/DataTables-1.10.2/js/jquery.dataTables.js"></script>
 
 </head>
 <body class="container-fluid" id="rs-container">
