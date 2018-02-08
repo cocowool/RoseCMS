@@ -97,3 +97,14 @@
 		</div>
 	</div>				
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#savedraft').on('click',function(){
+			$('#post_action').val('savedraft');
+		});
+
+		$('#publish').on('click',function(){
+			$('#post_action').val('publish');
+		});
+	});
+</script>

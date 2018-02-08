@@ -5,15 +5,16 @@
 		<?php //echo validation_errors(); ?>
 		<div id="rs-table-container">
 			<table id="rs-table" class="table table-striped table-hover">
-				<tr>
-					<th></th>
-					<th>题目类型</th>
-					<th>题目</th>
-					<th>创建日期</th>
-					<th>作者</th>
-					<th>操作</th>
-				</tr>
-				
+				<thead>
+					<tr>
+						<th></th>
+						<th>题目类型</th>
+						<th>题目</th>
+						<th>创建日期</th>
+						<th>作者</th>
+						<th>操作</th>
+					</tr>
+				</thead>
 			</table>
 		</div>
 	</div>				

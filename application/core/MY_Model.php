@@ -210,7 +210,32 @@ class MY_Model extends CI_Model {
 			'recordsFiltered'	=>	$total,
 			'data'	=>	$data
 		);
-	}	
+	}
+
+	/**
+	 *
+	 * 获取记录的总数
+	 **/
+	public function getTotal($condition= '', $group_by = ''){
+		if( !empty( $condition ) ){
+			if( is_string($condition) ){
+				$this->db->where("$condition");
+			}else if( is_array($condition) ){
+				foreach ($condition as $v){
+					if( isset($v['data']) ){
+						$this->db->$v['action']($v['field'], $v['data']);
+					}
+				}
+			}
+		}
+		
+		if(!empty($group_by)){
+			$this->db->group_by($group_by);
+		}
+
+		$this->db->from($this->table);
+		return $this->db->count_all_results();
+	}		
 }
 
 ?>

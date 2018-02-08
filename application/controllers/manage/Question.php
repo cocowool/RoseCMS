@@ -23,10 +23,15 @@ class Question extends MY_Controller {
 
 	//响应DataTable请求
 	public function serverside(){
-		$post_data = $this->input->post();
+		$request = $this->input->post();
 
 		$this->load->model('Question_Model','q');
-		$questions = $this->q->dtRequest();
+		$questions = $this->q->dtRequest($request);
+
+		foreach ($questions['data'] as $key => $value) {
+			$value['operation'] =  '<a href="#">编辑</a>&nbsp;&nbsp;<a href="#">删除</a>';
+			$questions['data'][$key] = $value;
+		}
 
 		echo json_encode($questions);
 	}
