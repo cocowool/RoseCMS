@@ -29,11 +29,29 @@ class Question extends MY_Controller {
 		$questions = $this->q->dtRequest($request);
 
 		foreach ($questions['data'] as $key => $value) {
-			$value['operation'] =  '<a href="#">编辑</a>&nbsp;&nbsp;<a href="#">删除</a>';
+			$value['operation'] =  '<a href="/manage/question/add/' . $value['id'] . '">编辑</a>&nbsp;&nbsp;<a href="/manage/question/del/' . $value['id'] . '">删除</a>';
 			$questions['data'][$key] = $value;
 		}
 
 		echo json_encode($questions);
+	}
+
+	/**
+	 * 删除试题
+	 **/
+	public function del($id = ''){
+		if(empty($id)){
+			echo "错误的ID";
+		}
+
+		$this->load->model('Question_Model','q');
+		$result = $this->q->delete($id);
+
+		if($result){
+			echo "Delete Success";
+		}else{
+			echo "Delete Failed";
+		}
 	}
 
 	//新增试题

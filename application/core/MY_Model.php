@@ -26,6 +26,21 @@ class MY_Model extends CI_Model {
 		return $validation_rules;
 	}
 
+	/**
+	 * 删除数据库数据
+	 * 
+	 * @param int $id
+	 * @param string $field
+	 */
+	public function delete($id, $field = ''){
+		if( empty($field) && isset($this->id) ){
+			$field = $this->id;
+		}
+		
+		$this->db->where($field, $id);
+		return $this->db->delete($this->table);
+	}
+
 	public function getTableDdl(){
 		$primary = '';
 		$sql = "CREATE TABLE " . $this->table . " (";
