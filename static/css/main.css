@@ -82,3 +82,6 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-about h3 { padding:0 0 1.5em; }
 .rs-about div {  }
 .rs-about div p { line-height: 1.5em; }
+
+.rs-q-title { margin-bottom:1em; }
+.rs-q-option {  }

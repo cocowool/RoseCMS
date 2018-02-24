@@ -20,4 +20,13 @@ class Question extends MY_Controller {
 		$this->load->view('question_list', $data);		
 	}
 
+	public function detail($id = ''){
+		$data = array();
+
+		$this->load->model('Question_Model', 'q');
+		$option = array();
+		$data['question'] = $this->q->getById($id);
+
+		$this->load->view('question_detail', $data);
+	}
 }

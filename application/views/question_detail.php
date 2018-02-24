@@ -22,27 +22,19 @@
 		<div class="row">
 			<div class="col-md-8 rs-post-list">
 			<?php
-			if( empty($question_list) ){
-				echo "<p>暂时还没有任何真题，敬请期待!</p>";
+			if( empty($question) ){
+				echo "<p>获取真题内容失败！</p>";
 			}else{
-				foreach ($question_list as $key => $value) {
+				
 			?>
-				<div class="row rs-pl-item">
-					<div class="col-md-6">
-						<?php
-						if( !empty($value['q_paper']) ){
-						?>
-						<a href="#"><?php echo $value['q_paper']; ?></a>
-						<?php
-						}
-						?>
-					</div>
-					<div class="col-md-6">
-						<a href="/question/detail/<?php echo $value['id']; ?>"><?php echo "第 " . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
-					</div>
+				<div class="row rs-q-detail">
+					<div class="rs-q-title"><?php echo $question['q_title']; ?></div>
+					<div class="rs-q-option"><label for="a">A</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_1']; ?></div>
+					<div class="rs-q-option"><label for="a">B</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_2']; ?></div>
+					<div class="rs-q-option"><label for="a">C</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_3']; ?></div>
+					<div class="rs-q-option"><label for="a">D</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_4']; ?></div>
 				</div>
 			<?php
-				}
 			}
 			?>
 			</div>
