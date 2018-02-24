@@ -8,6 +8,7 @@
 						<ul>
 							<li><a href="/"><span>首页</span><span></span></a></li>
 							<li><a href="/"><span>文章</span><span></span></a></li>
+							<li><a href="/question"><span>真题</span><span></span></a></li>
 							<li><a href="/about"><span>关于</span><span></span></a></li>
 						</ul>
 					</nav>

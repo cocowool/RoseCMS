@@ -121,6 +121,13 @@ class Question_Model extends MY_Model {
 				'default'	=>	'',
 				'extra'		=>	'',
 			)),
+		array('name'=>'q_paper', 'excel_column' => '1', 'comment'=>'隶属试卷',
+			'ddl' => array(
+				'type'		=>	'varchar(200)',
+				'index'		=>	'',
+				'default'	=>	'',
+				'extra'		=>	'',
+			)),
 		array('name'=>'q_group', 'excel_column' => '1', 'comment'=>'分组',
 			'ddl'	=>	array(
 				'type'		=>	'varchar(200)',
