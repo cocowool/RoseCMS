@@ -47,6 +47,16 @@
 						<input type="text" name="q_tips" id="q_tips" class="form-control" value="<?php echo !empty($question['q_tips'])?$question['q_tips']:''; ?>" placeholder="请输入试题解析">
 					</div>
 
+					<div class="form-group">
+						<label>隶属试卷</label>
+						<input type="text" name="q_paper" id="q_paper" class="form-control" value="<?php echo !empty($question['q_paper'])?$question['q_paper']:''; ?>" placeholder="请输入隶书试卷">
+					</div>
+
+					<div class="form-group">
+						<label>题号</label>
+						<input type="text" name="q_tihao" id="q_tips" class="form-control" value="<?php echo !empty($question['q_tihao'])?$question['q_tihao']:''; ?>" placeholder="题号">
+					</div>
+
 				</div>
 
 				<div class="col-md-4">
