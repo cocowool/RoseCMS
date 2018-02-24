@@ -152,6 +152,3 @@ class Question_Model extends MY_Model {
 	);
 
 }
-
-?>
-
