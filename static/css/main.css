@@ -38,7 +38,17 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 
 .rs-menu-fixed { /*position: fixed;*/ }
 .rs-menu-left, .rs-menu-left div, .rs-menu-left nav, .rs-menu-left ul, .rs-menu-left li { display: inline-block; }
+
+
 .rs-logo { margin-right:20px; }
+.rs-post-title { font-size: 24px; margin: 0 0 30px; }
+
+@media screen and (max-width: 480px) {
+	.rs-logo { margin-right:10px; }
+	.rs-post-title { font-size: 24px; margin: 0 0 30px; text-align: center; }
+}
+
+
 .rs-menu-left a { text-decoration: none; color: #828282; font-weight: 400; padding:0 15px; }
 .rs-menu-left a:hover { color:#337ab7; }
 
@@ -53,7 +63,6 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-pl-content { margin-bottom: 20px; }
 
 .rs-post-detail { display:block; position: relative; }
-.rs-post-title { font-size: 24px; margin: 0 0 30px; }
 .rs-post-content {  }
 .rs-post-content p { text-indent: 2em; }
 

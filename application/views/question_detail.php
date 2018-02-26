@@ -39,16 +39,11 @@
 			?>
 			</div>
 			<div class="col-md-4" id="right-column">
+				<div class="rs-sidebox rs-friendlink">
+					
+				</div>
 				<div class="rs-google-ad" id="google-ad">
 					<?php $this->load->view('adsense'); ?>					
-				</div>
-				<div class="rs-sidebox" id="date_counter">
-					<div class="rs-date-counter">
-						<p>距离2018年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
-						<p></p>
-					</div>
-				</div>
-				<div class="rs-sidebox rs-friendlink">
 				</div>
 			</div>
 		</div>
