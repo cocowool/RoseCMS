@@ -1,5 +1,5 @@
 		<div class="rs-menu-container rs-menu-fixed row">
-			<div class="col-md-9 rs-menu-left">
+			<div class="col-md-9 col-sm-9 rs-menu-left">
 				<div class="rs-logo">
 					<a href="/"><img src="/static/default/image/saexam.png"></a>
 				</div>
@@ -14,7 +14,7 @@
 					</nav>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-0">
 				<a href="#"></a>
 			</div>
 		</div>

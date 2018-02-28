@@ -45,9 +45,18 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 
 @media screen and (max-width: 480px) {
 	.rs-logo { margin-right:10px; }
+	.rs-logo a { padding:0; margin:0; }
 	.rs-post-title { font-size: 24px; margin: 0 0 30px; text-align: center; }
+	.rs-menu-container .col-md-9, .rs-menu-container .col-sm-12 { padding:0; }
+	.rs-pl-item .col-md-3 { display:none; }
 }
 
+@media screen and (max-width: 375px) {
+	.rs-top-menu { margin:0; padding:0; }
+	.rs-logo { margin-right:10px; }
+	.rs-logo a { padding:0; margin:0; }
+	.rs-post-title { font-size: 24px; margin: 0 0 30px; text-align: center; }	
+}
 
 .rs-menu-left a { text-decoration: none; color: #828282; font-weight: 400; padding:0 15px; }
 .rs-menu-left a:hover { color:#337ab7; }

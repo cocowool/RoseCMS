@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
 </head>
 <body class="">
-	<div class="rs-top-menu container">
+	<div class="container rs-top-menu">
 		<?php
 			$this->load->view('menu');
 		?>
@@ -25,7 +25,7 @@
 			foreach ($article_list as $key => $value) {
 			?>
 				<div class="row rs-pl-item">
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-0">
 						<?php
 						if( !empty($value['thumbnail']) ){
 						?>
@@ -38,7 +38,7 @@
 						}
 						?>
 					</div>
-					<div class="col-md-9">
+					<div class="col-md-9 col-sm-12">
 						<h2 class="rs-pl-title"><a href="/article/<?php echo $value['article']['id']; ?>"><?php echo mb_substr($value['article']['post_title'], 0, 22); ?></a></h2>
 						<div class="rs-pl-meta">
 							<span class="glyphicon glyphicon-time" aria-hidden="true"> <?php echo $value['article']['post_date']; ?></span>
