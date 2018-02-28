@@ -85,7 +85,11 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-login-container { padding:1em; }
 .rs-login-tip { margin-top:1em; }
 
+.rs-register-form {  }
+.rs-register-form h3 { margin-bottom:0.5em; }
+
 .rs-palceholder { min-height: 350px; height: 350px; display:block; }
+
 
 #right-column { position: fixed; right: 15px; }
 
