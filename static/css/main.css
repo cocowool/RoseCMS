@@ -61,6 +61,8 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-menu-left a { text-decoration: none; color: #828282; font-weight: 400; padding:0 15px; }
 .rs-menu-left a:hover { color:#337ab7; }
 
+.rs-tr-menu { text-align: right; }
+
 .rs-body { margin-top: 100px; min-height: 400px; }
 .rs-post-list {  }
 .rs-pl-item { margin:0 0 40px; }
@@ -79,6 +81,11 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 
 .rs-sidebox { margin-top:3em; }
 .rs-sidebox h3 { font-size: 18px; border-bottom:1px solid #ebebeb; line-height: 36px; }
+
+.rs-login-container { padding:1em; }
+.rs-login-tip { margin-top:1em; }
+
+.rs-palceholder { min-height: 350px; height: 350px; display:block; }
 
 #right-column { position: fixed; right: 15px; }
 

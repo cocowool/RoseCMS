@@ -14,7 +14,7 @@
 					</nav>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-0">
-				<a href="#"></a>
+			<div class="col-md-3 col-sm-0 rs-tr-menu">
+				<a href="/login">登陆</a>&nbsp;/&nbsp;<a href="#">注册</a>
 			</div>
 		</div>
