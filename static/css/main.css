@@ -88,6 +88,7 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-register-form {  }
 .rs-register-form h3 { margin-bottom:0.5em; }
 .rs-register-form .rs-register-required { color:red; font-weight: bold; }
+.rs-register-form .rs-register-error { color:#a94442; }
 
 .rs-palceholder { min-height: 350px; height: 350px; display:block; }
 
