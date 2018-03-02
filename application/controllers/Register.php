@@ -45,7 +45,17 @@ class Register extends CI_Controller {
 			$this->load->view('register', $data);
 		}else{
 			$post_data = $this->input->post();
-			print_r($post_data);
+
+			$result = $this->u->insert($post_data);
+			if($result){
+				$data['result'] = 'success';
+				$data['message'] = '恭喜您完成注册，马上登陆看一下吧。';
+			}else{
+				$data['result'] = 'failure';
+				$data['message'] = '非常抱歉，您的注册请求没有能够被正确处理，请联系管理员进行处理。';
+			}
+
+			$this->load->view('tip', $data);
 		}
 	}
 }
