@@ -21,41 +21,44 @@
 	<div class="rs-body container">
 		<div class="row">
 			<div class="col-md-9">
-				<div class="rs-register-form">
-					<form action="/register" method="post">
-						<h3>用户注册</h3>
-						<div class="form-group" style="display:none;">
-							<label for="">用户名：</label>
-							<input type="text" name="username" id="username" class="form-control" />
-						</div>
-						<div class="form-group">
-							<label for="">邮箱地址：</label>
-							<input type="password" name="password" id="password" class="form-control" />
-						</div>
-						<div class="form-group">
-							<label for="">手机号码：</label>
-							<input type="password" name="password" id="password" class="form-control" />
-						</div>
-						<div class="form-group">
-							<label for="">密码：</label>
-							<input type="password" name="password" id="password" class="form-control" />
-						</div>
-						<div class="form-group">
-							<label for="">确认密码：</label>
-							<input type="password" name="password" id="password" class="form-control" />
-						</div>
-						<div class="form-group">
-							<label for="">备考科目：</label>
-							<input type="password" name="password" id="password" class="form-control" />
-						</div>
-						<button type="submit" class="btn btn-default">提交</button>
-						<div class="rs-login-tip">
-							立即&nbsp;&nbsp;<a href="/register">注册</a>&nbsp;&nbsp;或使用第三方账号登陆
-						</div>
-						<p></p>
-						<p></p>
-						<div></div>
-					</form>
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="rs-register-form col-md-6">
+						<form action="/register" method="post">
+							<h3>用户注册</h3>
+							<div class="form-group <?php if(form_error('user_login')) echo "has-error"; ?>">
+								<label for="user_login">用户名&nbsp;<span class="rs-register-required">*</span></label><span><?php echo form_error('user_login'); ?></span>
+								<input type="text" name="user_login" id="user_login" class="form-control" value="<?php echo set_value('user_login'); ?>" placeholder="请输入登陆用户名" />
+							</div>
+							<div class="form-group">
+								<label for="user_pass">密码&nbsp;<span class="rs-register-required">*</span></label>
+								<input type="password" name="user_pass" id="user_pass" class="form-control" placeholder="请输入登陆密码" />
+							</div>
+							<div class="form-group">
+								<label for="chkPassword">确认密码&nbsp;<span class="rs-register-required">*</span></label>
+								<input type="password" name="chkPassword" id="chkPassword" class="form-control" placeholder="请重新输入登陆密码" />
+							</div>
+							<div class="form-group">
+								<label for="user_email">邮箱地址&nbsp;<span class="rs-register-required">*</span></label>
+								<input type="text" name="user_email" id="user_email" class="form-control" value="<?php echo set_value('user_email'); ?>" placeholder="请输入合法的邮箱地址" />
+							</div>
+							<div class="form-group">
+								<label for="user_phone">手机号码&nbsp;<span class="rs-register-required">*</span></label>
+								<input type="text" name="user_phone" id="user_phone" class="form-control" value="<?php echo set_value('user_phone'); ?>" placeholder="请留下您的手机号码，方便我们通知" />
+							</div>
+							<button type="submit" class="btn btn-default">提交</button>
+							<div class="rs-login-tip">
+								立即&nbsp;&nbsp;<a href="/register">注册</a>&nbsp;&nbsp;或使用第三方账号登陆
+							</div>
+							<p></p>
+							<p></p>
+							<div></div>
+						</form>
+					</div>
+					<div class="col-md-3">
+						
+					</div>
+					
 				</div>
 			</div>
 			<div class="col-md-3" id="right-column">

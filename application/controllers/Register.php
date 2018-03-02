@@ -20,7 +20,32 @@ class Register extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data = array();
+		$validations = array();
 
-		$this->load->view('register');	
+		$this->load->model('User_Model', 'u');
+		$validations = $this->u->getFormValidation();
+		$this->load->library('form_validation');
+
+		$validations = array(
+			array( 'field' => 'user_login', 'label' => '登陆账号', 'rules'	=>	'trim|required|min_length[5]|max_length[12]|is_unique[rs_user.user_login]'),
+			array( 'field' => 'user_pass', 'label' => '登陆密码', 'rules'	=>	'trim|required'),
+			array( 'field' => 'chkPassword', 'label' => '验证密码', 'rules'	=>	'trim|required|matches[user_pass]'),
+			array( 'field' => 'user_email', 'label' => '用户邮箱', 'rules'	=>	'trim|required|valid_email'),
+			array( 'field' => 'user_phone', 'label' => '手机号码', 'rules'	=>	'trim|required'),
+		);
+
+		$this->form_validation->set_rules($validations);		
+
+		//print_r($validations);die;
+
+		$user = array();
+		if($this->form_validation->run() == FALSE){
+
+			$this->load->view('register', $data);
+		}else{
+			$post_data = $this->input->post();
+			print_r($post_data);
+		}
 	}
 }
