@@ -9,6 +9,24 @@
 				<input type="hidden" id="q_id" name="q_id" value="<?php echo $question['id']; ?>">
 				<div class="col-md-8">
 					<div class="form-group">
+						<label>隶属试卷</label>
+						<input type="text" name="q_paper" id="q_paper" class="form-control" value="<?php echo !empty($question['q_paper'])?$question['q_paper']:''; ?>" placeholder="请输入隶书试卷">
+					</div>
+
+					<div class="form-group">
+						<label>题号</label>
+						<input type="text" name="q_tihao" id="q_tips" class="form-control" value="<?php echo !empty($question['q_tihao'])?$question['q_tihao']:''; ?>" placeholder="题号">
+					</div>
+
+					<div class="form-group">
+						<label>试题类型</label>
+						<select name="q_type" id="q_type" class="form-control">
+							<option value="选择题" <?php if($question['q_type']=='选择题') echo 'selected' ?>>选择题</option>
+							<option value="简答题" <?php if($question['q_type']=='简答题') echo 'selected' ?> >简答题</option>
+						</select>
+					</div>
+
+					<div class="form-group">
 						<label>试题题目</label>
 						<input type="text" name="q_title" id="q_title" class="form-control" value="<?php echo !empty($question['q_title'])?$question['q_title']:''; ?>" placeholder="请输入试题题目">
 					</div>
@@ -47,15 +65,6 @@
 						<input type="text" name="q_tips" id="q_tips" class="form-control" value="<?php echo !empty($question['q_tips'])?$question['q_tips']:''; ?>" placeholder="请输入试题解析">
 					</div>
 
-					<div class="form-group">
-						<label>隶属试卷</label>
-						<input type="text" name="q_paper" id="q_paper" class="form-control" value="<?php echo !empty($question['q_paper'])?$question['q_paper']:''; ?>" placeholder="请输入隶书试卷">
-					</div>
-
-					<div class="form-group">
-						<label>题号</label>
-						<input type="text" name="q_tihao" id="q_tips" class="form-control" value="<?php echo !empty($question['q_tihao'])?$question['q_tihao']:''; ?>" placeholder="题号">
-					</div>
 
 				</div>
 
