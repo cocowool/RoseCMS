@@ -92,6 +92,8 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 
 .rs-palceholder { min-height: 350px; height: 350px; display:block; }
 
+.rs-q-nav { margin-bottom:1em; }
+.rs-q-operation { margin-top:1em; }
 
 #right-column { position: fixed; right: 15px; }
 

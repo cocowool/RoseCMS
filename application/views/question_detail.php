@@ -27,12 +27,44 @@
 			}else{
 				
 			?>
+				<div class="row rs-q-nav">
+					<h4>真题 &gt; <a href="#"><?php echo $question['q_paper']; ?></a></h3>
+				</div>
 				<div class="row rs-q-detail">
-					<div class="rs-q-title"><?php echo $question['q_title']; ?></div>
-					<div class="rs-q-option"><label for="a">A</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_1']; ?></div>
-					<div class="rs-q-option"><label for="a">B</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_2']; ?></div>
-					<div class="rs-q-option"><label for="a">C</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_3']; ?></div>
-					<div class="rs-q-option"><label for="a">D</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_4']; ?></div>
+					<div class="rs-q-title">
+						<div><b>题目</b></div>
+						<div class="rs-q-title-content">
+							<?php echo $question['q_title']; ?>
+						</div>					
+					</div>
+					<div>
+					<form action="#">
+					<?php
+					if($question['q_type'] == ""){
+					?>
+						<div><b>选项</b></div>
+						<div class="rs-q-option form-group">
+							<label for="a">A</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_1']; ?></div>
+						<div class="rs-q-option form-group">
+							<label for="a">B</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_2']; ?></div>
+						<div class="rs-q-option form-group">
+							<label for="a">C</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_3']; ?></div>
+						<div class="rs-q-option form-group">
+							<label for="a">D</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_4']; ?></div>
+					<?php
+					}else{
+					?>
+						<div><b>问题</b></div>
+						<div><?php echo $question['q_desc']; ?></div>
+					<?php
+					}
+					?>
+						<div class="rs-q-operation form-group">
+							<button type="submit" class="btn btn-default">提交 并查看答案解析</button>
+							<button type="button" class="btn btn-warning">错误反馈</button>
+						</div>
+					</form>	
+					</div>
 				</div>
 			<?php
 			}
