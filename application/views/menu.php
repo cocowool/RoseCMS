@@ -15,6 +15,16 @@
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-0 rs-tr-menu">
+				<?php
+				if(empty($user_login)){
+				?>
 				<a href="/login">登陆</a>&nbsp;/&nbsp;<a href="/register">注册</a>
+				<?php
+				}else{
+				?>
+				<p>欢迎 <a href="#"><?php echo $user_login; ?></a> 回来</p>
+				<?php	
+				}
+				?>
 			</div>
 		</div>
