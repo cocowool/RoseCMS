@@ -17,7 +17,7 @@
 					<ul>
 						<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>
 						<li><a href="http://www.miit.gov.cn">中华人民共和国工业和信息化部</a></li>
-						<li><a href=""></a></li>
+						<li><a href="http://cnblogs.com/cocowool">小狼的世界</a></li>
 						<li><a href=""></a></li>
 						<li><a href=""></a></li>
 					</ul>					

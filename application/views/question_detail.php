@@ -65,6 +65,10 @@
 						</div>
 					</form>	
 					</div>
+
+					<div style="min-height:50px; height:50px;">
+						
+					</div>
 				</div>
 			<?php
 			}
