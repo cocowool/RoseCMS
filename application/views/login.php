@@ -31,11 +31,11 @@
 			<div class="col-md-3" id="right-column">
 				<div class="rs-login-container">
 					<form action="/login" method="post">
-						<div class="form-group">
+						<div class="form-group <?php if(form_error('username')) echo "has-error"; ?>">
 							<label for="">用户名：</label>
 							<input type="text" name="username" id="username" class="form-control" />
 						</div>
-						<div class="form-group">
+						<div class="form-group <?php if(form_error('password')) echo "has-error"; ?>">
 							<label for="">密码：</label>
 							<input type="password" name="password" id="password" class="form-control" />
 						</div>
