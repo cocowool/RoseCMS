@@ -66,7 +66,7 @@
 					</form>	
 					</div>
 
-					<div style="min-height:50px; height:50px;">
+					<div style="min-height:100px; height:100px; display:block;">
 						
 					</div>
 				</div>
