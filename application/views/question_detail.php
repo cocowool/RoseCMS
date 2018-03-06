@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 	<meta charset='UTF-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
 	<title>软考资料站</title>
 	<meta name="keyword" content="软考，系统分析师，系统架构师，历年真题，软考历年真题">
 	<meta name="description" content="系统分析师资料站，历年真题分析">
@@ -11,6 +12,7 @@
 	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/lib/jquery/jquery.qrcode.min.js"></script>
 </head>
 <body class="">
 	<div class="rs-top-menu container">
@@ -75,6 +77,9 @@
 			?>
 			</div>
 			<div class="col-md-4" id="right-column">
+				<div id="qrcode">
+					
+				</div>
 				<div class="rs-sidebox rs-friendlink">
 					
 				</div>
@@ -92,6 +97,8 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
+		//$('#qrcode').qrcode("this plugin is great");
+
 		console.log("Document Ready");
 	});
 

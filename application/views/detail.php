@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 	<meta charset='UTF-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
 	<title>软考资料站</title>
 	<meta name="keyword" content="软考，系统分析师，系统架构师">
 	<meta name="description" content="系统分析师资料站">
