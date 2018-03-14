@@ -22,7 +22,7 @@
 						<label>试题类型</label>
 						<select name="q_type" id="q_type" class="form-control">
 							<option value="选择题" <?php if($question['q_type']=='选择题') echo 'selected' ?>>选择题</option>
-							<option value="简答题" <?php if($question['q_type']=='简答题') echo 'selected' ?> >简答题</option>
+							<option value="简答题" <?php if($question['q_type']=='简答题') echo 'selected' ?>>简答题</option>
 						</select>
 					</div>
 
@@ -125,5 +125,20 @@
 		$('#publish').on('click',function(){
 			$('#post_action').val('publish');
 		});
+	
+		tinymce.init({
+			theme: "modern",
+			skin:"lightgray",
+			language:"en",
+			menubar: false,
+			branding: false,
+			plugins:'link,image,code,fullscreen',
+			toolbar:"formatselect,undo,redo,bold,italic,blockquote,alignleft,aligncenter,alignright,strikethrough,removeformat,outdent,indent,link,image,code,fullscreen",
+			//toolbar2:"hr,forecolor,pastetext,removeformat,charmap,wp_help,link,unlink,wp_more,spellchecker,dfw,wp_adv",
+			//toolbar3:"",
+			//toolbar4:"",
+			selector: "#q_desc"
+		});
+
 	});
 </script>

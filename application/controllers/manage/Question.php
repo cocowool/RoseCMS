@@ -29,7 +29,9 @@ class Question extends MY_Controller {
 		$questions = $this->q->dtRequest($request);
 
 		foreach ($questions['data'] as $key => $value) {
+			$value['q_title'] = mb_substr($value['q_title'], 0, 40);
 			$value['operation'] =  '<a href="/manage/question/add/' . $value['id'] . '">编辑</a>&nbsp;&nbsp;<a href="/manage/question/del/' . $value['id'] . '">删除</a>';
+
 			$questions['data'][$key] = $value;
 		}
 
