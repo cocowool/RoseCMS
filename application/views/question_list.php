@@ -20,6 +20,11 @@
 		?>
 	</div>
 	<div class="rs-body container">
+		<div class="row rs-q-nav">
+			<div class="col-md-6">
+				<h4>真题</h3>			
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-8 rs-post-list">
 			<?php
@@ -28,7 +33,7 @@
 			}else{
 				foreach ($question_list as $key => $value) {
 			?>
-				<div class="row rs-pl-item">
+				<div class="row rs-qt-item">
 					<div class="col-md-6">
 						<?php
 						if( !empty($value['q_paper']) ){
@@ -58,6 +63,7 @@
 					</div>
 				</div>
 				<div class="rs-sidebox rs-friendlink">
+
 				</div>
 			</div>
 		</div>

@@ -73,6 +73,9 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-pl-meta { margin:0.5em 0;  }
 .rs-pl-content { margin-bottom: 20px; }
 
+/*-- 试题列表样式 --*/
+.rs-qt-item {  }
+
 .rs-post-detail { display:block; position: relative; }
 .rs-post-content {  }
 .rs-post-content p { text-indent: 2em; }
@@ -95,7 +98,7 @@ h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 .rs-q-nav { margin-bottom:1em; }
 .rs-q-operation { margin-top:1em; }
 
-#right-column { position: fixed; right: 15px; }
+#right-column { right: 15px; height: auto; }
 
 .rs-friendlink { margin-top:2em; }
 .rs-friendlink h3 { font-size: 18px; border-bottom: 1px solid #ebebeb; line-height: 36px; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
