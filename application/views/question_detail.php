@@ -12,7 +12,7 @@
 	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/static/lib/jquery/jquery.qrcode.min.js"></script>
+	<script type="text/javascript" src="/static/lib/jquery/jquery-qrcode-0.14.0.min.js"></script>
 </head>
 <body class="">
 	<div class="rs-top-menu container">
@@ -77,15 +77,22 @@
 			?>
 			</div>
 			<div class="col-md-4" id="right-column">
-				<div id="qrcode">
-					
+				<div class="row">
+					<div class="col-md-4">
+						<div id="qrcode">
+							
+						</div>						
+					</div>
+					<div class="col-md-8" style="color:#88b5e5; line-height: 1.2em;">
+						<h3>扫描二维码<br />在手机中做题<br />随时随地尽在掌握</h3>
+					</div>
 				</div>
-				<div class="rs-sidebox rs-friendlink">
-					
-				</div>
+				<p></p>
 				<div class="rs-google-ad" id="google-ad">
 					<?php $this->load->view('adsense'); ?>					
 				</div>
+				<p></p>
+				<p>&nbsp;</p>
 			</div>
 		</div>
 	</div>
@@ -97,29 +104,40 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
+		$('#qrcode').qrcode({
+			"render": "canvas",
+			"text"	: "<?php echo current_url() ?>",
+			"minVersion" : 1,
+			"maxVersion": 40,
+			"left": 0,
+			"top": 0,
+			"size": 100,
+			"fill": '#000',
+			"mode": 0
+		});
 		//$('#qrcode').qrcode("this plugin is great");
 
 		console.log("Document Ready");
 	});
 
-	var d = new Date();
-	var se = new Date('2018-05-26');
-	var ddCount = parseInt( (Math.abs(se - d))/1000/60/60/24 ); 
+	// var d = new Date();
+	// var se = new Date('2018-05-26');
+	// var ddCount = parseInt( (Math.abs(se - d))/1000/60/60/24 ); 
 
-	var vm = new Vue({
-		el:"#dateCounter",
-		beforeCreate : function(){
-			console.log("Before Vue is created");
-			// console.log(d);
-			// console.log(se);
-		},
-		mounted : function(){
-			console.log("Vue is ready!");
-		},
-		data : {
-			dayCount : ddCount
-		}
-	});	
+	// var vm = new Vue({
+	// 	el:"#dateCounter",
+	// 	beforeCreate : function(){
+	// 		console.log("Before Vue is created");
+	// 		// console.log(d);
+	// 		// console.log(se);
+	// 	},
+	// 	mounted : function(){
+	// 		console.log("Vue is ready!");
+	// 	},
+	// 	data : {
+	// 		dayCount : ddCount
+	// 	}
+	// });	
 
 	//vm.$mount('#date_counter')
 
