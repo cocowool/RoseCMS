@@ -57,7 +57,7 @@
 					}else{
 					?>
 						<div><b>问题</b></div>
-						<div><?php echo $question['q_desc']; ?></div>
+						<div><?php echo htmlspecialchars_decode($question['q_desc']); ?></div>
 					<?php
 					}
 					?>

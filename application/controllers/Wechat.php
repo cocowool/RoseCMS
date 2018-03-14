@@ -20,8 +20,8 @@ class Wechat extends CI_Controller {
 	 */
 	public function index()
 	{
-		$get_data = $this->input->get();
-		$post_data = $this->input->post();
+		$get_data = $this->input->get(NULL, true);
+		$post_data = $this->input->post(NULL, true);
 
 		if(empty($get_data)){
 			echo "Hello, empty message!";

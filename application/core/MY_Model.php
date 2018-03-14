@@ -134,6 +134,7 @@ class MY_Model extends CI_Model {
 		$query = $this->db->get($this->table);
 		
 		$data = $query->result_array();
+
 		if(count($data) == 1 and !$alwaysArray){
 			return $data[0];
 		}else{
@@ -147,7 +148,7 @@ class MY_Model extends CI_Model {
 			return FALSE;
 		}
 		
-		$data = $this->filterInputArray($data);
+		$data = $this->filterInputArray($data, true);
 
 		$this->db->insert($this->table, $data);
 		return $this->db->insert_id();
@@ -193,6 +194,9 @@ class MY_Model extends CI_Model {
 			}else{
 				//luyh
 				if($xss_clean == true) $data[$k] = $this->security->xss_clean($data[$k]);
+
+				//对特殊字符进行处理
+				$data[$k] = htmlspecialchars($data[$k]);
 			}
 		}
 
