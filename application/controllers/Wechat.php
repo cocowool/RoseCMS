@@ -26,14 +26,18 @@ class Wechat extends CI_Controller {
 			echo "Hello, empty message!";
 		}
 
-		$signature = $data['signature'];
-		$timestamp = $data['timestamp'];
-		$nonce = $data['nonce'];
-		$echostr = $data['echostr'];
+		// 服务器端验证代码
+		// $signature = $data['signature'];
+		// $timestamp = $data['timestamp'];
+		// $nonce = $data['nonce'];
+		// $echostr = $data['echostr'];
 
-		$token = 'rivertown';
-		//print_r($_SERVER);
+		// $token = 'rivertown';
+		// //print_r($_SERVER);
+		// echo $echostr;
 
-		echo $echostr;
+		
+
+		echo "success"
 	}
 }
