@@ -20,9 +20,10 @@ class Wechat extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data = $this->input->get();
+		$get_data = $this->input->get();
+		$post_data = $this->input->post();
 
-		if(empty($data)){
+		if(empty($get_data)){
 			echo "Hello, empty message!";
 		}
 
@@ -35,8 +36,8 @@ class Wechat extends CI_Controller {
 		// $token = 'rivertown';
 		// //print_r($_SERVER);
 		// echo $echostr;
-
 		
+
 
 		echo "success"
 	}
