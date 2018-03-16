@@ -39,6 +39,12 @@ class Wechat extends CI_Controller {
 		
 
 
-		echo "success"
+		echo "success";
+	}
+
+	public function getToken(){
+		$this->load->library('weixin');
+
+		$this->weixin->getToken();
 	}
 }
