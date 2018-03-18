@@ -70,7 +70,7 @@
 						<a href="javascript:void(0);">
 							<div class="rs-menu-arrow"></div>
 							<div class="rs-menu-icon"></div>
-							<div class="rs-menu-name">设置</div>
+							<div class="rs-menu-name"><a href="/manage/conf">设置</a></div>
 						</a>
 					</li>
 					<li>
