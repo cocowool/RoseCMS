@@ -27,7 +27,7 @@ class Wechat extends CI_Controller {
 		$post_data = $this->input->post(NULL, true);
 
 		// 如果获取到 echostr 参数，则表示接口验证
-		if(!empty($get_data) and isset($get_data['echostr'])){
+		if(isset($get_data['echostr'])){
 			//echo "Hello, empty message!";
 			服务器端验证代码
 			$signature = $data['signature'];
