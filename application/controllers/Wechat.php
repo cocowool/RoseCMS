@@ -19,13 +19,15 @@ class Wechat extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
+	public function index(){
+		$this->load->library('xmlrpc');
+		$this->load->library('xmlrpcs');
+
 		$get_data = $this->input->get(NULL, true);
 		$post_data = $this->input->post(NULL, true);
 
 		if(empty($get_data)){
-			echo "Hello, empty message!";
+			//echo "Hello, empty message!";
 		}
 
 		// 服务器端验证代码

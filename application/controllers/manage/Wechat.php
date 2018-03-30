@@ -17,6 +17,10 @@ class Wechat extends CI_Controller {
 		$this->load->view('manage/dashboard', $data);
 	}
 
+	public function mesage( $action = 'list', $type = ''){
+		
+	}
+
 	public function serverside( $action = ''){
 		switch ($action) {
 			case 'menu':
