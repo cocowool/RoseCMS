@@ -26,24 +26,40 @@ class Wechat extends CI_Controller {
 		$get_data = $this->input->get(NULL, true);
 		$post_data = $this->input->post(NULL, true);
 
-		if(empty($get_data)){
+		// 如果获取到 echostr 参数，则表示接口验证
+		if(!empty($get_data) and isset($get_data['echostr'])){
 			//echo "Hello, empty message!";
+			服务器端验证代码
+			$signature = $data['signature'];
+			$timestamp = $data['timestamp'];
+			$nonce = $data['nonce'];
+			$echostr = $data['echostr'];
+
+			$token = 'rivertown';
+			//print_r($_SERVER);
+			echo $echostr;
+			return;
 		}
 
-		// 服务器端验证代码
-		// $signature = $data['signature'];
-		// $timestamp = $data['timestamp'];
-		// $nonce = $data['nonce'];
-		// $echostr = $data['echostr'];
+		if(!empty($post_data)){
+			$HTTP_RAW_POST_DATA = isset($GLOBALS['HTTP_RAW_POST_DATA']) ? $GLOBALS['HTTP_RAW_POST_DATA'] : file_get_contents("php://input");
+			$post_obj = simplexml_load_string($HTTP_RAW_POST_DATA, 'SimpleXMLElement', LIBXML_NOCDATA);
 
-		// $token = 'rivertown';
-		// //print_r($_SERVER);
-		// echo $echostr;
-		
-		$format = '<xml> <ToUserName>< ![CDATA[toUser] ]></ToUserName> <FromUserName>< ![CDATA[fromUser] ]></FromUserName> <CreateTime>12345678</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[你好] ]></Content> </xml>';
+			$msg_type = $post_obj->MsgType;
 
-		sprintf($format);
-		//echo $format;
+			switch ($msg_type) {
+				case 'text':
+					$keyword = trim($post_obj->Content);
+					$msg_tpl = '<xml> <ToUserName>< ![CDATA[%s] ]></ToUserName> <FromUserName>< ![CDATA[%s] ]></FromUserName> <CreateTime>%s</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[%s] ]></Content> </xml>';
+					echo sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), '欢迎访问大江小浪!');
+					return;
+					break;
+				
+				default:
+					# code...
+					break;
+			}
+		}
 	}
 
 	public function getToken(){
