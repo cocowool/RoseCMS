@@ -8,7 +8,33 @@ class Wechat extends CI_Controller {
 
 	}
 
-	public function menu( $action = '' ){
-		
+	public function menu( $action = 'list' ){
+		$data = array();
+
+		$data['rs_view_main'] = 'manage/wechat/menu_list';
+		$data['rs_view_data'] = $q_data;
+
+		$this->load->view('manage/dashboard', $data);
+	}
+
+	public function serverside( $action = ''){
+		switch ($action) {
+			case 'menu':
+				# code...
+				$this->serverside_menu();
+				break;
+			default:
+				# code...
+				break;
+		}
+	}
+
+	private function serverside_menu(){
+		$this->load->library('weixin');
+
+		$token = $this->weixin->getToken();
+		$menus = $this->weixin->getMenu($token);
+
+		print_r($menus);
 	}
 }

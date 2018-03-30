@@ -37,6 +37,20 @@ class Weixin {
 		}
 	}
 
+	/**
+	 * 自定义菜单查询接口
+	 *
+	 * @author wangshiqiang<cocowool@qq.com>
+	 **/
+	public function getMenu( $token = '' ){
+		$this->ci->load->library('Curl');
+
+		$menus = $this->ci->curl->simple_get( $this->api_domain . '/cgi-bin/menu/get?access_token=' . $token['access_token']);
+
+		return json_decode($menus, True);
+
+	}
+
 	//获取用户Token
     public function getToken(){
     	$this->grant_type = "client_credential";
