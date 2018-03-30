@@ -27,19 +27,19 @@ class Wechat extends CI_Controller {
 		$post_data = $this->input->post(NULL, true);
 
 		// 如果获取到 echostr 参数，则表示接口验证
-		if(isset($get_data['echostr'])){
-			//echo "Hello, empty message!";
-			服务器端验证代码
-			$signature = $data['signature'];
-			$timestamp = $data['timestamp'];
-			$nonce = $data['nonce'];
-			$echostr = $data['echostr'];
+		// if(isset($get_data['echostr'])){
+		// 	//echo "Hello, empty message!";
+		// 	服务器端验证代码
+		// 	$signature = $data['signature'];
+		// 	$timestamp = $data['timestamp'];
+		// 	$nonce = $data['nonce'];
+		// 	$echostr = $data['echostr'];
 
-			$token = 'rivertown';
-			//print_r($_SERVER);
-			echo $echostr;
-			return;
-		}
+		// 	$token = 'rivertown';
+		// 	//print_r($_SERVER);
+		// 	echo $echostr;
+		// 	return;
+		// }
 
 		if(!empty($post_data)){
 			$HTTP_RAW_POST_DATA = isset($GLOBALS['HTTP_RAW_POST_DATA']) ? $GLOBALS['HTTP_RAW_POST_DATA'] : file_get_contents("php://input");
