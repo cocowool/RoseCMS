@@ -181,6 +181,11 @@
 				if(isset($rs_view_main) and !empty($rs_view_main)){
 					$this->load->view($rs_view_main, $rs_view_data); 					
 				} 
+				//如果有单独的表单视图，则进行展示
+				if(isset($rs_view_form) and !empty($rs_view_form)){
+					$this->load->view($rs_view_form, $rs_view_data); 					
+				} 
+
 				?>
 			</div>
 		</div>
