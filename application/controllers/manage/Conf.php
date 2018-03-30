@@ -45,8 +45,8 @@ class Conf extends MY_Controller {
 			echo "错误的ID";
 		}
 
-		$this->load->model('Question_Model','q');
-		$result = $this->q->delete($id);
+		$this->load->model('Conf_Model','c');
+		$result = $this->c->delete($id);
 
 		if($result){
 			echo "Delete Success";
