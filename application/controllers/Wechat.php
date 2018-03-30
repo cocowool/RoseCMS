@@ -40,9 +40,9 @@ class Wechat extends CI_Controller {
 		// //print_r($_SERVER);
 		// echo $echostr;
 		
+		$format = '<xml> <ToUserName>< ![CDATA[toUser] ]></ToUserName> <FromUserName>< ![CDATA[fromUser] ]></FromUserName> <CreateTime>12345678</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[你好] ]></Content> </xml>';
 
-
-		echo "success";
+		echo $format;
 	}
 
 	public function getToken(){
