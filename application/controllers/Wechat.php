@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Wechat extends CI_Controller {
+	private $api_domain = 'https://api.weixin.qq.com';
 
 	/**
 	 * Index Page for this controller.
@@ -45,6 +46,10 @@ class Wechat extends CI_Controller {
 	public function getToken(){
 		$this->load->library('weixin');
 
-		$this->weixin->getToken();
+		$token = $this->weixin->getToken();
+
+		echo $token['access_token'];
+		echo "<br />";
+		echo $token['expires_in'];
 	}
 }

@@ -49,6 +49,18 @@
 						<a href="javascript:void(0);">
 							<div class="rs-menu-arrow"></div>
 							<div class="rs-menu-icon"></div>
+							<div class="rs-menu-name"><a href="/manage/wechat">微信管理</a></div>
+						</a>
+						<ul class="rs-submenu">
+							<li class="rs-submenu-item rs-submenu-first rs-active"><a href="/manage/wechat/menu" class="">自定义菜单管理</a></li>
+							<li><a href="/manage/wechat/message">消息管理</a></li>
+							<li><a href="/manage/wechat/media">资源管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="rs-menu-arrow"></div>
+							<div class="rs-menu-icon"></div>
 							<div class="rs-menu-name">资源</div>
 						</a>
 					</li>
