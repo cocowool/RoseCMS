@@ -51,7 +51,8 @@ class Wechat extends CI_Controller {
 				case 'text':
 					$keyword = trim($post_obj->Content);
 					$msg_tpl = '<xml> <ToUserName>< ![CDATA[%s] ]></ToUserName> <FromUserName>< ![CDATA[%s] ]></FromUserName> <CreateTime>%s</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[%s] ]></Content> </xml>';
-					echo sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), '欢迎访问大江小浪!');
+					$result =  sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), '欢迎访问大江小浪!');
+					echo $result;
 					return;
 					break;
 				
