@@ -10,13 +10,6 @@ RoseCMS 是我在个人网站功能逐渐完善的情况下，剥离出来的一
 
 目前还处于Beta版本。
 
-**************************
-Changelog and New Features
-**************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
-
 *******************
 服务器要求
 *******************
