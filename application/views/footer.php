@@ -5,10 +5,11 @@
 					<p><img src="/static/default/image/sapublic.jpg" width="129px"></p>					
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<div class="rs-ft-about">
 					<h3>关于我们</h3>
 					<p>我们致力于分享与计算机技术与软件专业技术资格（水平）考试相关的所有信息，如有需要，关注我们的微信公众号，随时随地掌握更多内容。</p>
+					<p>Copyright &copy; 2018 京ICP备15058613－1号</p>
 				</div>
 			</div>
 			<div class="col-md-6">
