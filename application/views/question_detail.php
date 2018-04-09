@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="renderer" content="webkit">
-	<title>软考资料站</title>
+	<title>软考资料站-历年真题</title>
 	<meta name="keyword" content="软考，系统分析师，系统架构师，历年真题，软考历年真题">
 	<meta name="description" content="系统分析师资料站，历年真题分析">
 	<link href="/static/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@
 					<div>
 					<form action="#">
 					<?php
-					if($question['q_type'] == ""){
+					if($question['q_type'] == "选择题"){
 					?>
 						<div><b>选项</b></div>
 						<div class="rs-q-option form-group">
