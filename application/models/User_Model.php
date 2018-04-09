@@ -7,6 +7,7 @@ class User_Model extends MY_Model {
 	public $fields = array(
 		array(
 			'name'=>'id', 
+			'comment' => 'ID',
 			//Database数据定义相关属性
 			'ddl' => array(
 					'type'		=>	'int(11)',
@@ -33,6 +34,7 @@ class User_Model extends MY_Model {
 		),
 		array(
 			'name'=>'user_login', 
+			'comment' => '用户登陆账号',
 			//Database数据定义相关属性
 			'ddl' => array(
 					'type'		=>	'varchar(60)',
@@ -60,6 +62,7 @@ class User_Model extends MY_Model {
 		array(
 			'name'=>'user_pass', 
 			//Database数据定义相关属性
+			'comment' => '登陆密码',
 			'ddl' => array(
 					'type'		=>	'varchar(255)',
 					'primary'	=>	FALSE,
@@ -85,6 +88,7 @@ class User_Model extends MY_Model {
 		),
 		array(
 			'name'=>'user_nicename', 
+			'comment' => '用户昵称',
 			//Database数据定义相关属性
 			'ddl' => array(
 					'type'		=>	'varchar(50)',
@@ -111,6 +115,7 @@ class User_Model extends MY_Model {
 		),
 		array(
 			'name'=>'user_email', 
+			'comment' => '邮箱',
 			//Database数据定义相关属性
 			'ddl' => array(
 					'type'		=>	'varchar(100)',
@@ -137,6 +142,7 @@ class User_Model extends MY_Model {
 		),
 		array(
 			'name'=>'user_url', 
+			'comment' => '地址',
 			//Database数据定义相关属性
 			'ddl' => array(
 					'type'		=>	'varchar(100)',
@@ -163,6 +169,7 @@ class User_Model extends MY_Model {
 		),
 		array(
 			'name'=>'user_registered', 
+			'comment' => '注册时间',
 			//Database数据定义相关属性
 			'ddl' => array(
 					'type'		=>	'datetime',
@@ -189,6 +196,7 @@ class User_Model extends MY_Model {
 		),
 		array(
 			'name'=>'user_status', 
+			'comment' => '状态',
 			//Database数据定义相关属性
 			'ddl' => array(
 					'type'		=>	'int(11)',
@@ -215,6 +223,7 @@ class User_Model extends MY_Model {
 		),
 		array(
 			'name'=>'display_name', 
+			'comment' => '显示名称',
 			//Database数据定义相关属性
 			'ddl' => array(
 					'type'		=>	'varchar(250)',
