@@ -46,13 +46,13 @@
 					?>
 						<div><b>选项</b></div>
 						<div class="rs-q-option form-group">
-							<label for="a">A</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_1']; ?></div>
+							<input type="radio" name="a" value=""> <label for="a">A</label> <?php echo $question['q_option_1']; ?></div>
 						<div class="rs-q-option form-group">
-							<label for="a">B</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_2']; ?></div>
+							<input type="radio" name="a" value=""> <label for="a">B</label> <?php echo $question['q_option_2']; ?></div>
 						<div class="rs-q-option form-group">
-							<label for="a">C</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_3']; ?></div>
+							<input type="radio" name="a" value=""> <label for="a">C</label> <?php echo $question['q_option_3']; ?></div>
 						<div class="rs-q-option form-group">
-							<label for="a">D</label> <input type="radio" name="a" value=""> <?php echo $question['q_option_4']; ?></div>
+							<input type="radio" name="a" value=""> <label for="a">D</label> <?php echo $question['q_option_4']; ?></div>
 					<?php
 					}else{
 					?>
