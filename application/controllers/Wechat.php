@@ -50,8 +50,17 @@ class Wechat extends CI_Controller {
 			switch ($msg_type) {
 				case 'text':
 					$keyword = trim($post_obj->Content);
+					switch ($keyword) {
+						case '真题':
+							$text_content = "历年真题，<a href='http://www.edulinks.cn/question'>点击查看</a>";
+							break;
+						default:
+							$text_content = "欢迎访问大江小浪!";
+							break;
+					}
+
 					$msg_tpl = '<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[%s]]></Content></xml>';
-					$result =  sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), '欢迎访问大江小浪!');
+					$result =  sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), $text_content);
 					echo $result;
 					return;
 					break;
