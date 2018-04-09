@@ -29,10 +29,10 @@
 			}else{
 				
 			?>
-				<div class="row rs-q-nav">
+				<div class="rs-q-nav">
 					<h4>真题 &gt; <a href="#"><?php echo $question['q_paper']; ?></a></h3>
 				</div>
-				<div class="row rs-q-detail">
+				<div class="rs-q-detail">
 					<div class="rs-q-title">
 						<div><b>题目</b></div>
 						<div class="rs-q-title-content">
