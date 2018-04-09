@@ -22,7 +22,7 @@
 				<?php
 				}else{
 				?>
-				<p>欢迎 <a href="#"><?php echo $user_login; ?></a> 回来</p>
+				<p>欢迎 <a href="#"><?php echo $user_login; ?></a> 回来, <a href="/logout">注销</a></p>
 				<?php	
 				}
 				?>
