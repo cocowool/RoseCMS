@@ -14,7 +14,7 @@
 					</nav>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-0 rs-tr-menu">
+			<div class="col-md-3 col-sm-3 rs-tr-menu">
 				<?php
 				if(empty($user_login)){
 				?>
