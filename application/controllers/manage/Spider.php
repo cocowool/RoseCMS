@@ -33,8 +33,8 @@ class Spider extends MY_Controller {
 			}
 
 			//提取题号
-			//preg_match_all('/<td width="80%" height="32" align="left"  style=""  ><span class="shisi_text_hui">第(\d+)题/iu', $html_data, $question_no);
-			//$data['q_tihao'] = $question_no[1][0];
+			preg_match_all('/<td width="80%" height="32" align="left"  style=""  ><span class="shisi_text_hui">第(\d+)题/iu', $html_data, $question_no);
+			$data['q_tihao'] = $question_no[1][0];
 
 			//提取试卷
 			$data['q_paper'] = '2017年上半年 系统分析师 上午试卷 综合知识';
