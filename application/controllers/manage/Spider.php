@@ -14,7 +14,7 @@ class Spider extends MY_Controller {
 		$cache = array();
 		$stats = array();
 
-		$start_url = "http://www.rkpass.cn/tk_timu/3_509_7_xuanze.html";
+		$start_url = "http://www.rkpass.cn/tk_timu/3_509_6_xuanze.html";
 
 		$cache[md5($start_url)] = $start_url;
 		$this->load->library('Curl');
