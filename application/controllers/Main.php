@@ -18,7 +18,7 @@ class Main extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index($version = '')
 	{
 		$this->load->model('Post_Model', 'p');
 		$condition = array();
@@ -53,8 +53,12 @@ class Main extends CI_Controller {
 		}else{
 			$data['user_login'] = '';
 		}
-		
-		$this->load->view('main', $data);
+
+		if(!empty($version)){
+			$this->load->view('main_bt4', $data);
+		}else{
+			$this->load->view('main', $data);
+		}
 	}
 
 	public function about(){

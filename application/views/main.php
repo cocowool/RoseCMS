@@ -9,6 +9,10 @@
 	<meta name="keyword" content="软考，系统分析师，系统架构师">
 	<meta name="description" content="系统分析师资料站">
 	<link href="/static/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
