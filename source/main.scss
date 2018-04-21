@@ -1,0 +1,44 @@
+// 使用SCSS进行CSS开发 2018-04-21 by shiqiang
+
+// Basic Codes
+.rs-body {
+	.rs-content {
+		.rs-left {
+			font-size: 12px;
+		}
+
+		.rs-right {
+			font-size: 10px;
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 575.98px) {
+	body {
+		color: yellow;
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 767.98px) { 
+	body {
+		color: blue;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 991.98px) {
+	body {
+		color: green;
+	}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1199.98px) {
+	body {
+		color: red;
+	}
+}
+
+
