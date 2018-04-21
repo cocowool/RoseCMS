@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/source/main.css">
 	<title>软考资料站</title>
@@ -10,6 +11,14 @@
 	<meta name="description" content="系统分析师资料站">
 </head>
 <body>
+	<nav class="navbar navbar-dark rs-nav">
+		<div>
+			<a href="/">软考资料站</a>
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+	</nav>
 	<div class="container">
 		<div class="row">
 			<div class="rs-head col-12">

@@ -1,7 +1,21 @@
 // 使用SCSS进行CSS开发 2018-04-21 by shiqiang
-html, body { }
 
 //col,col-sm,col-md,col-lg,col-xl
+$font-family-sans-serif:
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+html, body { font-family: $font-family-sans-serif; }
 
 // Basic Codes
 .rs-head {
@@ -9,6 +23,8 @@ html, body { }
 
 	h1 {
 		a {
+			font-size: 1rem;
+			text-indent: -9999px;
 			text-decoration: none;
 		}
 
@@ -30,7 +46,31 @@ html, body { }
 	}
 }
 
+@media (min-width: 320px ) {
+	html {
+		font-size: 12px;
+	}
+
+	body {
+		color: purple;
+	}	
+}
+
+@media (min-width: 375px ) {
+	html {
+		font-size: 12px;
+	}
+
+	body {
+		color: purple;
+	}	
+}
+
 @media (min-width: 414px ) {
+	html {
+		font-size: 14px;
+	}
+
 	body {
 		color: purple;
 	}	
@@ -38,6 +78,10 @@ html, body { }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
+	html {
+		font-size: 14px;
+	}
+
 	body {
 		color: yellow;
 	}
@@ -45,6 +89,10 @@ html, body { }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
+	html {
+		font-size: 16px;
+	}
+
 	body {
 		color: blue;
 	}
@@ -52,6 +100,10 @@ html, body { }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+	html {
+		font-size: 16px;
+	}
+
 	body {
 		color: green;
 	}
@@ -59,6 +111,10 @@ html, body { }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+	html {
+		font-size: 16px;
+	}
+
 	body {
 		color: red;
 	}
