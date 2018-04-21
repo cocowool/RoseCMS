@@ -11,7 +11,11 @@
 </head>
 <body>
 	<div class="container">
-		<h1>软考</h1>
+		<div class="row">
+			<div class="rs-head col-12">
+				<h1><a href="/">软考资料站</a></h1>				
+			</div>
+		</div>
 		
 	</div>
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
