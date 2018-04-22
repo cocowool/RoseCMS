@@ -25,9 +25,9 @@
 			</ul>
 		</div>
 
-		<form action="" class="form-inline my-2 my-lg-0">
-			<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">登录</button>&nbsp;&nbsp;
-			<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">注册</button>
+		<form action="/" class="form-inline my-2 my-lg-0">
+			<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0 collapse navbar-collapse" type="submit">登录</button>&nbsp;&nbsp;
+			<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0 collapse navbar-collapse" type="submit">注册</button>
 		</form>
 	</nav>
 	<div class="container">
