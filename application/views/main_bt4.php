@@ -11,13 +11,24 @@
 	<meta name="description" content="系统分析师资料站">
 </head>
 <body>
-	<nav class="navbar navbar-dark rs-nav">
-		<div>
-			<a href="/">软考资料站</a>
-			<ul>
-				<li></li>
+	<nav class="navbar rs-nav navbar-expand-sm bg-primary text-light">
+		<a href="/" class="navbar-brand text-light">软考资料站</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="rs-nav-menu">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a href="/" class="nav-link">文章</a></li>
+				<li class="nav-item"><a href="/question.html" class="nav-link">真题</a></li>
+				<li class="nav-item"><a href="／about.html" class="nav-link">关于</a></li>
 			</ul>
 		</div>
+
+		<form action="" class="form-inline my-2 my-lg-0">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">登录</button>&nbsp;&nbsp;
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">注册</button>
+		</form>
 	</nav>
 	<div class="container">
 		<div class="row">
