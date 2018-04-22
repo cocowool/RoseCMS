@@ -11,8 +11,8 @@
 	<meta name="description" content="系统分析师资料站">
 </head>
 <body>
-	<nav class="navbar rs-nav navbar-expand-sm bg-primary text-light">
-		<a href="/" class="navbar-brand text-light">软考资料站</a>
+	<nav class="navbar rs-nav navbar-expand-sm navbar-dark bg-primary">
+		<a href="/" class="navbar-brand text-light"><img src="/static/default/image/saexam.png" width="30" height="30">软考资料站</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
