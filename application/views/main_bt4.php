@@ -11,7 +11,7 @@
 	<meta name="description" content="软考资料">
 </head>
 <body>
-	<nav class="navbar rs-nav navbar-expand-sm navbar-dark bg-primary sticky-top">
+	<nav id="rs-nav" class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top">
 		<a href="/" class="navbar-brand text-light"><img src="/static/default/image/sa_white.png" width="30" height="30">&nbsp;&nbsp;软考资料</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rs-nav-menu" aria-controls="rs-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -26,53 +26,25 @@
 		</div>
 
 		<form action="/" class="form-inline my-2 my-lg-0">
-			<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0 collapse navbar-collapse" type="submit">登录</button>&nbsp;&nbsp;
-			<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0 collapse navbar-collapse" type="submit">注册</button>
+			<button class="btn btn-sm btn-link collapse navbar-collapse text-light" type="submit">登录</button>
+			<button class="btn btn-sm btn-link collapse navbar-collapse text-light" type="submit">注册</button>
 		</form>
 	</nav>
-	<div class="container">
+	<div id="rs-content" class="container">
 		<div class="row">
-			<div class="rs-head col-12">
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
-				<h1><a href="/">软考资料站</a></h1>				
+			<div class="col-md-8">
+				列表
+			</div>
+			<div class="col-md-4">
+				<div class="rs-google-ad" id="google-ad">
+					<?php $this->load->view('adsense'); ?>					
+				</div>
+				<div class="rs-sidebox" id="date_counter">
+					<div class="rs-date-counter">
+						<p>距离2018年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
+						<p></p>
+					</div>
+				</div>
 			</div>
 		</div>
 		
@@ -80,5 +52,29 @@
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script src="/static/lib/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//console.log("Document Ready");
+	});
+
+	var d = new Date();
+	var se = new Date('2018-05-26');
+	var ddCount = parseInt( (Math.abs(se - d))/1000/60/60/24 ); 
+
+	var vm = new Vue({
+		el:"#dateCounter",
+		beforeCreate : function(){
+			console.log("Before Vue is created");
+			// console.log(d);
+			// console.log(se);
+		},
+		mounted : function(){
+			console.log("Vue is ready!");
+		},
+		data : {
+			dayCount : ddCount
+		}
+	});	
+</script>
 </body>
 </html>
