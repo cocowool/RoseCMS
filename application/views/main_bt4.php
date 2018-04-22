@@ -8,19 +8,19 @@
 	<link rel="stylesheet" href="/source/main.css">
 	<title>软考资料站</title>
 	<meta name="keyword" content="软考，系统分析师，系统架构师">
-	<meta name="description" content="系统分析师资料站">
+	<meta name="description" content="软考资料">
 </head>
 <body>
 	<nav class="navbar rs-nav navbar-expand-sm navbar-dark bg-primary">
-		<a href="/" class="navbar-brand text-light"><img src="/static/default/image/saexam.png" width="30" height="30">软考资料站</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<a href="/" class="navbar-brand text-light"><img src="/static/default/image/sa_white.png" width="30" height="30">&nbsp;&nbsp;软考资料</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rs-nav-menu" aria-controls="rs-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="rs-nav-menu">
-			<ul class="navbar-nav mr-auto">
+			<ul class="navbar-nav">
 				<li class="nav-item"><a href="/" class="nav-link">文章</a></li>
-				<li class="nav-item"><a href="/question.html" class="nav-link">真题</a></li>
+				<li class="nav-item active"><a href="/question.html" class="nav-link">真题</a></li>
 				<li class="nav-item"><a href="／about.html" class="nav-link">关于</a></li>
 			</ul>
 		</div>
