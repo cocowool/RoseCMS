@@ -33,20 +33,26 @@
 	<div id="rs-content" class="container">
 		<div class="row">
 			<div class="col-md-8">
-				列表
+				<div id="rs-breadcrum">
+					<a href="/" class="mr-1">首页</a>&gt;
+					<a href="/question.html" class="text-muted">真题</a>
+				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="rs-google-ad" id="google-ad">
+				<div id="rs-google-ad">
 					<?php $this->load->view('adsense'); ?>					
 				</div>
-				<div class="rs-sidebox" id="date_counter">
-					<div class="rs-date-counter">
+				<div class="bg-primary text-light p-1 align-middle d-flex" id="date_counter">
+					<div class="rs-date-counter align-middle">
 						<p>距离2018年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
 						<p></p>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+	</div>
+	<div class="container" id="rs-footer">
 		
 	</div>
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>

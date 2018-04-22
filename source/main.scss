@@ -18,42 +18,31 @@ $font-family-sans-serif:
 html, body { font-family: $font-family-sans-serif; }
 
 // Basic Codes
-.rs-head {
-	border-bottom:1px solid #333;
-
-	h1 {
-		a {
-			font-size: 1rem;
-			text-indent: -9999px;
-			text-decoration: none;
-		}
-
-		a:hover {
-
-		}
-	}
-}
-
-.rs-body {
-	.rs-content {
-		.rs-left {
-			font-size: 12px;
-		}
-
-		.rs-right {
-			font-size: 10px;
-		}
-	}
-}
-
 @media (min-width: 320px ) {
 	html {
 		font-size: 12px;
 	}
 
 	body {
-		color: purple;
+
 	}	
+
+	#rs-nav {
+
+	}
+
+	#rs-content {
+		padding-top:1rem;
+	}
+
+	#rs-footer {
+		padding-top:1rem;
+	}
+
+	#rs-google-ad {
+		width: auto;
+		height: auto;
+	}
 }
 
 @media (min-width: 375px ) {
@@ -62,7 +51,7 @@ html, body { font-family: $font-family-sans-serif; }
 	}
 
 	body {
-		color: purple;
+
 	}	
 }
 
@@ -72,7 +61,7 @@ html, body { font-family: $font-family-sans-serif; }
 	}
 
 	body {
-		color: purple;
+
 	}	
 }
 
@@ -83,7 +72,7 @@ html, body { font-family: $font-family-sans-serif; }
 	}
 
 	body {
-		color: yellow;
+
 	}
 }
 
@@ -94,7 +83,7 @@ html, body { font-family: $font-family-sans-serif; }
 	}
 
 	body {
-		color: blue;
+
 	}
 }
 
@@ -105,7 +94,7 @@ html, body { font-family: $font-family-sans-serif; }
 	}
 
 	body {
-		color: green;
+
 	}
 }
 
@@ -116,7 +105,7 @@ html, body { font-family: $font-family-sans-serif; }
 	}
 
 	body {
-		color: red;
+
 	}
 }
 
