@@ -11,7 +11,7 @@
 	<meta name="description" content="软考资料">
 </head>
 <body>
-	<nav class="navbar rs-nav navbar-expand-sm navbar-dark bg-primary">
+	<nav class="navbar rs-nav navbar-expand-sm navbar-dark bg-primary sticky-top">
 		<a href="/" class="navbar-brand text-light"><img src="/static/default/image/sa_white.png" width="30" height="30">&nbsp;&nbsp;软考资料</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rs-nav-menu" aria-controls="rs-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -26,8 +26,8 @@
 		</div>
 
 		<form action="" class="form-inline my-2 my-lg-0">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">登录</button>&nbsp;&nbsp;
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">注册</button>
+			<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">登录</button>&nbsp;&nbsp;
+			<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">注册</button>
 		</form>
 	</nav>
 	<div class="container">
