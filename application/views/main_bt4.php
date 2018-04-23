@@ -89,19 +89,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
-					<div class="rs-ft-about">
+					<div class="rs-ft-about text-xs-center text-sm-left">
 						<p><img src="/static/default/image/sapublic.jpg" width="129px"></p>					
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="rs-ft-about text-light">
+					<div class="rs-ft-about text-xs-center text-sm-left text-light">
 						<h5>关于我们</h5>
 						<p>我们致力于分享与计算机技术与软件专业技术资格（水平）考试相关的所有信息，如有需要，关注我们的微信公众号，随时随地掌握更多内容。</p>
 						<p>Copyright &copy; 2018 京ICP备15058613－1号</p>
 					</div>
 				</div>
 				<div class="col-md-6">
-					<div class="rs-ft-about text-light">
+					<div class="rs-ft-about text-light text-xs-center text-sm-left">
 						<h5>友情链接</h5>
 						<ul>
 							<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>
