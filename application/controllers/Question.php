@@ -7,7 +7,7 @@ class Question extends MY_Controller {
 		parent::__construct();
 	}
 
-	public function index($page = 0){
+	public function index($page = 0, $flag = ''){
 		$data = array();
 		$rs_view_data = array();
 
@@ -24,7 +24,11 @@ class Question extends MY_Controller {
 			$data['user_login'] = '';
 		}
 
-		$this->load->view('question_list', $data);		
+		if(!empty($flag)){
+			$this->load->view('main_bt4', $data);
+		}else{
+			$this->load->view('question_list', $data);		
+		}
 	}
 
 	public function detail($id = ''){

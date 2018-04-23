@@ -37,15 +37,40 @@
 					<a href="/" class="mr-1">首页</a>&gt;
 					<a href="/question.html" class="text-muted">真题</a>
 				</div>
+				<div id="rs-question-list" class="pt-1">
+				<?php
+				if( empty($question_list) ){
+					echo "<p>暂时还没有任何真题，敬请期待!</p>";
+				}else{
+					foreach ($question_list as $key => $value) {
+				?>
+					<div class="row rs_question_item">
+						<div class="col-md-8">
+							<?php
+							if( !empty($value['q_paper']) ){
+							?>
+							<a href="#"><?php echo $value['q_paper']; ?></a>
+							<?php
+							}
+							?>
+						</div>
+						<div class="col-md-4">
+							<a href="/question/detail/<?php echo $value['id']; ?>"><?php echo "第 " . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
+						</div>
+					</div>
+				<?php
+					}
+				}
+				?>				
+				</div>
 			</div>
 			<div class="col-md-4">
 				<div id="rs-google-ad">
 					<?php $this->load->view('adsense'); ?>					
 				</div>
-				<div class="bg-primary text-light p-1 align-middle d-flex" id="date_counter">
-					<div class="rs-date-counter align-middle">
-						<p>距离2018年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
-						<p></p>
+				<div class="bg-primary text-light p-1 align-middle text-center d-flex" id="date_counter">
+					<div class="rs-date-counter align-middle text-center p-2">
+						<p class="m-0 text-center">距离2018年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
 					</div>
 				</div>
 			</div>
