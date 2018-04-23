@@ -52,7 +52,7 @@
 							<?php
 							}
 							?>&nbsp;/&nbsp;
-							<a href="/question/detail/<?php echo $value['id']; ?>.html"><?php echo "第 " . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
+							<a href="/question/detail/<?php echo $value['id']; ?>.html"><?php echo "<span class='d-none d-sm-block'">第 </span>" . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
 							</li>	
 				<?php
 					}
