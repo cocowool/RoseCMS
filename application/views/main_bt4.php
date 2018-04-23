@@ -45,15 +45,15 @@
 					foreach ($question_list as $key => $value) {
 				?>
 					<div class="row rs_question_item">
-						<ul class="list-group">
-							<li class="list-group-item"><?php
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item list-group-item-action"><?php
 							if( !empty($value['q_paper']) ){
 							?>
 							<a href="#"><?php echo $value['q_paper']; ?></a>
 							<?php
 							}
 							?>&nbsp;/&nbsp;
-							<a href="/question/detail/<?php echo $value['id']; ?>"><?php echo "第 " . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
+							<a href="/question/detail/<?php echo $value['id']; ?>.html"><?php echo "第 " . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
 							</li>	
 						</ul>
 					</div>
