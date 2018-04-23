@@ -37,7 +37,7 @@
 					<a href="/" class="mr-1">首页</a>&gt;
 					<a href="/question.html" class="text-muted">真题</a>
 				</div>
-				<div id="rs-question-list" class="pt-1">
+				<div id="rs-question-list" class="pt-1 pb-1">
 				<?php
 				if( empty($question_list) ){
 					echo "<p>暂时还没有任何真题，敬请期待!</p>";
