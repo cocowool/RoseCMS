@@ -38,14 +38,13 @@
 					<a href="/question.html" class="text-muted">真题</a>
 				</div>
 				<div id="rs-question-list" class="pt-1 pb-1">
+					<ul class="list-group list-group-flush">
 				<?php
 				if( empty($question_list) ){
 					echo "<p>暂时还没有任何真题，敬请期待!</p>";
 				}else{
 					foreach ($question_list as $key => $value) {
 				?>
-					<div class="row rs_question_item">
-						<ul class="list-group list-group-flush">
 							<li class="list-group-item list-group-item-action"><?php
 							if( !empty($value['q_paper']) ){
 							?>
@@ -55,12 +54,11 @@
 							?>&nbsp;/&nbsp;
 							<a href="/question/detail/<?php echo $value['id']; ?>.html"><?php echo "第 " . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
 							</li>	
-						</ul>
-					</div>
 				<?php
 					}
 				}
 				?>				
+					</ul>
 				</div>
 			</div>
 			<div class="col-md-4">
