@@ -53,18 +53,30 @@ class Wechat extends CI_Controller {
 					switch ($keyword) {
 						case '真题':
 							$text_content = "历年真题，<a href='http://www.edulinks.cn/question'>点击查看</a>";
+							$msg_tpl = '<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[%s]]></Content></xml>';
+							$result =  sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), $text_content);
 							break;
+						case '图文':
+							$title = "图文测试";
+							$description = "文字描述信息";
+							$picurl = "http://corpuscloud-thumbnail.stor.sinaapp.com/upload/20180102/userupload_1514859506.jpg";
+							$msg_tpl = '<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[news]]></MsgType><Content><![CDATA[]]></Content><ArticleCount>1</ArticleCount><Articles><item><Title><![CDATA[[%s]]></Title><Description><![CDATA[%s]></Description><PicUrl><![CDATA[%s]]></PicUrl><Url><![CDATA[]]></Url></item></Articles><FuncFlag>0</FuncFlag></xml>';
+							$result =  sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), $title, $description, $picurl);
+							break;							
 						default:
+							$msg_tpl = '<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[%s]]></Content></xml>';
+							$result =  sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), $text_content);
 							$text_content = "欢迎访问大江小浪!";
 							break;
 					}
 
-					$msg_tpl = '<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[%s]]></Content></xml>';
-					$result =  sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), $text_content);
 					echo $result;
 					return;
 					break;
-				
+				case 'event':
+					// subscribe
+					// unsubscribe
+					break;
 				default:
 					# code...
 					break;
