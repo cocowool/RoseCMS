@@ -25,10 +25,10 @@
 			</ul>
 		</div>
 
-		<form action="/" class="form-inline my-2 my-lg-0">
-			<button class="btn btn-sm btn-link collapse navbar-collapse text-light" type="submit">登录</button>
-			<button class="btn btn-sm btn-link collapse navbar-collapse text-light" type="submit">注册</button>
-		</form>
+		<div class="form-inline my-2 my-lg-0">
+			<a href="/login.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
+			<a href="/register.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
+		</div>
 	</nav>
 	<div id="rs-content" class="container">
 		<div class="row">
@@ -45,15 +45,15 @@
 				}else{
 					foreach ($question_list as $key => $value) {
 				?>
-							<li class="list-group-item list-group-item-action"><?php
-							if( !empty($value['q_paper']) ){
-							?>
-							<a href="#"><?php echo $value['q_paper']; ?></a>
-							<?php
-							}
-							?>&nbsp;/&nbsp;
-							<a href="/question/detail/<?php echo $value['id']; ?>.html"><?php echo "<span class='d-none d-sm-inline'>第 </span>" . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
-							</li>	
+					<li class="list-group-item list-group-item-action"><?php
+					if( !empty($value['q_paper']) ){
+					?>
+					<a href="#"><?php echo $value['q_paper']; ?></a>
+					<?php
+					}
+					?>&nbsp;/&nbsp;
+					<a href="/question/detail/<?php echo $value['id']; ?>.html"><?php echo "<span class='d-none d-sm-inline'>第 </span>" . mb_substr($value['q_tihao'], 0, 22) . " 题"; ?></a>
+					</li>	
 				<?php
 					}
 				}
@@ -76,7 +76,7 @@
 				<div id="rs-google-ad">
 					<?php $this->load->view('adsense'); ?>					
 				</div>
-				<div class="bg-primary text-light p-1 align-middle text-center d-flex" id="date_counter">
+				<div class="bg-primary text-light p-1 align-middle text-center d-flex my-2 m-y-2 py-1 p-y-1" id="date_counter">
 					<div class="rs-date-counter align-middle text-center p-2">
 						<p class="m-0 text-center">距离2018年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
 					</div>
@@ -89,19 +89,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
-					<div class="rs-ft-about text-sm-center text-md-left">
-						<p><img src="/static/default/image/sapublic.jpg" width="129px"></p>					
+					<div class="rs-ft-about">
+						<p class="text-center text-md-left"><img src="/static/default/image/sapublic.jpg" width="129px"></p>					
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="rs-ft-about text-sm-center text-md-left text-light">
+					<div class="rs-ft-about text-center text-sm-center text-md-left text-light">
 						<h5>关于我们</h5>
-						<p>我们致力于分享与计算机技术与软件专业技术资格（水平）考试相关的所有信息，如有需要，关注我们的微信公众号，随时随地掌握更多内容。</p>
+						<p>本站致力于分享与计算机技术与软件专业技术资格（水平）考试相关的所有信息，为所有软考路上的朋友提供所需帮助，您可以关注我们的微信公众号，进行随时的自我测验以及与更多的考友一起交流。</p>
 						<p>Copyright &copy; 2018 京ICP备15058613－1号</p>
 					</div>
 				</div>
 				<div class="col-md-6">
-					<div class="rs-ft-about text-light text-sm-center text-md-left">
+					<div class="rs-ft-about text-light text-center text-sm-center text-md-left">
 						<h5>友情链接</h5>
 						<ul>
 							<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>

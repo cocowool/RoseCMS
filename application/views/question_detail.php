@@ -1,25 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-	<meta charset='UTF-8'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="renderer" content="webkit">
-	<title>软考资料站-历年真题</title>
-	<meta name="keyword" content="软考，系统分析师，系统架构师，历年真题，软考历年真题">
-	<meta name="description" content="系统分析师资料站，历年真题分析">
-	<link href="/static/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
-	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
-	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/static/lib/jquery/jquery-qrcode-0.14.0.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/source/main.css">
+	<title>软考资料站</title>
+	<meta name="keyword" content="软考，系统分析师，系统架构师">
+	<meta name="description" content="软考资料">
 </head>
+<body>
+	<nav id="rs-nav" class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top">
+		<a href="/" class="navbar-brand text-light"><img src="/static/default/image/sa_white.png" width="30" height="30">&nbsp;&nbsp;软考资料</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rs-nav-menu" aria-controls="rs-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="rs-nav-menu">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a href="/" class="nav-link">文章</a></li>
+				<li class="nav-item active"><a href="/question.html" class="nav-link">真题</a></li>
+				<li class="nav-item"><a href="／about.html" class="nav-link">关于</a></li>
+			</ul>
+		</div>
+
+		<div class="form-inline my-2 my-lg-0">
+			<a href="/login.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
+			<a href="/register.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
+		</div>
+	</nav>
+	<div id="rs-content" class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<?php 
+				if( empty($question) ){
+
+				}else{
+				?>
+				<div id="rs-breadcrum">
+					<a href="/" class="mr-1">首页</a>&gt;
+					<a href="/question.html" class="text-muted mr-1">真题</a>&gt;
+					<a href="#"><?php echo $question['q_paper']; ?></a>
+				</div>
+				<?php
+				}
+				?>
+			</div>
+		</div>
+		
+	</div>	
+</body>
+
 <body class="">
-	<div class="rs-top-menu container">
-		<?php
-			$this->load->view('menu');
-		?>
-	</div>
 	<div class="rs-body container">
 		<div class="row">
 			<div class="col-md-8 rs-post-list">
@@ -29,9 +62,6 @@
 			}else{
 				
 			?>
-				<div class="rs-q-nav">
-					<h4>真题 &gt; <a href="#"><?php echo $question['q_paper']; ?></a></h3>
-				</div>
 				<div class="rs-q-detail">
 					<div class="rs-q-title">
 						<div><b>题目</b></div>

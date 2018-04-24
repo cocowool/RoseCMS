@@ -24,6 +24,8 @@ class Question extends MY_Controller {
 			$data['user_login'] = '';
 		}
 
+		
+
 		if(!empty($flag)){
 			$this->load->view('main_bt4', $data);
 		}else{
