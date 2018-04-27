@@ -85,7 +85,7 @@
 		</div>
 		
 	</div>
-	<div class="container-fluid  bg-dark" id="rs-footer">
+	<div class="container-fluid  bg-dark pt-4 p-t-4" id="rs-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">

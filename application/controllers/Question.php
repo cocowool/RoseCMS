@@ -26,11 +26,11 @@ class Question extends MY_Controller {
 
 		
 
-		if(!empty($flag)){
-			$this->load->view('main_bt4', $data);
-		}else{
-			$this->load->view('question_list', $data);		
-		}
+		//if(!empty($flag)){
+		$this->load->view('main_bt4', $data);
+		//}else{
+		//	$this->load->view('question_list', $data);		
+		//}
 	}
 
 	public function detail($id = ''){
