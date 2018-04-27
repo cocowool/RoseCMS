@@ -60,7 +60,7 @@ class Wechat extends CI_Controller {
 							$title = "图文测试";
 							$description = "文字描述信息";
 							$picurl = "http://corpuscloud-thumbnail.stor.sinaapp.com/upload/20180102/userupload_1514859506.jpg";
-							$msg_tpl = '<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[news]]></MsgType><Content><![CDATA[]]></Content><ArticleCount>1</ArticleCount><Articles><item><Title><![CDATA[[%s]]></Title><Description><![CDATA[%s]></Description><PicUrl><![CDATA[%s]]></PicUrl><Url><![CDATA[]]></Url></item></Articles><FuncFlag>0</FuncFlag></xml>';
+							$msg_tpl = '<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[news]]></MsgType><Content><![CDATA[]]></Content><ArticleCount>1</ArticleCount><Articles><item><Title><![CDATA[%s]]></Title><Description><![CDATA[%s]></Description><PicUrl><![CDATA[%s]]></PicUrl><Url><![CDATA[]]></Url></item></Articles><FuncFlag>0</FuncFlag></xml>';
 							$result =  sprintf($msg_tpl,$post_obj->FromUserName, $post_obj->ToUserName, time(), $title, $description, $picurl);
 							break;							
 						default:
