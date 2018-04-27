@@ -85,7 +85,7 @@
 				?>
 			</div>
 			<div class="col-md-4" id="right-column">
-				<div class="row">
+				<div class="row text-center text-sm-center text-md-left">
 					<div class="col-md-4">
 						<div id="qrcode">
 							

@@ -103,7 +103,7 @@
 				<div class="col-md-6">
 					<div class="rs-ft-about text-light text-center text-sm-center text-md-left">
 						<h5>友情链接</h5>
-						<ul>
+						<ul class="rs_friendlink">
 							<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>
 							<li><a href="http://www.miit.gov.cn">中华人民共和国工业和信息化部</a></li>
 							<li><a href="http://cnblogs.com/cocowool">小狼的世界</a></li>
