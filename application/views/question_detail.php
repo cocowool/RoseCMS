@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/lib/jquery/jquery-qrcode-0.14.0.min.js"></script>
 	<link rel="stylesheet" href="/source/main.css">
 	<title>软考资料站</title>
 	<meta name="keyword" content="软考，系统分析师，系统架构师">
@@ -35,7 +37,7 @@
 			<div class="col-md-8">
 				<?php 
 				if( empty($question) ){
-
+					echo "<div><p>获取真题内容失败！</p></div>";
 				}else{
 				?>
 				<div id="rs-breadcrum">
@@ -43,46 +45,26 @@
 					<a href="/question.html" class="text-muted mr-1">真题</a>&gt;
 					<a href="#"><?php echo $question['q_paper']; ?></a>
 				</div>
-				<?php
-				}
-				?>
-			</div>
-		</div>
-		
-	</div>	
-</body>
-
-<body class="">
-	<div class="rs-body container">
-		<div class="row">
-			<div class="col-md-8 rs-post-list">
-			<?php
-			if( empty($question) ){
-				echo "<p>获取真题内容失败！</p>";
-			}else{
-				
-			?>
-				<div class="rs-q-detail">
-					<div class="rs-q-title">
-						<div><b>题目</b></div>
-						<div class="rs-q-title-content">
-							<?php echo $question['q_title']; ?>
-						</div>					
+				<div id="rs-question">
+				<form action="">
+					<div class="py-2 p-y-2">
+						<div class="rs_q_title">
+							题目
+						</div>						
+						<?php echo $question['q_title']; ?>
 					</div>
-					<div>
-					<form action="#">
-					<?php
+				<?php
 					if($question['q_type'] == "选择题"){
 					?>
 						<div><b>选项</b></div>
-						<div class="rs-q-option form-group">
-							<input type="radio" name="a" value=""> <label for="a">A</label> <?php echo $question['q_option_1']; ?></div>
-						<div class="rs-q-option form-group">
-							<input type="radio" name="a" value=""> <label for="a">B</label> <?php echo $question['q_option_2']; ?></div>
-						<div class="rs-q-option form-group">
-							<input type="radio" name="a" value=""> <label for="a">C</label> <?php echo $question['q_option_3']; ?></div>
-						<div class="rs-q-option form-group">
-							<input type="radio" name="a" value=""> <label for="a">D</label> <?php echo $question['q_option_4']; ?></div>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="question_option" value="a"> <label for="a" class="form-check-label"><b>A</b> <?php echo $question['q_option_1']; ?></label></div>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="question_option" value="b"> <label for="b" class="form-check-label"><b>B</b> <?php echo $question['q_option_2']; ?></label></div>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="question_option" value="c"> <label for="c" class="form-check-label"><b>C</b> <?php echo $question['q_option_3']; ?></label></div>
+						<div class="form-group form-check">
+							<input type="radio" class="form-check-input" name="question_option" value="d"> <label for="c" class="form-check-label"><b>D</b> <?php echo $question['q_option_4']; ?></label></div>
 					<?php
 					}else{
 					?>
@@ -91,20 +73,16 @@
 					<?php
 					}
 					?>
-						<div class="rs-q-operation form-group">
-							<button type="submit" class="btn btn-default">提交 并查看答案解析</button>
-							<button type="button" class="btn btn-warning">错误反馈</button>
-						</div>
-					</form>	
+					<div class="rs_q_operation form-group">
+						<button type="submit" class="btn btn-primary">提交 并查看答案解析</button>
+						<button type="button" class="btn btn-warning">错误反馈</button>
 					</div>
 
-					<div style="min-height:110px; height:110px; display:block;">
-						
-					</div>
+				</form>
 				</div>
-			<?php
-			}
-			?>
+				<?php
+				}
+				?>
 			</div>
 			<div class="col-md-4" id="right-column">
 				<div class="row">
@@ -114,7 +92,7 @@
 						</div>						
 					</div>
 					<div class="col-md-8" style="color:#88b5e5; line-height: 1.2em;">
-						<h3>扫描二维码<br />在手机中做题<br />随时随地尽在掌握</h3>
+						<h5>扫描二维码<br />在手机中做题<br />随时随地尽在掌握</h5>
 					</div>
 				</div>
 				<p></p>
@@ -125,12 +103,37 @@
 				<p>&nbsp;</p>
 			</div>
 		</div>
-	</div>
-	<div class="rs-footer">
-	<?php
-		$this->load->view('footer');
-	?>
-	</div>
+		
+	</div>	
+	<div class="container-fluid  bg-dark" id="rs-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="rs-ft-about">
+						<p class="text-center text-md-left"><img src="/static/default/image/sapublic.jpg" width="129px"></p>					
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="rs-ft-about text-center text-sm-center text-md-left text-light">
+						<h5>关于我们</h5>
+						<p>本站致力于分享与计算机技术与软件专业技术资格（水平）考试相关的所有信息，为所有软考路上的朋友提供所需帮助，您可以关注我们的微信公众号，进行随时的自我测验以及与更多的考友一起交流。</p>
+						<p>Copyright &copy; 2018 京ICP备15058613－1号</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="rs-ft-about text-light text-center text-sm-center text-md-left">
+						<h5>友情链接</h5>
+						<ul class="rs_friendlink">
+							<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>
+							<li><a href="http://www.miit.gov.cn">中华人民共和国工业和信息化部</a></li>
+							<li><a href="http://cnblogs.com/cocowool">小狼的世界</a></li>
+						</ul>					
+					</div>				
+				</div>
+			</div>
+			
+		</div>
+	</div>	
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){

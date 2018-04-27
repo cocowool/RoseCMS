@@ -19,6 +19,21 @@ html, body {
     width: auto;
     height: auto;
   }
+
+  ul.rs_friendlink {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    -webkit-padding-start: 0;
+  }
+
+  ul.rs_friendlink li {
+    padding: 0;
+  }
+
+  ul.rs_friendlink li a {
+    color: #ffffff;
+  }
 }
 @media (min-width: 375px) {
   html {
