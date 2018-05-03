@@ -62,13 +62,9 @@
 				</div>
 				<div id="rs-question-page">
 					<nav aria-label="Page navigation example">
-						<ul class="pagination justify-content-center">
-							<li class="page-item"><a class="page-link" href="#">上一页</a></li>
-							<li class="page-item"><a class="page-link" href="#">1</a></li>
-							<li class="page-item"><a class="page-link" href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#">下一页</a></li>
-						</ul>
+						<?php
+							echo $page_links;
+						?>
 					</nav>
 				</div>
 			</div>
