@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Conf_Model extends MY_Model {
-	protected $table = 'rs_config';
+class Wechat_Model extends MY_Model {
+	protected $table = 'rs_wechat_msg';
 	protected $id	=	'id';
 	public $fields = array(
 		array('name'=>'id', 'excel_column' => '', 'comment'=>'主键', 'primary' => TRUE, 

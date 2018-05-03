@@ -47,9 +47,20 @@ class Wechat extends CI_Controller {
 
 			$msg_type = $post_obj->MsgType;
 
+			//将用户的消息进行保存
+			$this->load->model('Wechat_Model', 'w');
+			//$data['']
+
 			switch ($msg_type) {
 				case 'text':
 					$keyword = trim($post_obj->Content);
+					$data['ToUserName'] = $post_obj->ToUserName;
+					$data['FromUserName'] = $post_obj->FromUserName;
+					$data['FromUserName'] = $post_obj->FromUserName;
+					$data['CreateTime'] = $post_obj->CreateTime;
+					$data['MsgType'] = $post_obj->MsgType;
+					$data['content'] = $post_obj->Content;
+					$this->w->insert($data);
 					switch ($keyword) {
 						case '真题':
 							$text_content = "历年真题，<a href='http://www.edulinks.cn/question'>点击查看</a>";
