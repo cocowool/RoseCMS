@@ -56,13 +56,13 @@
 					?>
 						<div><b>选项</b></div>
 						<div class="form-check">
-							<input type="radio" class="form-check-input" name="question_option" value="a"> <label for="a" class="form-check-label"><b>A</b> <?php echo $question['q_option_1']; ?></label></div>
+							<input type="radio" class="form-check-input" name="question_option" id="a" value="a"> <label for="a" class="form-check-label"><b>A</b> <?php echo $question['q_option_1']; ?></label></div>
 						<div class="form-check">
-							<input type="radio" class="form-check-input" name="question_option" value="b"> <label for="b" class="form-check-label"><b>B</b> <?php echo $question['q_option_2']; ?></label></div>
+							<input type="radio" class="form-check-input" name="question_option" id="b" value="b"> <label for="b" class="form-check-label"><b>B</b> <?php echo $question['q_option_2']; ?></label></div>
 						<div class="form-check">
-							<input type="radio" class="form-check-input" name="question_option" value="c"> <label for="c" class="form-check-label"><b>C</b> <?php echo $question['q_option_3']; ?></label></div>
+							<input type="radio" class="form-check-input" name="question_option" id="c" value="c"> <label for="c" class="form-check-label"><b>C</b> <?php echo $question['q_option_3']; ?></label></div>
 						<div class="form-group form-check">
-							<input type="radio" class="form-check-input" name="question_option" value="d"> <label for="c" class="form-check-label"><b>D</b> <?php echo $question['q_option_4']; ?></label></div>
+							<input type="radio" class="form-check-input" name="question_option" id="d" value="d"> <label for="d" class="form-check-label"><b>D</b> <?php echo $question['q_option_4']; ?></label></div>
 					<?php
 					}else{
 					?>
