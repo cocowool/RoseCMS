@@ -120,6 +120,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		//console.log("Document Ready");
+		console.log(window.height);
 	});
 
 	var d = new Date();

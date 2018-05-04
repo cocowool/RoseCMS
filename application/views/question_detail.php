@@ -5,8 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap.min.css">
-	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/static/lib/jquery/jquery-qrcode-0.14.0.min.js"></script>
 	<link rel="stylesheet" href="/source/main.css">
 	<title>软考资料站</title>
 	<meta name="keyword" content="软考，系统分析师，系统架构师">
@@ -107,7 +105,7 @@
 	</div>	
 	<div class="container-fluid  bg-dark" id="rs-footer">
 		<div class="container">
-			<div class="row">
+			<div class="row py-2 p-y-2">
 				<div class="col-md-2">
 					<div class="rs-ft-about">
 						<p class="text-center text-md-left"><img src="/static/default/image/sapublic.jpg" width="129px"></p>					
@@ -134,6 +132,10 @@
 			
 		</div>
 	</div>	
+	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
+	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/lib/jquery/jquery-qrcode-0.14.0.min.js"></script>
+	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.min.js"></script>
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -150,7 +152,8 @@
 		});
 		//$('#qrcode').qrcode("this plugin is great");
 
-		console.log("Document Ready");
+		//console.log("Document Ready");
+		$('#rs-content').height(($(document).height() - 300));
 	});
 
 	// var d = new Date();
