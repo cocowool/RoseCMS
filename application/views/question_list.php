@@ -116,6 +116,9 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		//console.log("Document Ready");
+		if($(document).height() > $('#rs-content').height()){
+			$('#rs-content').height(($(document).height() - 300));
+		}
 	});
 
 	var d = new Date();

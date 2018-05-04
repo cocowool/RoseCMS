@@ -153,7 +153,9 @@
 		//$('#qrcode').qrcode("this plugin is great");
 
 		//console.log("Document Ready");
-		$('#rs-content').height(($(document).height() - 300));
+		if($(document).height() > $('#rs-content').height()){
+			$('#rs-content').height(($(document).height() - 300));
+		}
 	});
 
 	// var d = new Date();
