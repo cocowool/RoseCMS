@@ -16,6 +16,15 @@
 	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?d8942469c6b491646211f9397a226b44";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
 </head>
 <body class="">
 	<div class="container rs-top-menu">
