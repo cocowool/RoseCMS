@@ -81,8 +81,8 @@
 					}
 					?>
 					<div class="rs_q_operation form-group">
-						<button type="submit" class="btn btn-primary">提交 并查看答案解析</button>
-						<button type="button" class="btn btn-warning">错误反馈</button>
+						<button type="submit" id="rs-submit" class="btn btn-primary">提交 并查看答案解析</button>
+						<button type="button" id="rs-feedback" class="btn btn-warning">错误反馈</button>
 					</div>
 
 				</form>
@@ -167,6 +167,19 @@
 		}
 	});
 
+	$('#rs-submit').click(function(e){
+		console.log('Form Submit');
+		e.preventDefault();
+	});
+
+	$('#rs-feedback').click(function(e){
+
+		e.preventDefault();
+	});
+
+	var vm = new Vue({
+
+	});
 	// var d = new Date();
 	// var se = new Date('2018-05-26');
 	// var ddCount = parseInt( (Math.abs(se - d))/1000/60/60/24 ); 
