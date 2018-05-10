@@ -1,21 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-	<meta charset='UTF-8'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="renderer" content="webkit">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="/static/lib/bootstrap-4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/source/main.css">
 	<title>软考资料站</title>
-	<meta name="keyword" content="软考，系统分析师，系统架构师">
-	<meta name="description" content="系统分析师资料站">
-	<link href="/static/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	<link rel='stylesheet' id='twentyseventeen-style-css'  href='/static/css/main.css' type='text/css' media='all' />
-	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
-	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
+	<meta name="keyword" content="软考，系统分析师，系统架构师，真题">
+	<meta name="description" content="软考资料分享，软考真题模拟">
 	<script>
 	var _hmt = _hmt || [];
 	(function() {
@@ -26,19 +19,33 @@
 	})();
 	</script>
 </head>
-<body class="">
-	<div class="container rs-top-menu">
-		<?php
-			$this->load->view('menu');
-		?>
-	</div>
-	<div class="rs-body container">
+<body>
+	<nav id="rs-nav" class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top">
+		<a href="/" class="navbar-brand text-light"><img src="/static/default/image/sa_white.png" width="30" height="30">&nbsp;&nbsp;软考资料</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rs-nav-menu" aria-controls="rs-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="rs-nav-menu">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a href="/" class="nav-link">文章</a></li>
+				<li class="nav-item"><a href="/question.html" class="nav-link">真题</a></li>
+				<li class="nav-item"><a href="／about.html" class="nav-link">关于</a></li>
+			</ul>
+		</div>
+
+		<div class="form-inline my-2 my-lg-0">
+			<a href="/login.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
+			<a href="/register.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
+		</div>
+	</nav>
+	<div id="rs-content" class="container">
 		<div class="row">
-			<div class="col-md-8 rs-post-list">
+			<div class="col-md-8 py-3 p-y-3">
 			<?php
 			foreach ($article_list as $key => $value) {
 			?>
-				<div class="row rs-pl-item">
+				<div class="row rs_pl_item" id="rs-post-list">
 					<div class="col-md-3 col-sm-0">
 						<?php
 						if( !empty($value['thumbnail']) ){
@@ -53,15 +60,15 @@
 						?>
 					</div>
 					<div class="col-md-9 col-sm-12">
-						<h2 class="rs-pl-title"><a href="/article/<?php echo $value['article']['id']; ?>"><?php echo mb_substr($value['article']['post_title'], 0, 22); ?></a></h2>
-						<div class="rs-pl-meta">
+						<h2 class="rs_pl_title"><a href="/article/<?php echo $value['article']['id']; ?>"><?php echo mb_substr($value['article']['post_title'], 0, 22); ?></a></h2>
+						<div class="rs_pl_meta">
 							<span class="glyphicon glyphicon-time" aria-hidden="true"> <?php echo $value['article']['post_date']; ?></span>
 							<!--
 							<span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
 							<span class="glyphicon glyphicon-tag" aria-hidden="true"> </span>
 							-->
 						</div>
-						<div class="rs-pl-content">
+						<div class="rs_pl_content">
 							<?php echo mb_substr(strip_tags($value['article']['post_content']), 0, 150) . "..."; ?>
 						</div>
 						<a href="/article/<?php echo $value['article']['id']; ?>" class="btn btn-default">了解更多</a>
@@ -69,32 +76,57 @@
 				</div>
 			<?php
 			}
-			?>
+			?>				
 			</div>
-			<div class="col-md-4" id="right-column">
-				<div class="rs-google-ad" id="google-ad">
+			<div class="col-md-4">
+				<div id="rs-google-ad">
 					<?php $this->load->view('adsense'); ?>					
 				</div>
-				<div class="rs-sidebox" id="date_counter">
-					<div class="rs-date-counter">
-						<p>距离2018年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
-						<p></p>
+				<div class="bg-primary text-light p-1 align-middle text-center d-flex my-2 m-y-2 py-1 p-y-1" id="date_counter">
+					<div class="rs-date-counter align-middle text-center p-2">
+						<p class="m-0 text-center">距离2018年软考还有<span id="dateCounter">{{ dayCount }}</span>天</p>
 					</div>
-				</div>
-				<div class="rs-sidebox rs-friendlink">
 				</div>
 			</div>
 		</div>
+		
 	</div>
-	<div class="rs-footer">
-	<?php
-		$this->load->view('footer');
-	?>
+	<div class="container-fluid  bg-dark pt-4 p-t-4" id="rs-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="rs-ft-about">
+						<p class="text-center text-md-left"><img src="/static/default/image/sapublic.jpg" width="129px"></p>					
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="rs-ft-about text-center text-sm-center text-md-left text-light">
+						<h5>关于我们</h5>
+						<p>本站致力于分享与计算机技术与软件专业技术资格（水平）考试相关的所有信息，为所有软考路上的朋友提供所需帮助，您可以关注我们的微信公众号，进行随时的自我测验以及与更多的考友一起交流。</p>
+						<p>Copyright &copy; 2018 京ICP备15058613－1号</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="rs-ft-about text-light text-center text-sm-center text-md-left">
+						<h5>友情链接</h5>
+						<ul class="rs_friendlink">
+							<li><a href="http://www.ruankao.org.cn/jsjnew/cms/focusNews/">中国计算机技术职业资格网</a></li>
+							<li><a href="http://www.miit.gov.cn">中华人民共和国工业和信息化部</a></li>
+							<li><a href="http://cnblogs.com/cocowool">小狼的世界</a></li>
+						</ul>					
+					</div>				
+				</div>
+			</div>
+			
+		</div>
 	</div>
-</body>
+	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
+	<script src="/static/lib/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		console.log("Document Ready");
+		//console.log("Document Ready");
+		console.log(window.height);
 	});
 
 	var d = new Date();
@@ -115,34 +147,6 @@
 			dayCount : ddCount
 		}
 	});	
-
-	//vm.$mount('#date_counter')
-
-	// var google_ad = new Vue({
-	// 	el:"#date_counter",
-	// 	data(){
-	// 		return {
-	// 			scroll:''
-	// 		}
-	// 	},
-	// 	methods: {
-	// 		google() {
-	// 			this.scroll = document.body.scrollTop;
-	// 			console.log(this.scroll);
-	// 		},
-
-	// 		mounted() {
-	// 			console.log("Event Listener");
-	// 			window.addEventListener('scroll', this.google)
-	// 		}
-	// 	}
-	// });
-
-	// var app = new Vue({
-	// 	el:"#date_counter",
-	// 	data:{
-	// 		message:"距离下半年软考还有"
-	// 	}
-	// });
 </script>
+</body>
 </html>
