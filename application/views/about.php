@@ -44,9 +44,9 @@
 			<div class="col-md-8">
 				<div id="rs-breadcrum">
 					<a href="/" class="mr-1">首页</a>&gt;
-					<a href="/about.html" class="text-muted mr-1">关于我们</a>&gt;
+					<a href="/about.html" class="text-muted mr-1">关于我们</a>
 				</div>
-				<div>
+				<div class='py-4 p-y-4'>
 					<p>我们希望为软考考友提供全面、贴切的资讯服务，为大家提供一个优质的学习平台。我们目前正在茁壮成长中，也非常希望有志之士加入我们。为各位考友贡献一份力量！</p>
 					<p>邮箱 <a href="mailto:cocowool@qq.com">cocowool@qq.com</a> </p>
 				</div>
