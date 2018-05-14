@@ -30,7 +30,7 @@
 			<ul class="navbar-nav">
 				<li class="nav-item"><a href="/" class="nav-link">文章</a></li>
 				<li class="nav-item active"><a href="/question.html" class="nav-link">真题</a></li>
-				<li class="nav-item"><a href="／about.html" class="nav-link">关于</a></li>
+				<li class="nav-item"><a href="/about.html" class="nav-link">关于</a></li>
 			</ul>
 		</div>
 
