@@ -18,7 +18,7 @@ class MY_Model extends CI_Model {
 				//echo $value['name']; echo "<br />";
 				$validation_rules[] = array(
 					'field'	=>	$value['name'],
-					'label'	=>	$value['comment'],
+					'label'	=>	$value['ddl']['comment'],
 					'rules'	=>	$value['form']['validation']
 				);
 			}
