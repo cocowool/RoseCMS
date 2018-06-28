@@ -60,7 +60,7 @@
 						?>
 					</div>
 					<div class="col-md-9 col-sm-12">
-						<h2 class="rs_pl_title"><a href="/article/<?php echo $value['article']['id']; ?>.html"><?php echo mb_substr(strip_tags($value['article']['post_title']), 0, 22); ?></a></h2>
+						<h2 class="rs_pl_title"><a href="/article/<?php echo $value['article']['id']; ?>.html"><?php echo mb_substr(strip_html_tags($value['article']['post_title']), 0, 22); ?></a></h2>
 						<div class="rs_pl_meta">
 							<span class="glyphicon glyphicon-time" aria-hidden="true"> <?php echo $value['article']['post_date']; ?></span>
 							<!--
