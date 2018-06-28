@@ -44,7 +44,7 @@
 			<div class="col-md-8 py-3 p-y-3 rs-post-detail">
 				<h2 class="rs-post-title"><?php echo $post_title; ?></h2>
 				<div class="rs-post-content">
-					<?php echo $post_content; ?>
+					<?php echo  htmlspecialchars_decode($post_content); ?>
 				</div>
 				<div class="rs-post-meta">
 					
