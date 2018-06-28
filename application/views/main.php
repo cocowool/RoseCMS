@@ -69,7 +69,7 @@
 							-->
 						</div>
 						<div class="rs_pl_content">
-							<?php echo mb_substr(strip_tags($value['article']['post_content']), 0, 150) . "..."; ?>
+							<?php echo mb_substr(strip_tags(htmlspecialchars_decode($value['article']['post_content'])), 0, 150) . "..."; ?>
 						</div>
 						<a href="/article/<?php echo $value['article']['id']; ?>" class="btn btn-default">了解更多</a>
 					</div>
