@@ -131,7 +131,7 @@
 	});
 
 	var d = new Date();
-	var se = new Date('2018-05-26');
+	var se = new Date('2018-11-10');
 	var ddCount = parseInt( (Math.abs(se - d))/1000/60/60/24 ); 
 
 	var vm = new Vue({
