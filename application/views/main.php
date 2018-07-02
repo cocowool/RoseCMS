@@ -35,7 +35,7 @@
 		</div>
 
 		<div class="form-inline my-2 my-lg-0">
-			<a href="/login.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
+			<a href="/login.html" data-toggle="modal" data-target="#rs_login_modal" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
 			<a href="/register.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
 		</div>
 	</nav>
@@ -120,6 +120,25 @@
 			
 		</div>
 	</div>
+	<div id="rs_login_modal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">用户登陆</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>请输入用户名密码。</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">登陆</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">忘记密码</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script src="/static/lib/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.min.js"></script>
@@ -127,6 +146,8 @@
 	$(document).ready(function(){
 		//console.log("Document Ready");
 		console.log(window.height);
+
+
 	});
 
 	var d = new Date();
