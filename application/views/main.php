@@ -121,7 +121,7 @@
 		</div>
 	</div>
 	<div id="rs_login_modal" class="modal fade" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">用户登陆</h5>
@@ -130,9 +130,18 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<p>请输入用户名密码。</p>
+					<form action="">
+						<div class="form-group">
+							<label for="username" class="col-form-label">用户名</label>
+							<input type="text" class="form-control" placeholder="请输入用户名" id="username" name="username">
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-form-label">密码</label>
+							<input type="password" class="form-control" placeholder="请输入密码" id="password" name="password">
+						</div>
+					</form>
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer text-left">
 					<button type="button" class="btn btn-primary">登陆</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">忘记密码</button>
 				</div>
