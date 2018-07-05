@@ -177,17 +177,17 @@
 				<div class="modal-body">
 					<form action="">
 						<div class="form-group">
-							<label for="username" class="col-form-label">用户名</label>
+							<label for="username" class="col-form-label">用户名</label><span class="rs_error_tip"></span>
 							<input type="text" class="form-control" placeholder="请输入用户名" id="username" name="username">
 						</div>
 						<div class="form-group">
-							<label for="password" class="col-form-label">密码</label>
+							<label for="password" class="col-form-label">密码</label><span class="rs_error_tip"></span>
 							<input type="password" class="form-control" placeholder="请输入密码" id="password" name="password">
 						</div>
 					</form>
 				</div>
 				<div class="modal-footer text-left">
-					<button type="button" class="btn btn-primary">登陆</button>
+					<button type="button" id="btn_login" class="btn btn-primary">登陆</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">忘记密码</button>
 				</div>
 			</div>
@@ -201,7 +201,28 @@
 		//console.log("Document Ready");
 		console.log(window.height);
 
+		$('#username').on('input', function(){
+			$('#username').parent().removeClass('alert alert-danger');
+			$('#username').prev().html('');
+		});
 
+		$('#password').on('input', function(){
+			$('#password').parent().removeClass('alert alert-danger');
+			$('#password').prev().html('');
+		});
+
+		$('#btn_login').on('click', function(){
+			//表单校验
+			if($('#username').val() == ""){
+				$('#username').parent().addClass('alert alert-danger');
+				$('#username').prev().html('用户名不能为空');
+			}
+
+			if($('#password').val() == ""){
+				$('#password').parent().addClass('alert alert-danger');
+				$('#password').prev().html('密码不能为空');
+			}
+		});
 	});
 
 	var d = new Date();
