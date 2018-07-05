@@ -20,6 +20,7 @@ class Main extends CI_Controller {
 	 */
 	public function index($version = '')
 	{
+		$this->load->library('form_validation');
 		$this->load->model('Post_Model', 'p');
 		$condition = array();
 		$condition[] = array('data'	=> 'open', 'field' => 'post_status', 'action' => 'where'	);
