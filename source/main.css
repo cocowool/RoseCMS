@@ -42,6 +42,14 @@ html, body {
     margin-bottom: 20px;
   }
 
+  .rs-register-required {
+    color: red;
+  }
+
+  .rs_error_tip {
+    padding-left: 4em;
+  }
+
   #rs-footer {
     padding-top: 1rem;
   }
