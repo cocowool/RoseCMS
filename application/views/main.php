@@ -225,12 +225,16 @@
 			$.ajax({
 				'url'	:	'/login/json',
 				'method':	'post',
+				'dataType':	'json',
 				'data'	:	{
 					'username'	:	$('#username').val(),
 					'password'	:	$('#password').val()
 				},
-				'success': function(){
-					$('#rs_login_modal').modal('hide')
+				'success': function(data){
+					var user = data.data;
+					console.log(user);
+					$('#rs_login_modal').modal('hide');
+					$('#rs-tr-container').html('<div class="text-light">' + user.user_nicename + ' 欢迎回来，<a class="text-light" href="javascript:void(0);">退出</a></div>');
 				}
 			})
 		});
