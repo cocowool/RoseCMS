@@ -183,7 +183,7 @@
 			<div id="rs-topbar">
 				<div class="top-links">
 					<ul id="rs-topbar-default">
-						<li id="rs-site-name"><a href="javascript:void(0);">系统分析之家</a></li>
+						<li id="rs-site-name"><a href="http://www.edulinks.cn">系统分析之家</a></li>
 					</ul>
 					
 				</div>
