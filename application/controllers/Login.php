@@ -14,6 +14,7 @@ class Login extends CI_Controller {
 		if( $this->u->check_user($post_data['username'], $post_data['password'])){
 			$userinfo = $this->u->getById($post_data['username'], 'user_login');
 			$this->session->set_userdata( 'rs_user_login', $userinfo['user_login']);
+			$this->session->set_userdata( 'rs_user_nicename', $userinfo['user_nicename']);
 
 			$response_msg['status'] = '200';
 			$response_msg['msg']	=	'用户验证成功';
