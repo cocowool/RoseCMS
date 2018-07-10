@@ -34,7 +34,7 @@
 			</ul>
 		</div>
 
-		<div class="form-inline my-2 my-lg-0">
+		<div class="form-inline my-2 my-lg-0" id="rs-tr-container">
 			<a href="/login.html" data-toggle="modal" data-target="#rs_login_modal" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
 			<a href="/register.html" data-toggle="modal" data-target="#rs_register_modal"  class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
 		</div>
@@ -199,8 +199,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		//console.log("Document Ready");
-		console.log(window.height);
-
+		// console.log(window.height);
 		$('#username').on('input', function(){
 			$('#username').parent().removeClass('alert alert-danger');
 			$('#username').prev().html('');
@@ -222,6 +221,18 @@
 				$('#password').parent().addClass('alert alert-danger');
 				$('#password').prev().html('密码不能为空');
 			}
+
+			$.ajax({
+				'url'	:	'/login/json',
+				'method':	'post',
+				'data'	:	{
+					'username'	:	$('#username').val(),
+					'password'	:	$('#password').val()
+				},
+				'success': function(){
+					$('#rs_login_modal').modal('hide')
+				}
+			})
 		});
 	});
 
