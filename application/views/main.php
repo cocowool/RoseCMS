@@ -47,6 +47,7 @@
 		?>
 		</div>
 	</nav>
+	
 	<div id="rs-content" class="container">
 		<div class="row">
 			<div class="col-md-8 py-3 p-y-3">
@@ -97,8 +98,8 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
+
 	<div class="container-fluid  bg-dark pt-4 p-t-4" id="rs-footer">
 		<div class="container">
 			<div class="row">
@@ -125,9 +126,9 @@
 					</div>				
 				</div>
 			</div>
-			
 		</div>
 	</div>
+
 	<div id="rs_register_modal" class="modal fade" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">

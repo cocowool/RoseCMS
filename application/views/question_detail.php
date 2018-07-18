@@ -39,6 +39,7 @@
 			<a href="/register.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
 		</div>
 	</nav>
+
 	<div id="rs-content" class="container">
 		<div class="row">
 			<div class="col-md-8">
@@ -110,8 +111,8 @@
 				<p>&nbsp;</p>
 			</div>
 		</div>
-		
 	</div>	
+
 	<div class="container-fluid  bg-dark" id="rs-footer">
 		<div class="container">
 			<div class="row py-2 p-y-2">
@@ -163,7 +164,13 @@
 
 		//console.log("Document Ready");
 		if($(document).height() > $('#rs-content').height()){
-			$('#rs-content').height(($(document).height() - 300));
+			// console.log($(document).height());
+			// console.log($('#rs-content').height());
+			// console.log($(document).height() - 300);
+			// $('#rs-content').height(($(document).height() - 300));
+			// $('#rs-content .container').height(($(document).height() - 300));
+			// console.log($('#rs-content').height());
+
 		}
 	});
 

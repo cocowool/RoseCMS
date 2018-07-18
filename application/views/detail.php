@@ -39,6 +39,7 @@
 			<a href="/register.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
 		</div>
 	</nav>
+
 	<div id="rs-content" class="container">
 		<div class="row">
 			<div class="col-md-8 py-3 p-y-3 rs-post-detail">
@@ -62,8 +63,8 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
+
 	<div class="container-fluid  bg-dark pt-4 p-t-4" id="rs-footer">
 		<div class="container">
 			<div class="row">
@@ -90,9 +91,9 @@
 					</div>				
 				</div>
 			</div>
-			
 		</div>
 	</div>
+
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script src="/static/lib/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.min.js"></script>
