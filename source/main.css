@@ -50,6 +50,11 @@ html, body {
     padding-left: 4em;
   }
 
+  .rs-register-error {
+    color: red;
+    font-size: 0.8em;
+  }
+
   #rs-footer {
     padding-top: 1rem;
   }
