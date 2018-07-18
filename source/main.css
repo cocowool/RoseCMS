@@ -55,6 +55,10 @@ html, body {
     font-size: 0.8em;
   }
 
+  #rs-content {
+    height: auto;
+  }
+
   #rs-footer {
     padding-top: 1rem;
   }
