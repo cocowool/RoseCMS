@@ -35,8 +35,16 @@
 		</div>
 
 		<div class="form-inline my-2 my-lg-0">
-			<a href="/login.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
-			<a href="/register.html" class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
+		<?php
+			if( $this->session->userdata('rs_user_login') ){
+				echo '<div class="text-light">' . $this->session->userdata('rs_user_nicename') . ' 欢迎回来，<a class="text-light" href="/logout.html">退出</a></div>';
+			}else{
+		?>
+			<a href="/login.html" data-toggle="modal" data-target="#rs_login_modal" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
+			<a href="/register.html" data-toggle="modal" data-target="#rs_register_modal"  class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
+		<?php
+			}
+		?>
 		</div>
 	</nav>
 
