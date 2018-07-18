@@ -82,8 +82,8 @@
 					}
 					?>
 					<div class="rs_q_operation form-group">
-						<button type="submit" id="rs-submit" class="btn btn-primary">提交 并查看答案解析</button>
-						<button type="button" id="rs-feedback" class="btn btn-warning">错误反馈</button>
+						<button type="submit" id="rs-submit" class="btn btn-primary" <?php if(!$this->session->userdata('rs_user_login')){ echo 'data-toggle="tooltip" data-placement="top" title="请先登陆"'; } ?> >提交 并查看答案解析</button>
+						<button type="button" id="rs-feedback" class="btn btn-warning" <?php if(!$this->session->userdata('rs_user_login')){ echo 'data-toggle="tooltip" data-placement="top" title="请先登陆"'; } ?>>错误反馈</button>
 					</div>
 
 				</form>
@@ -145,10 +145,12 @@
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-qrcode-0.14.0.min.js"></script>
-	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.bundle.min.js"></script>
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
+		$('[data-toggle="tooltip"]').tooltip();
+
 		$('#qrcode').qrcode({
 			"render": "canvas",
 			"text"	: "<?php echo current_url() ?>",
@@ -175,12 +177,18 @@
 	});
 
 	$('#rs-submit').click(function(e){
-		console.log('Form Submit');
-		e.preventDefault();
+		<?php 
+		if( $this->session->userdata('rs_user_login') ){
+
+		}else{
+			echo "e.preventDefault();";
+			echo "";
+		}
+		?>
+		
 	});
 
 	$('#rs-feedback').click(function(e){
-
 		e.preventDefault();
 	});
 

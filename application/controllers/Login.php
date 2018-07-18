@@ -30,6 +30,16 @@ class Login extends CI_Controller {
 		}		
 	}
 
+	/**
+	 * 获取用户的登陆状态
+	 */
+	public function get_status(){
+		$post_data = $this->input->post();
+		if($this->session->userdata('rs_user_login')){
+			//
+		}
+	}
+
 	public function index()
 	{
 		$validation_rules = array(
