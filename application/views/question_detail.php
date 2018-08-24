@@ -20,33 +20,9 @@
 	</script>
 </head>
 <body>
-	<nav id="rs-nav" class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top">
-		<a href="/" class="navbar-brand text-light"><img src="/static/default/image/sa_white.png" width="30" height="30">&nbsp;&nbsp;软考资料</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rs-nav-menu" aria-controls="rs-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="rs-nav-menu">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a href="/" class="nav-link">文章</a></li>
-				<li class="nav-item active"><a href="/question.html" class="nav-link">真题</a></li>
-				<li class="nav-item"><a href="/about.html" class="nav-link">关于</a></li>
-			</ul>
-		</div>
-
-		<div class="form-inline my-2 my-lg-0">
-		<?php
-			if( $this->session->userdata('rs_user_login') ){
-				echo '<div class="text-light">' . $this->session->userdata('rs_user_nicename') . ' 欢迎回来，<a class="text-light" href="/logout.html">退出</a></div>';
-			}else{
-		?>
-			<a href="/login.html" data-toggle="modal" data-target="#rs_login_modal" class="btn btn-sm btn-link collapse navbar-collapse text-light">登录</a>
-			<a href="/register.html" data-toggle="modal" data-target="#rs_register_modal"  class="btn btn-sm btn-link collapse navbar-collapse text-light">注册</a>
-		<?php
-			}
-		?>
-		</div>
-	</nav>
+	<?php
+		$this->load->view('top_nav');
+	?>
 
 	<div id="rs-content" class="container">
 		<div class="row">
@@ -150,12 +126,60 @@
 			
 		</div>
 	</div>	
+
+	<?php
+		$this->load->view('foot_modal');
+	?>
+
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-qrcode-0.14.0.min.js"></script>
 	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.bundle.min.js"></script>
 </body>
 <script type="text/javascript">
+	$(document).ready(function(){
+		//console.log("Document Ready");
+		// console.log(window.height);
+		$('#username').on('input', function(){
+			$('#username').parent().removeClass('alert alert-danger');
+			$('#username').prev().html('');
+		});
+
+		$('#password').on('input', function(){
+			$('#password').parent().removeClass('alert alert-danger');
+			$('#password').prev().html('');
+		});
+
+		$('#btn_login').on('click', function(){
+			//表单校验
+			if($('#username').val() == ""){
+				$('#username').parent().addClass('alert alert-danger');
+				$('#username').prev().html('用户名不能为空');
+			}
+
+			if($('#password').val() == ""){
+				$('#password').parent().addClass('alert alert-danger');
+				$('#password').prev().html('密码不能为空');
+			}
+
+			$.ajax({
+				'url'	:	'/login/json',
+				'method':	'post',
+				'dataType':	'json',
+				'data'	:	{
+					'username'	:	$('#username').val(),
+					'password'	:	$('#password').val()
+				},
+				'success': function(data){
+					var user = data.data;
+					console.log(user);
+					$('#rs_login_modal').modal('hide');
+					$('#rs-tr-container').html('<div class="text-light">' + user.user_nicename + ' 欢迎回来，<a class="text-light" href="/logout.html">退出</a></div>');
+				}
+			})
+		});
+	});
+
 	$(document).ready(function(){
 		$('[data-toggle="tooltip"]').tooltip();
 

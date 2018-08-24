@@ -55,6 +55,7 @@ class Question extends MY_Controller {
 	public function detail($id = ''){
 		$data = array();
 
+		$this->load->library('form_validation');
 		$this->load->model('Question_Model', 'q');
 		$option = array();
 		$data['question'] = $this->q->getById($id);

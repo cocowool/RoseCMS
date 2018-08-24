@@ -114,6 +114,49 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		//console.log("Document Ready");
+		// console.log(window.height);
+		$('#username').on('input', function(){
+			$('#username').parent().removeClass('alert alert-danger');
+			$('#username').prev().html('');
+		});
+
+		$('#password').on('input', function(){
+			$('#password').parent().removeClass('alert alert-danger');
+			$('#password').prev().html('');
+		});
+
+		$('#btn_login').on('click', function(){
+			//表单校验
+			if($('#username').val() == ""){
+				$('#username').parent().addClass('alert alert-danger');
+				$('#username').prev().html('用户名不能为空');
+			}
+
+			if($('#password').val() == ""){
+				$('#password').parent().addClass('alert alert-danger');
+				$('#password').prev().html('密码不能为空');
+			}
+
+			$.ajax({
+				'url'	:	'/login/json',
+				'method':	'post',
+				'dataType':	'json',
+				'data'	:	{
+					'username'	:	$('#username').val(),
+					'password'	:	$('#password').val()
+				},
+				'success': function(data){
+					var user = data.data;
+					console.log(user);
+					$('#rs_login_modal').modal('hide');
+					$('#rs-tr-container').html('<div class="text-light">' + user.user_nicename + ' 欢迎回来，<a class="text-light" href="/logout.html">退出</a></div>');
+				}
+			})
+		});
+	});
+
+	$(document).ready(function(){
+		//console.log("Document Ready");
 		if($(document).height() > $('#rs-content').height()){
 			$('#rs-content').height(($(document).height() - 300));
 		}
