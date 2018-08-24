@@ -14,6 +14,7 @@ class Question extends MY_Controller {
 		//加载
 		$this->load->model('Question_Model', 'q');
 		$total = $this->q->getTotal();
+		$this->load->library('form_validation');
 
 		//处理分页
 		$pagesize = 10;
