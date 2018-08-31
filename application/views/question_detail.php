@@ -209,14 +209,13 @@
 	});
 
 	$('#rs-submit').click(function(e){
-		<?php 
-		if( $this->session->userdata('rs_user_login') ){
-
+		e.preventDefault();
+		//检查Cookie初步判断是否登陆
+		if( ! $.cookie('rs_user_login') ){
+			alert('请先登陆！');
 		}else{
-			echo "e.preventDefault();";
-			echo "";
+			
 		}
-		?>
 		
 	});
 
