@@ -133,6 +133,7 @@
 
 	<script type="text/javascript" src="/static/lib/vue-2.3.0/vue.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/lib/jquery/js.cookie.js"></script>
 	<script type="text/javascript" src="/static/lib/jquery/jquery-qrcode-0.14.0.min.js"></script>
 	<script type="text/javascript" src="/static/lib/bootstrap-4.1.0/js/bootstrap.bundle.min.js"></script>
 </body>
