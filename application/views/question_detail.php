@@ -214,7 +214,24 @@
 		if( ! $.cookie('rs_user_login') ){
 			alert('请先登陆！');
 		}else{
-			
+			var val=$('input:radio[name="question_option"]:checked').val();
+			if(val == null){
+				alert("请选择！");
+				return false;
+			}else{
+				$.ajax({
+					'url'	:	'/question/check',
+					'method':	'post',
+					'dataType':	'json',
+					'data'	:	{
+						'question_id'		:	<?php echo $question['id']; ?>,
+						'question_option'	:	val
+					},
+					'success': function(data){
+						alert(data);
+					}
+				});
+			}
 		}
 		
 	});
