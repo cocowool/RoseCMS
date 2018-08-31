@@ -212,7 +212,7 @@
 	$('#rs-submit').click(function(e){
 		e.preventDefault();
 		//检查Cookie初步判断是否登陆
-		if( ! $.cookie('rs_user_login') ){
+		if( ! Cookies.get('rs_user_login') ){
 			alert('请先登陆！');
 		}else{
 			var val=$('input:radio[name="question_option"]:checked').val();
