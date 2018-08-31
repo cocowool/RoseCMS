@@ -228,7 +228,7 @@
 						'question_option'	:	val
 					},
 					'success': function(data){
-						alert(data);
+						alert(data.errorinfo);
 					}
 				});
 			}
