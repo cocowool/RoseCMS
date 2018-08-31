@@ -94,7 +94,7 @@ class Question extends MY_Controller {
 			$result['error']	=	'502';
 			$result['errorinfo']=	'请选择正确的选项!';
 		}else{
-			$this->load->library('Question_Model', 'q');
+			$this->load->model('Question_Model', 'q');
 			$question_detail = $this->q->getById($request['question_id']);
 
 			if($question_detail['q_answer'] == $request['question_option']){
