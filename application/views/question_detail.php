@@ -176,7 +176,7 @@
 					console.log(user);
 					$('#rs_login_modal').modal('hide');
 					$('#rs-tr-container').html('<div class="text-light">' + user.user_nicename + ' 欢迎回来，<a class="text-light" href="/logout.html">退出</a></div>');
-					Cookie.set('rs_user_login', '1');
+					Cookies.set('rs_user_login', '1');
 				}
 			})
 		});
