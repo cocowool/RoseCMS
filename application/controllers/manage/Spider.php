@@ -14,7 +14,7 @@ class Spider extends MY_Controller {
 		$cache = array();
 		$stats = array();
 
-		$start_url = "http://www.rkpass.cn/tk_timu/3_509_6_xuanze.html";
+		$start_url = "http://www.rkpass.cn/tk_timu/4_538_1_xuanze.html";
 
 		$cache[md5($start_url)] = $start_url;
 		$this->load->library('Curl');
@@ -37,7 +37,7 @@ class Spider extends MY_Controller {
 			$data['q_tihao'] = $question_no[1][0];
 
 			//提取试卷
-			$data['q_paper'] = '2017年上半年 系统分析师 上午试卷 综合知识';
+			$data['q_paper'] = '2017年下半年 系统架构设计师 上午试卷 综合知识';
 			$data['q_type'] = '选择题';
 			$data['q_status'] = 'open';
 			$data['q_author'] = 1;
